@@ -6,9 +6,7 @@ public class ej13 {
 
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
-		int x1;
-		int x2;
-		int x3;
+		int x1, x2, x3;
 		System.out.print("introduce tres números enteros: ");
 		x1 = s.nextInt();
 		x2 = s.nextInt();
