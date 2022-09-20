@@ -15,9 +15,10 @@ public class ej10 {
 
 		System.out.println("---------------------------------------------");
 
-		System.out.println(segundos + " segundos");
-		System.out.println(minutos + " minutos");
-		System.out.println(horas + " horas");
+		System.out.println("Tiempo: " + segundos + 
+						   " segundos," + minutos + 
+						   " minutos," + horas + 
+						   " horas");
 	}
 
 }
