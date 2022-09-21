@@ -21,7 +21,7 @@ public class CalcularPrecioFinal {
 
 		System.out.println("Introduce el precio del producto: ");
 		precio = s.nextDouble();
-		System.out.println("Introduce el descuento que se aplicará al producto: ");
+		System.out.println("Introduce el descuento que se aplicará al producto (20%, 10%): ");
 		descuento = s.nextDouble();
 
 		System.out.println("------------------------------------------------------------");
