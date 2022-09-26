@@ -10,7 +10,6 @@ public class ej12 {
 		System.out.println("Introduce dos numeros: ");
 		n1 = s.nextInt();
 		n2 = s.nextInt();
-
 		System.out.println(n1 < n2);
 
 	}

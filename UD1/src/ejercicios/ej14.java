@@ -9,7 +9,6 @@ public class ej14 {
 		int n1;
 		System.out.println("Introduce un numero: ");
 		n1 = s.nextInt();
-
 		System.out.println(n1 % 2 == 0);
 
 	}

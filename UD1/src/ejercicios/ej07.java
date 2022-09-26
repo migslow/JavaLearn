@@ -9,7 +9,6 @@ public class ej07 {
 		double dollar;
 		System.out.println("Introduce la cantidad de dollares a conversar: ");
 		dollar = s.nextDouble();
-		
 		double calculo = euros * dollar;
 		System.out.println("El cambio es de: " + calculo + "$");
 	}
