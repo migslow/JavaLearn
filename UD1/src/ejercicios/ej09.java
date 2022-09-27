@@ -11,7 +11,6 @@ public class ej09 {
 		grados = s.nextDouble();
 		calculo = ((5.0 / 9) * (grados - 32));
 		System.out.println(calculo + " grados");
-
 	}
 
 }
