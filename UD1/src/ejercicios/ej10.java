@@ -13,9 +13,9 @@ public class ej10 {
 		horas = minutos / 60;
 		System.out.println("---------------------------------------------");
 		System.out.println("Tiempo: " + segundos + 
-						   " segundos," + minutos + 
-						   " minutos," + horas + 
-						   " horas");
+						   " segundos, " + minutos + 
+						   " minutos, " + horas + 
+						   " horas.");
 	}
 
 }
