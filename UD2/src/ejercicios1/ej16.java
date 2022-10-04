@@ -9,11 +9,7 @@ public class ej16 {
 		System.out.println("Introduce un numero entero: ");
 		int n = s.nextInt();
 		int suma = 0;
-		for (int i = n; i > 0; i--) {
-			suma = suma + i;
-			System.out.println(i);
-		}
-		System.out.println("la suma de " + n + " es: " + suma);
+		
 	}
 
 }
