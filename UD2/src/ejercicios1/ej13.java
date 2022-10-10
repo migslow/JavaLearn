@@ -9,7 +9,7 @@ public class ej13 {
 		System.out.println("Introduce un numero entero: ");
 		int n = s.nextInt();
 		double factorial = 1;
-		for(int i = n; i > 0; i--) {
+		for (int i = n; i > 0; i--) {
 			factorial = factorial * i;
 			System.out.println(i);
 		}
