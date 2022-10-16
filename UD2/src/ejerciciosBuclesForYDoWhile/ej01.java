@@ -1,4 +1,4 @@
-package ejerciciosBuclesFor;
+package ejerciciosBuclesForYDoWhile;
 
 import java.util.Scanner;
 
