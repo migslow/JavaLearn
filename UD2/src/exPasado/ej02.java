@@ -16,5 +16,5 @@ public class ej02 {
 				System.out.print(i + " - ");
 			}
 		} // del for
-	}
+	}// del main
 }

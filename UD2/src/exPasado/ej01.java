@@ -20,5 +20,5 @@ public class ej01 {
 		} else {
 			System.out.println("El numero no es perfecto");
 		}
-	}
+	}// del main
 }
