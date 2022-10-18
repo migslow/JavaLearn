@@ -16,5 +16,4 @@ public class ej16 {
 		}
 		System.out.print("La suma de todos sus dígitos es: " + acumulador);
 	}
-
 }
