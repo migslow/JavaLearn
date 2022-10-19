@@ -14,7 +14,7 @@ public class ej01 {
 			System.out.println(n);
 		}
 		System.out.println();
-		System.out.println("Hay " + (contador-1) + " numeros sin contar el 50");
+		System.out.println("Hay " + (contador - 1) + " numeros sin contar el 50");
 		if (n == 50) {
 			System.out.println("Ha aparecido un 50, se acabo.");
 			System.exit(0);
