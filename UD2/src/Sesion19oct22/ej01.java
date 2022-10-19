@@ -5,7 +5,6 @@ public class ej01 {
 	public static void main(String[] args) {
 		// variables
 		int n = 0;
-		int suma = 0;
 		int contador = 0;
 
 		while (n != 50) {
