@@ -8,14 +8,10 @@ public class ej03 {
 		Scanner s = new Scanner(System.in);
 		
 		// variables
-		int contador = 21;
-		int nC;
-		
+		int cerillas = 21, eliges = 0;
+		String nombre;
 		System.out.println("Introduce tu nombre: ");
-		String nombre = s.next();
-		System.out.println("Comenzamos. Hay " + contador + " cerillas");
-
-		while()
+		nombre = s.next();
 	}
 
 }
