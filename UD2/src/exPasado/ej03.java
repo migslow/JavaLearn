@@ -25,7 +25,7 @@ public class ej03 {
 				eligeUsuario = s.nextInt();
 			}
 			cerillas = cerillas - eligeUsuario;
-			if (cerillas == 0) {
+			if (cerillas == 1) {
 				System.out.println(nombre + " has perdido.");
 			} else {
 				eligeOrdenador = 5 - eligeUsuario;
