@@ -4,19 +4,19 @@ public class _02NumerosPrimosv1 {
 
 	public static void main(String[] args) {
 		int numero, contador;
-		Scanner s = new Scanner (System.in);
-		System.out.println("Introduce número");
+		Scanner s = new Scanner(System.in);
+		System.out.println("Introduce nï¿½mero");
 		numero = s.nextInt();
-		contador =0;
-		for (int i=1; i<=numero;i++) {
-			if (numero%i==0) {
+		contador = 0;
+		for (int i = 1; i <= numero; i++) {
+			if (numero % i == 0) {
 				contador++;
 			}
-		}// del for
-		if (contador ==2)
-			System.out.println("El número " + numero + " es primo");
+		} // del for
+		if (contador == 2)
+			System.out.println("El nï¿½mero " + numero + " es primo");
 		else
-			System.out.println("El número " + numero + " No es primo");
+			System.out.println("El nï¿½mero " + numero + " No es primo");
 
 	}
 

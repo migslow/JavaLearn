@@ -1,12 +1,13 @@
 
 import java.util.Scanner;
+
 public class _04_Ejercicio17versinoWhileNoCorrecta {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		int numeroLeido, numeroAnterior = 0, contador = 0;
 		boolean esCreciente = true;
 		while (true) {
-			System.out.println("Introduce un número (finalizar con 0");
+			System.out.println("Introduce un nï¿½mero (finalizar con 0");
 			numeroLeido = s.nextInt();
 			if (numeroLeido == 0) {
 				break;

@@ -1,12 +1,13 @@
 import java.util.Scanner;
+
 public class _07_Ejercicio16 {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		int numero, suma = 0;
-		System.out.println("Introduzca el número");
+		System.out.println("Introduzca el nï¿½mero");
 		numero = s.nextInt();
-		if (numero <0) {
-			System.out.println("El número debe ser positivo");
+		if (numero < 0) {
+			System.out.println("El nï¿½mero debe ser positivo");
 			System.exit(-1);
 		}
 		while (numero >= 10) {

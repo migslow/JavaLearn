@@ -1,5 +1,4 @@
 
-
 import java.util.Scanner;
 
 public class _08_EjemploDoWhile02 {
@@ -8,7 +7,7 @@ public class _08_EjemploDoWhile02 {
 		int numero;
 
 		do {
-			System.out.println("Introduzca un número entre 1 y 10");
+			System.out.println("Introduzca un nï¿½mero entre 1 y 10");
 			numero = s.nextInt();
 		} while (numero < 1 || numero > 10);
 		System.out.println("Correcto");

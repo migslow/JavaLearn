@@ -5,20 +5,20 @@ public class _05NumerosPrimosv4 {
 	public static void main(String[] args) {
 		int numero;
 		boolean esPrimo;
-		Scanner s = new Scanner (System.in);
-		System.out.println("Introduce número");
+		Scanner s = new Scanner(System.in);
+		System.out.println("Introduce nï¿½mero");
 		numero = s.nextInt();
-		esPrimo=true;
-		for (int i=2; i<=numero/2;i++) {
-			if (numero%i==0) {
-				esPrimo=false;
+		esPrimo = true;
+		for (int i = 2; i <= numero / 2; i++) {
+			if (numero % i == 0) {
+				esPrimo = false;
 				break;
 			}
-		}// del for
-		if (esPrimo) //(esPrimo==true)
-			System.out.println("El número " + numero + " es primo");
+		} // del for
+		if (esPrimo) // (esPrimo==true)
+			System.out.println("El nï¿½mero " + numero + " es primo");
 		else
-			System.out.println("El número " + numero + " No es primo");
+			System.out.println("El nï¿½mero " + numero + " No es primo");
 
 	}
 
