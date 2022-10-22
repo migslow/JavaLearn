@@ -20,7 +20,7 @@ public class ej03 {
 			int eligirUsuario = 0;
 			System.out.println(nombre + " elige cerillas (1-4) :");
 			eligirUsuario = sc.nextInt();
-			while (eligirUsuario < 1 || eligirUsuario > 4 || eligirUsuario > cerillas) {
+			while (eligirUsuario < 1 && eligirUsuario > 4 && eligirUsuario > cerillas) {
 				System.out.println(nombre + " error elige  cerillas entre (1-4)");
 				eligirUsuario = sc.nextInt();
 
