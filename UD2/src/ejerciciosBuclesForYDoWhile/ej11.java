@@ -12,10 +12,10 @@ public class ej11 {
 			System.out.println("Introduce 10 numeros por teclado: ");
 			n = s.nextInt();
 			contador++;
-			if (n < 0) {
-				min++;
-			} else {
+			if (n >= 0) {
 				max++;
+			} else {
+				min++;
 			}
 			suma = suma + n;
 		}
