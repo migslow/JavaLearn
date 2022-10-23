@@ -13,12 +13,12 @@ public class ej02v2 {
 		do {
 			System.out.println("Introduce un numero entero por teclado: ");
 			serie = s.nextInt();
-			for (int i = 1; i < serie; i++) {
+			for (int i = 0; i < serie; i++) {
 				suma = num1 + num2;
 				num1 = num2;
 				num2 = suma;
 				System.out.print(suma + " - ");
 			}
-		} while (serie > 1);
+		} while (serie >= 1);
 	}
 }

@@ -13,7 +13,7 @@ public class ej03 {
 		if (resto == 0) {
 			System.out.println(n1 + " es multiplo de " + n2);
 		} else {
-			System.out.println(n1 + " es es multiplo de " + n2);
+			System.out.println(n1 + " no es multiplo de " + n2);
 		}
 	}
 

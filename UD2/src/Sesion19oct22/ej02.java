@@ -14,10 +14,10 @@ public class ej02 {
 		int suma = 1;
 
 		for (int i = 1; i < serie; i++) {
-			System.out.print(suma + " - ");
 			suma = num1 + num2;
 			num1 = num2;
 			num2 = suma;
+			System.out.print(suma + " - ");
 		}
 
 	}
