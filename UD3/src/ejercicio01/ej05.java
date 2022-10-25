@@ -15,7 +15,7 @@ public class ej05 {
 	}
 
 	public static void main(String[] args) {
-		System.out.println("El calculo de: " + potencias);
+		System.out.println("El calculo de: " + potencias(0, 0));
 
 	}
 
