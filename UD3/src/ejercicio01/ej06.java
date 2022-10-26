@@ -5,17 +5,22 @@ import java.util.Scanner;
 public class ej06 {
 
 	static Scanner s = new Scanner(System.in);
-	static int calculo;
+	static double calculo;
 
-	public static int cuadrado(int n) {
-		System.out.println("Introduce el primer numero entero: ");
+	public static double cuadrado(double n) {
+		System.out.println("Introduce un numero entero: ");
 		n = s.nextInt();
-		calculo = (int) Math.pow(n, 0.5);
-		return calculo;
+		calculo = Math.pow(n, 0.5);
+		if (n % calculo == 0) {
+			System.out.println(calculo + " es cuadrado de " + n);
+			return calculo;
+		} else {
+			System.out.println(0);
+			return 0;
+		}
 	}
 
 	public static void main(String[] args) {
-		System.out.println(cuadrado(0) + " es cuadrado de " + n);
+		cuadrado(calculo);
 	}
-
 }
