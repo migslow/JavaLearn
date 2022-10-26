@@ -10,7 +10,7 @@ public class ej06 {
 	public static double cuadrado(double n) {
 		System.out.println("Introduce un numero entero: ");
 		n = s.nextInt();
-		calculo = Math.pow(n, 0.5);
+		calculo = Math.sqrt(n);
 		if (n % calculo == 0) {
 			System.out.println(calculo + " es cuadrado de " + n);
 			return calculo;
