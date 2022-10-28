@@ -27,14 +27,17 @@ public class ej04 {
 		System.out.println("Introduce el numero de euros: ");
 		int numero = s.nextInt();
 		switch (nombre) {
+		case "Libras":
 		case "libras":
 			calculo = numero * 0.86;
 			System.out.println("El cambio de libras a euros es: " + calculo);
 			break;
+		case "Dolares":
 		case "dolares":
 			calculo = numero * 1.28611;
 			System.out.println("El cambio de dolares a euros es: " + calculo);
 			break;
+		case "Yenes":
 		case "yenes":
 			calculo = numero * 129.852;
 			System.out.println("El cambio de yenes a euros es: " + calculo);
