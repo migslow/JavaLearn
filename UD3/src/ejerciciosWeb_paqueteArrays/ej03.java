@@ -19,15 +19,15 @@ public class ej03 {
 			System.out.println("Inserte un numero en la posicion " + i);
 			do {
 				num = s.nextInt();
-				if (!(num > 0 && num < 10)) {
+				if (!(num >= 0 && num <= 10)) {
 					System.out.println("Error. Solo numeros del 0 al 10. " + "Inserte un numero en la posicion " + i);
 				}
 
-			} while (!(num > 0 && num < 10));
+			} while (!(num >= 0 && num <= 10));
 			numeros[i] = num;
 		}
 		System.out.println("ESTOS SON LOS NUMEROS ELEGIDOS POR EL USUARIO: ");
-		for (int i = 1; i < numeros.length; i++) {
+		for (int i = 0; i < numeros.length; i++) {
 			System.out.println(numeros[i]);
 		}
 

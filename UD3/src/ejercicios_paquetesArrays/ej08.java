@@ -8,7 +8,7 @@ public class ej08 {
 	static double m = 10;
 	double[] notas = new double[(int) m];
 
-	public static double notas(double n) {
+	public static void notas() {
 		System.out.println("Introduce 10 notas: ");
 		m = s.nextDouble();
 	}
