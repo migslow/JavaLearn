@@ -22,7 +22,8 @@ public class ej05 {
 		}
 
 		for (int i = 0; i < 20; i++) {
-			System.out.println("Elemento " + i + ": " + "		" + numero[i] + "		" + cuadrado[i] + "			" + cubo[i]);
+			System.out.println(
+					"Elemento " + i + ": " + "		" + numero[i] + "		" + cuadrado[i] + "			" + cubo[i]);
 		}
 	}
 
