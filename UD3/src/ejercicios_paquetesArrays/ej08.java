@@ -5,12 +5,18 @@ import java.util.Scanner;
 public class ej08 {
 
 	static Scanner s = new Scanner(System.in);
-	static double m = 10;
-	double[] notas = new double[(int) m];
+	static double numero = 10;
+	static double[] notas = new double[numero];
 
 	public static void notas() {
 		System.out.println("Introduce 10 notas: ");
-		m = s.nextDouble();
+		for (int i = 0; i < notas.length; i++) {
+			System.out.print("Introduce el " + i + ": ");
+			notas[i] = s.nextInt();
+		}
+		for (int i = 0; i < notas.length; i++) {
+			System.out.print(notas[i] + " ");
+		}
 	}
 
 	public static int aprobados(int a) {
@@ -22,7 +28,7 @@ public class ej08 {
 	}
 
 	public static void main(String[] args) {
-
+		notas();
 	}
 
 }
