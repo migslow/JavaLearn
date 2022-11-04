@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ej09 {
 
 	static Scanner s = new Scanner(System.in);
-	static int numero = 10;
+	static int numero = 30;
 	static double[] notas = new double[numero];
 
 	public static void notas() {
@@ -44,16 +44,16 @@ public class ej09 {
 		return contador;
 	}
 
-	 public static double maximo(int m) {
-		 double maximo = notas[0];
-			for (int i = 0; i < notas.length; i++) {
-				if (notas[i] > maximo) {
-					maximo = notas[i];
-				}
+	public static double maximo(int m) {
+		double maximo = notas[0];
+		for (int i = 0; i < notas.length; i++) {
+			if (notas[i] > maximo) {
+				maximo = notas[i];
 			}
-			return maximo;
 		}
-	 
+		return maximo;
+	}
+
 	public static int suspendidos(int s) {
 		int contador = 0;
 		for (int i = 0; i < notas.length; i++) {
