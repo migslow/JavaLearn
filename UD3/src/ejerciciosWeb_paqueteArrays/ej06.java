@@ -24,30 +24,34 @@ public class ej06 {
 		}
 	}
 
-	public static int positivos(int p) {
-		int contador = 0;
+	public static void media() {
+		int positivo = 0, negativo = 0;
+		double sumaPos = 0, sumaNeg = 0;
 		for (int i = 0; i < numeros.length; i++) {
 			if (numeros[i] > 0) {
-				contador++;
+				sumaPos = sumaPos + numeros[i];
+				positivo++;
+			} else if (numeros[i] < 0) {
+				sumaNeg = sumaNeg + numeros[i];
+				negativo++;
 			}
 		}
-		return contador;
-	}
+		if (positivo != 0) {
+			System.out.println("\nMedia de los valores positivos: " + sumaPos / positivo);
+		} else {
+			System.out.println("No ha introducido numeros positivos");
+		}
+		if (negativo != 0) {
+			System.out.println("Media de los valores negativos: " + sumaNeg / negativo);
+		} else {
+			System.out.println("No ha introducido numeros negativos");
+		}
 
-	public static int negativos(int n) {
-		int contador = 0;
-		for (int i = 0; i < numeros.length; i++) {
-			if (numeros[i] <= 0) {
-				contador++;
-			}
-		}
-		return contador;
 	}
 
 	public static void main(String[] args) {
 		pedir();
-		System.out.println("\nLa media de los numeros positivos es: " + positivos(0));
-		System.out.println("\nLa media de los numeros negativos es: " + negativos(0));
+		media();
 	}
 
 }
