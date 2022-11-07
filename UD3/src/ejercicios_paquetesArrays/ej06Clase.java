@@ -17,7 +17,7 @@ public class ej06Clase {
 		for (int i = 0; i < v.length; i++) {
 			System.out.print(v[i] + " - ");
 			if (v[i] == min) {
-				System.out.print("minimo");
+				System.out.print("minimo ");
 			}
 			if (v[i] == max) {
 				System.out.print("maximo");
