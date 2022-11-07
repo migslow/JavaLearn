@@ -22,11 +22,10 @@ public class ej06 {
 		for (int i = 0; i < num.length; i++) {
 			if (num[0] == maximo(num)) {
 				System.out.println(" maximo");
-			} else if (num[0] == minimo(num)) {
-				System.out.println(" minimo");
-			} else if (num[0] == maximo(num) && num[0] == minimo(num)) {
-				System.out.println(" minimo maximo");
 			}
+			if (num[0] == minimo(num)) {
+				System.out.println(" minimo");
+			} 
 		}
 	}
 
@@ -43,7 +42,7 @@ public class ej06 {
 	public static int minimo(int[] num) {
 		int minimo = num[0];
 		for (int i = 0; i < num.length; i++) {
-			if (num[i] > minimo) {
+			if (num[i] < minimo) {
 				minimo = num[i];
 			}
 		}
