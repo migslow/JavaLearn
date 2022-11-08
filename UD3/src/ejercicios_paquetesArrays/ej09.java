@@ -9,21 +9,21 @@ public class ej09 {
 	static double[] notas = new double[numero];
 
 	public static void notas() {
-		System.out.println("Introduce 30 notas: ");
-		for (int i = 0; i < notas.length; i++) {
-			System.out.print("Introduce el " + i + ": ");
-			notas[i] = s.nextInt();
-			if (notas[i] < 0) {
-				System.out.println("Has introducido una nota negativa. Fin");
-				System.exit(0);
+		do {
+			System.out.println("Introduce 30 notas: ");
+			for (int i = 0; i < notas.length; i++) {
+				System.out.print("Introduce el " + i + ": ");
+				notas[i] = s.nextInt();
+				if (notas[i] < 0) {
+					System.out.println("Has introducido una nota negativa. Fin");
+					System.exit(0);
+				}
 			}
-
-		}
-		System.out.println("\nLas notas introducidas son: ");
-		for (int i = 0; i < notas.length; i++) {
-			System.out.println(notas[i]);
-		}
-
+			System.out.println("\nLas notas introducidas son: ");
+			for (int i = 0; i < notas.length; i++) {
+				System.out.println(notas[i]);
+			}
+		} while (notas[numero] < 0);
 	}
 
 	public static double media(double m) {
