@@ -5,41 +5,52 @@ import java.util.Scanner;
 public class ej10Voluntario {
 
 	static Scanner s = new Scanner(System.in);
+	static int[] binario = new int[8];
 
-	public static void main(String[] args) {
-		int[] numeros = new int[8];
-		int suma = 0;
-		do {
-			System.out.println("Introduce el numero en binario: ");
-			numeros[0] = s.nextInt();
-			for (int i = 0; i < numeros.length; i++) {
-				if (i == 0) {
+	public static void rellenar() {
+		for (int i = 0; i < binario.length; i++) {
+			System.out.println("Introduce los bits: ");
+			binario[i] = s.nextInt();
+
+		}
+	}
+
+	public static void calculo() {
+		for (int i = 0; i < binario.length; i++) {
+			int suma = 0;
+			if ((binario[i] == 1 || binario[i] == 0)) {
+				if (binario[0] == 1) {
 					suma = suma + 128;
 				}
-				if (i == 1) {
+				if (binario[1] == 1) {
 					suma = suma + 64;
 				}
-				if (i == 2) {
+				if (binario[2] == 1) {
 					suma = suma + 32;
 				}
-				if (i == 3) {
+				if (binario[3] == 1) {
 					suma = suma + 16;
 				}
-				if (i == 4) {
+				if (binario[4] == 1) {
 					suma = suma + 8;
 				}
-				if (i == 5) {
+				if (binario[5] == 1) {
 					suma = suma + 4;
 				}
-				if (i == 6) {
+				if (binario[6] == 1) {
 					suma = suma + 2;
 				}
-				if (i == 7) {
+				if (binario[7] == 1) {
 					suma = suma + 1;
 				}
 			}
-		} while (numeros[0] == 0 && numeros[0] == 1);
+			System.out.println(suma);
+		}
 
-		System.out.println("El numero en decimal es: " + suma);
+	}
+
+	public static void main(String[] args) {
+		rellenar();
+		calculo();
 	}
 }

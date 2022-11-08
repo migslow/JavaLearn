@@ -8,27 +8,10 @@ public class ej09 {
 	static int numero = 30;
 	static double[] notas = new double[numero];
 
-	public static void notas() {
-		do {
-			System.out.println("Introduce 30 notas: ");
-			for (int i = 0; i < notas.length; i++) {
-				System.out.print("Introduce el " + i + ": ");
-				notas[i] = s.nextInt();
-				if (notas[i] < 0) {
-					System.out.println("Has introducido una nota negativa. Fin");
-					System.exit(0);
-				}
-			}
-			System.out.println("\nLas notas introducidas son: ");
-			for (int i = 0; i < notas.length; i++) {
-				System.out.println(notas[i]);
-			}
-		} while (notas[numero] < 0);
-	}
-
 	public static double media(double m) {
 		double suma = 0;
-		for (int i = 0; i < notas.length; i++) {
+		int i;
+		for (i = 0; i < notas.length; i++) {
 			suma = suma + notas[i];
 		}
 		return suma / notas.length;
@@ -65,11 +48,20 @@ public class ej09 {
 	}
 
 	public static void main(String[] args) {
-		notas();
-		System.out.println("\nEl numero de aprobados es: " + aprobados(numero));
-		System.out.println("El numero de suspendidos es: " + suspendidos(numero));
-		System.out.println("La nota media es: " + media(numero));
-		System.out.println("El maximo es: " + maximo(numero));
+		System.out.println("Introduce 30 notas: ");
+		for (int i = 0; i < notas.length; i++) {
+			System.out.print("Introduce el " + i + ": ");
+			notas[i] = s.nextInt();
+			if (notas[i] < 0) {
+				System.out.println("\nLas notas introducidas son: ");
+				for (i = 0; i < notas.length; i++) {
+					System.out.println(notas[i]);
+				}
+				System.out.println("\nEl numero de aprobados es: " + aprobados(numero));
+				System.out.println("El numero de suspendidos es: " + suspendidos(numero));
+				System.out.println("La nota media es: " + media(numero));
+				System.out.println("El maximo es: " + maximo(numero));
+			}
+		}
 	}
-
 }
