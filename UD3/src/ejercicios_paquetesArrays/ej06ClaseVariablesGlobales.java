@@ -2,7 +2,9 @@ package ejercicios_paquetesArrays;
 
 import java.util.Scanner;
 
-public class ej06Clase {
+public class ej06ClaseVariablesGlobales {
+
+	static int min, max;
 
 	public static void escribirArray(int[] v) {
 		Scanner s = new Scanner(System.in);
@@ -13,7 +15,7 @@ public class ej06Clase {
 		}
 	} // de escribirArray
 
-	public static void visualizarArray(int[] v, int min, int max) {
+	public static void visualizarArray(int[] v) {
 		for (int i = 0; i < v.length; i++) {
 			System.out.print(v[i] + " - ");
 			if (v[i] == min) {
@@ -48,10 +50,9 @@ public class ej06Clase {
 
 	public static void main(String[] args) {
 		int[] tabla = new int[10];
-		int min, max;
 		escribirArray(tabla);
 		max = maximo(tabla);
 		min = minimo(tabla);
-		visualizarArray(tabla, min, max);
+		visualizarArray(tabla);
 	} // del main
 } // de la clase

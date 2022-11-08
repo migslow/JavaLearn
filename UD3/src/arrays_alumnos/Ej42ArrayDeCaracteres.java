@@ -7,7 +7,11 @@ public class Ej42ArrayDeCaracteres {
 
 		char[] cadena = { 'A', 'l', 'b', 'e', 'r', 't', 'o' };
 		System.out.print("Imprimimos la cadena de caracteres: ");
-		for (int i = 0; i < cadena.length; i++)
-			System.out.print(cadena[i]);
+		// for (int i = 0; i < cadena.length; i++)
+		// System.out.print(cadena[i]);
+		for (char c : cadena) {
+			System.out.print(c);
+		}
+		String string = cadena.toString();
 	}
 }
