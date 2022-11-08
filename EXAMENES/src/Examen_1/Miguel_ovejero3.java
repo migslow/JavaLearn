@@ -6,7 +6,7 @@ public class Miguel_ovejero3 {
 
 	public static void main(String[] args) {
 		int contador = 0;
-		int minimo = 20;
+		int minimo = 0;
 		for (int i = 1; i <= 15; i++) {
 
 			int rdm = (int) (Math.random() * 21);
