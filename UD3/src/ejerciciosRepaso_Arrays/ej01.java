@@ -18,13 +18,18 @@ public class ej01 {
 		}
 	}
 
-	public static void posicion(int[] n, int max, int min) {
+	public static void posicionMax(int[] n, int max) {
 		for (int i = 0; i < numeros.length; i++) {
 			if (numeros[i] == max) {
-				System.out.println(numeros[i] + " se encuentra en la posicion" + (i + 1));
+				System.out.println(numeros[i] + " se encuentra en la posicion " + (i + 1));
 			}
+		}
+	}
+	
+	public static void posicionMin(int[] n, int min) {
+		for (int i = 0; i < numeros.length; i++) {
 			if (numeros[i] == min) {
-				System.out.println(numeros[i] + " se encuentra en la posicion" + (i + 1));
+				System.out.println(numeros[i] + " se encuentra en la posicion " + (i + 1));
 			}
 		}
 	}
@@ -51,13 +56,12 @@ public class ej01 {
 
 	public static void main(String[] args) {
 		leer();
-		int min, max;
-		max = maximo(numeros);
-		min = minimo(numeros);
+		int max = maximo(numeros);
+		int min = minimo(numeros);
 		System.out.println("El numero maximo es: " + maximo(numeros));
-		posicion(numeros, max, max);
 		System.out.println("EL numero minimo es: " + minimo(numeros));
-		posicion(numeros, max, max);
+		posicionMax(numeros, max);
+		posicionMin(numeros, min);
 	}
 
 }
