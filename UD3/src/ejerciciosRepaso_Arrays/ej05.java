@@ -4,52 +4,47 @@ import java.util.Scanner;
 
 public class ej05 {
 
-	static Scanner s = new Scanner(System.in);
-	
-	public static int sueldoEmpleado(int [] nom, int max) {
-		int n = nom[0];
+	public static void rellenar(String[] nom, int[] sue) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("Introduce los nombres de los empleados: ");
 		for (int i = 0; i < nom.length; i++) {
-			if (nom[i] == max) {
-				max = nom[i];
-				System.out.println("El empleado " + nom[i] + " cobrando " + max + " tiene el sueldo mas alto");
+			System.out.print("Empleado " + i + ": ");
+			nom[i] = s.next();
+		}
+		System.out.println("Introduce los sueldos de los empleados");
+		for (int i = 0; i < sue.length; i++) {
+			System.out.print("Empleado " + i + ": ");
+			sue[i] = s.nextInt();
+		}
+
+		for (int i = 0; i < 10; i++) {
+			System.out.println("Empleado " + i + ": " + "		" + nom[i] + "		" + sue[i]);
+		}
+	}
+
+	public static int maximo(int[] sueldo) {
+		int max = sueldo[0];
+		for (int i = 0; i < sueldo.length; i++) {
+			if (sueldo[i] > max) {
+				max = sueldo[i];
 			}
 		}
 		return max;
 	}
-	
-	public static int maximoSueldo(int [] sueldo) {
-		int maximo = sueldo[0];
-		for (int i = 0; i < sueldo.length; i++) {
-			if (sueldo[i] > maximo) {
-				maximo = sueldo[i];
+
+	public static void masRico(String[] nom, int[] sue, int maximo) {
+		for (int i = 0; i < sue.length; i++) {
+			if (sue[i] == maximo(sue)) {
+				System.out.println("El empleado mejor pagado es " + nom[i] + " que cobra " + sue[i] + " Euros");
 			}
 		}
-		return maximo;
 	}
 
 	public static void main(String[] args) {
 		String[] nombre = new String[10];
 		int[] sueldo = new int[10];
-		System.out.println("Introduce el nombre de los trabajadores: ");
-		for (int i = 0; i < nombre.length; i++) {
-			System.out.print("Elemento " + i + ": ");
-			nombre[i] = s.next();
-		}
-		System.out.println("Introduce el sueldo de los trabajadores: ");
-		for (int i = 0; i < sueldo.length; i++) {
-			System.out.print("Elemento " + i + ": ");
-			sueldo[i] = s.nextInt();
-		}
-		System.out.println("\nLos nombres son: ");
-		for (String c : nombre) {
-			System.out.println(c);
-		}
-		System.out.println("\nLos sueldos son: ");
-		for (int c : sueldo) {
-			System.out.println(c);
-		}
-		int max = maximoSueldo(sueldo);
-		System.out.println("El sueldo maximo es: " + maximoSueldo(sueldo));
-		sueldoEmpleado(sueldo, max);
+		rellenar(nombre, sueldo);
+		System.out.println("\nEl sueldo maximo es: " + maximo(sueldo));
+		masRico(nombre, sueldo, maximo(sueldo));
 	}
 }

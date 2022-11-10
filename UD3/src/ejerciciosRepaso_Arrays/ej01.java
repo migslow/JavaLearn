@@ -4,64 +4,54 @@ import java.util.Scanner;
 
 public class ej01 {
 
-	static Scanner s = new Scanner(System.in);
-	static int[] numeros = new int[10];
-
-	public static void leer() {
-		System.out.println("Introduce los 10 numeros por teclado: ");
-		for (int i = 0; i < numeros.length; i++) {
-			System.out.print("Elemento " + i + ": ");
-			numeros[i] = s.nextInt();
-		}
-		for (int c : numeros) {
-			System.out.println(c);
-		}
-	}
-
-	public static void posicionMax(int[] n, int max) {
-		for (int i = 0; i < numeros.length; i++) {
-			if (numeros[i] == max) {
-				System.out.println(numeros[i] + " se encuentra en la posicion " + (i + 1));
-			}
-		}
-	}
-	
-	public static void posicionMin(int[] n, int min) {
-		for (int i = 0; i < numeros.length; i++) {
-			if (numeros[i] == min) {
-				System.out.println(numeros[i] + " se encuentra en la posicion " + (i + 1));
-			}
-		}
-	}
-
-	public static int maximo(int[] max) {
-		int maximo = numeros[0];
-		for (int i = 0; i < numeros.length; i++) {
-			if (numeros[i] > maximo) {
-				maximo = numeros[i];
-			}
-		}
-		return maximo;
-	}
-
-	public static int minimo(int[] min) {
-		int minimo = numeros[0];
-		for (int i = 0; i < numeros.length; i++) {
-			if (numeros[i] < minimo) {
-				minimo = numeros[i];
-			}
-		}
-		return minimo;
-	}
+	static int max, min;
 
 	public static void main(String[] args) {
-		leer();
-		int max = maximo(numeros);
-		int min = minimo(numeros);
-		System.out.println("El numero maximo es: " + maximo(numeros));
-		System.out.println("EL numero minimo es: " + minimo(numeros));
-		posicionMax(numeros, max);
-		posicionMin(numeros, min);
+		int numero = 10;
+		int vector[] = new int[numero];
+		System.out.println("Introduce una serie de " + numero + " numeros seguidos de un intro");
+		rellenar(vector);
+		System.out.println("El numero maximo es: " + max(vector));
+		System.out.println("El numero minimo es: " + min(vector));
+		pos(vector);
 	}
 
+	public static void rellenar(int v[]) {
+		Scanner s = new Scanner(System.in);
+		for (int i = 0; i < v.length; i++) {
+			System.out.print("Introduce el siguiente número =>");
+			v[i] = s.nextInt();
+		}
+	}
+
+	public static int max(int v[]) {
+		max = v[0];
+		for (int i = 0; i < v.length; i++) {
+			if (v[i] > max)
+				max = v[i];
+		}
+		return max;
+	}
+
+	public static int min(int v[]) {
+		min = v[0];
+		for (int i = 0; i < v.length; i++) {
+			if (v[i] < min)
+				min = v[i];
+		}
+		return min;
+	}
+
+	public static void pos(int v[]) {
+		System.out.print("El minimo aparece en la posicion: ");
+		for (int i = 0; i < v.length; i++) {
+			if (v[i] == min)
+				System.out.print((i + 1));
+		}
+		System.out.print("\nEl maximo aparece  posicion: ");
+		for (int i = 0; i < v.length; i++) {
+			if (v[i] == max)
+				System.out.print((i + 1));
+		}
+	}
 }
