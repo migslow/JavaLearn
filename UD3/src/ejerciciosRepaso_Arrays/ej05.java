@@ -44,7 +44,6 @@ public class ej05 {
 		String[] nombre = new String[10];
 		int[] sueldo = new int[10];
 		rellenar(nombre, sueldo);
-		System.out.println("\nEl sueldo maximo es: " + maximo(sueldo));
 		masRico(nombre, sueldo, maximo(sueldo));
 	}
 }

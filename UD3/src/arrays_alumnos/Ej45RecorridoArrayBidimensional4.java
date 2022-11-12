@@ -13,7 +13,7 @@ public class Ej45RecorridoArrayBidimensional4 {
   //
   public static void escribirMatriz(int [][]m)  {
 	  Scanner s = new Scanner(System.in);          
-	    System.out.println("Introducción de elementos en la matriz 3 x 2");
+	    System.out.println("Introducciï¿½n de elementos en la matriz 3 x 2");
 	    
 	    for (int i=0; i<m.length; i++) {
 	    	for (int j=0; j<m[i].length ; j++) {
@@ -21,7 +21,6 @@ public class Ej45RecorridoArrayBidimensional4 {
 	    		m[i][j]=s.nextInt();
 	    	}
 	    }
-	  
   } // de escribirMatriz
   
   public static void leerMatriz (int [][]m) {
@@ -34,6 +33,5 @@ public class Ej45RecorridoArrayBidimensional4 {
 	    	System.out.println("");
 	    
 	  }
-	  
   } // de leerMatriz
 }
