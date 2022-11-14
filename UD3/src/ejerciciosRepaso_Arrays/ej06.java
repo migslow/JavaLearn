@@ -14,26 +14,20 @@ public class ej06 {
 		}
 	}
 
-	public static int esPrimo(int[] n) {
-		int contador = 0;
-		boolean esPrimo = false;
-		for (int i = 0; i < n.length; i++) {
-			int x = n[i];
-			for (int j = 2; j < x / 2; j++) {
-				if (x % j == 0) {
+	 public static boolean NumeroPrimo(int[] n) {
+			boolean esPrimo = true;
+			for (int i = 2; i <= n.length / 2; i++)
+				if ((n % i) == 0) {
 					esPrimo = false;
 					break;
-				} else
-					esPrimo = true;
-			}
+				}
+			return esPrimo;
 		}
-		return esPrimo;
-	}
 
 	public static void recorrerArrayPrimos(int[]n) {
 		System.out.println("\nEl array solo con los numeros primos: ");
 		for (int i = 0; i < n.length; i++) {
-			if (n[i] == esPrimo) {
+			if (n[i] == NumeroPrimo(n)) {
 
 			}
 		}
@@ -42,7 +36,7 @@ public class ej06 {
 	public static void main(String[] args) {
 		int[] numeros = new int[20];
 		// int[] primos = new int[20];
-		boolean esPrimo = esPrimo(numeros);
+		boolean esPrimo = NumeroPrimo(numeros);
 		System.out.println("El array con los numeros aleatorios: ");
 		numerosAle(numeros);
 	}

@@ -32,7 +32,7 @@ public class ej13 {
 			System.out.println("\nAlumno " + (i + 1) + ": ");
 			System.out.print("\nNota maxima: " + maximo + " ");
 			System.out.print("\nNota minima: " + minimo + " ");
-			System.out.println("\nNota media: " + media / notas.length);
+			System.out.println("\nNota media: " + media / notas[0].length);
 		}
 	}
 
