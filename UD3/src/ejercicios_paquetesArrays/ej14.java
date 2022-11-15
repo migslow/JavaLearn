@@ -7,8 +7,10 @@ public class ej14 {
 	static Scanner s = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		int filas = 3;
-		int columnas = 3;
+		System.out.println("Introduce el numero de filas");
+		int filas = s.nextInt();
+		System.out.println("Introduce el numero de columnas");
+		int columnas = s.nextInt();
 		int[][] numeros = new int[filas][columnas];
 		escribirArray(numeros);
 		leerArray(numeros);
@@ -30,7 +32,7 @@ public class ej14 {
 			for (int j = 0; j < n[i].length; j++) {
 				System.out.print(n[i][j] + "  ");
 			}
-			System.out.println(" ");
+			System.out.println("\t");
 		}
 	}
 
@@ -42,7 +44,7 @@ public class ej14 {
 					simetrica = false;
 				}
 			}
-			System.out.println(" ");
+			System.out.println("\t");
 		}
 		if (simetrica) {
 			System.out.println("La matriz es simetrica");

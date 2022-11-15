@@ -37,11 +37,12 @@ public class ej15 {
 	}
 
 	public static void cambiarArray(int[][] n) {
+		int aux = n[0][0];
 		System.out.println("\nEl resultado del array cambiando el orden de las filas y las columnas");
 		for (int i = 0; i < n.length; i++) {
 			for (int j = 0; j < n[i].length; j++) {
-				n[i][j] = n[j][i];
-				System.out.print(n[i][j] + "  ");
+				aux = n[j][i];
+				System.out.print(aux + "  ");
 			}
 			System.out.println(" ");
 		}
