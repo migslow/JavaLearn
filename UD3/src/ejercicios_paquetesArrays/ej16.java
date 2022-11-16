@@ -14,16 +14,14 @@ public class ej16 {
 		int[][] numeros = new int[filas][columnas];
 		escribirArray(numeros);
 		leerArray(numeros);
+		esMagica(numeros);
 	}
 
 	public static void escribirArray(int[][] n) {
 		for (int i = 0; i < n.length; i++) {
 			for (int j = 0; j < n[i].length; j++) {
-					
-				/*
-				 * System.out.print("Introduce Fila " + i + " Columna " + j + ": "); n[i][j] =
-				 * s.nextInt();
-				 */
+				System.out.print("Introduce Fila " + i + " Columna " + j + ": ");
+				n[i][j] = s.nextInt();
 			}
 		}
 	}
@@ -36,6 +34,24 @@ public class ej16 {
 			}
 			System.out.println(" ");
 		}
+	}
+
+	public static void esMagica(int[][] n) {
+		int sumaC = 0;
+		int sumaF = 0;
+		for (int i = 0; i < n.length; i++) {
+			sumaF = sumaF = n[][0];
+			for (int j = 0; i < n[0].length; i++) {
+				sumaC = sumaC + n[i][j];
+
+			}
+		}
+		if (sumaC == n[i][j]) {
+			System.out.println("Es magica");
+		} else {
+			System.out.println("No es magica");
+		}
+
 	}
 
 }
