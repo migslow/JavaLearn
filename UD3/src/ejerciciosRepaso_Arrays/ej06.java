@@ -1,50 +1,43 @@
 package ejerciciosRepaso_Arrays;
 
-import java.util.Random;
+import java.util.Scanner;
 
 public class ej06 {
-
-	public static void rellenarAleatorio(int[] n) {
-		for (int i = 0; i < n.length; i++) {
-			n[i] = (int) (Math.random() * 100);
-		}
-		for (int i = 0; i < n.length; i++) {
-			System.out.print(n[i] + " ");
-		}
-	}
-
-	public static boolean NumeroPrimo(int[] n, int[] p) {
-		boolean esPrimo = false;
-		for (int i = 0; i < n.length; i++) {
-			int x = n[i];
-			for (int j = 2; j < x / 2; j++) {
-				if (x % j == 0) {
-					esPrimo = false;
-					break;
-				} else
-					esPrimo = true;
-			}
-
-			if (esPrimo) {
-				p[i] = x;
-			}
-		}
-		return esPrimo;
-	}
-
-	public static void rellenarArraySiSonPrimos(int[] n) {
-		for (int i = 0; i < n.length; i++) {
-			if(n[i] == NumeroPrimo(n, n)) {
-				
-			}
-		}
-	}
-
 	public static void main(String[] args) {
-		int[] numeros = new int[20];
-		int[] primos = new int[20];
-		boolean esPrimo = NumeroPrimo(numeros, primos);
-		System.out.println("El array con los numeros aleatorios: ");
-		rellenarAleatorio(numeros);
+		Scanner s = new Scanner(System.in);
+		int[] numero = new int[20];
+		int[] primo = new int[20];
+		int contador;
+		boolean esPrimo;
+		for (int i = 0; i < 20; i++) {
+			numero[i] = (int) (Math.random() * 100);
+		}
+		contador = 0;
+		for (int n : numero) {
+			esPrimo = true;
+			for (int i = 2; i <= Math.sqrt(n) && esPrimo; i++) {
+				if ((n % i) == 0) {
+					esPrimo = false;
+				}
+			}
+			if (esPrimo) {
+				primo[contador] = n;
+				contador++;
+			}
+		}
+		System.out.println("Números generados:");
+		for (int n : numero) {
+			System.out.print(n + " ");
+		}
+		System.out.println();
+		System.out.println("\nNúmeros primos:");
+		for (int n : primo) {
+			System.out.print(n + " ");
+		}
+		System.out.println();
+		System.out.println("\nNúmeros primos:");
+		for (int i = 0; i < contador; i++) {
+			System.out.print(primo[i] + " ");
+		}
 	}
 }

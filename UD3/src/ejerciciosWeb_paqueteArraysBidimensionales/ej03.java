@@ -20,8 +20,9 @@ public class ej03 {
 	}
 
 	public static int numerosAleatorios() {
-		int contador = 0;
+		int suma = 0, contador = 0;
 		for (int i = 0; i < 9; i++) {
+			suma = i + 1;
 			contador++;
 		}
 		return contador;
