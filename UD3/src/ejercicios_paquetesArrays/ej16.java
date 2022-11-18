@@ -40,13 +40,15 @@ public class ej16 {
 		int sumaC = 0;
 		int sumaF = 0;
 		for (int i = 0; i < n.length; i++) {
-			sumaF = sumaF = n[][0];
+			sumaF = sumaF = n[i][0];
 			for (int j = 0; i < n[0].length; i++) {
-				sumaC = sumaC + n[i][j];
+				sumaC = sumaC + n[0][j];
 
 			}
 		}
-		if (sumaC == n[i][j]) {
+		System.out.println("La suma de las columnas: " + sumaC);
+		System.out.println("La suma de las filas: " + sumaF);
+		if (sumaC == sumaF) {
 			System.out.println("Es magica");
 		} else {
 			System.out.println("No es magica");

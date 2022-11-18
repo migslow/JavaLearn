@@ -18,7 +18,7 @@ public class ej06 {
 			System.out.println("Subiendo al piso " + i);
 		}
 		return planta;
-		
+
 	}
 
 	public static void main(String[] args) {

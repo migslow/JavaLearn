@@ -8,44 +8,44 @@ public class ej09 {
 	static int numero = 30;
 	static double[] notas = new double[numero];
 
-	public static double media(double m) {
+	public static void media() {
+		double notaMedia = 0;
 		int contador = 0;
 		double suma = 0;
 		for (int i = 0; i < notas.length; i++) {
-			suma = suma + notas[i];
-			contador++;
+			if (notas[i] > 0) {
+				suma = suma + notas[i];
+				contador++;
+			}
+			notaMedia = suma / contador;
 		}
-		return contador / suma;
+		System.out.printf("La nota media es: %.2f", notaMedia);
 	}
 
-	public static double maximo(int m) {
+	public static void maximo() {
 		double maximo = notas[0];
 		for (int i = 0; i < notas.length; i++) {
 			if (notas[i] > maximo) {
 				maximo = notas[i];
 			}
 		}
-		return maximo;
+		System.out.println("La nota máxima es: " + maximo);
 	}
 
-	public static int aprobados(int a) {
-		int contador = 0;
+	public static void aprobados() {
+		int aprobados = 0, suspensos = 0;
 		for (int i = 0; i < notas.length; i++) {
+			if (notas[i] < 0) {
+			}
+			if (notas[i] > 0 && notas[i] < 5) {
+				suspensos++;
+			}
 			if (notas[i] >= 5) {
-				contador++;
+				aprobados++;
 			}
 		}
-		return contador;
-	}
-
-	public static int suspendidos(int s) {
-		int contador = 0;
-		for (int i = 0; i < notas.length; i++) {
-			if (notas[i] < 5) {
-				contador++;
-			}
-		}
-		return contador;
+		System.out.println("El número de aprobados es " + aprobados);
+		System.out.println("El número de suspensos es " + suspensos);
 	}
 
 	public static void main(String[] args) {
@@ -58,9 +58,9 @@ public class ej09 {
 			if (notas[i] < 0)
 				break;
 		}
-		System.out.println("\nEl numero de aprobados es: " + aprobados(numero));
-		System.out.println("El numero de suspendidos es: " + suspendidos(numero));
-		System.out.println("La nota media es: " + media(numero));
-		System.out.println("El maximo es: " + maximo(numero));
+		aprobados();
+		media();
+		System.out.println();
+		maximo();
 	}
 }

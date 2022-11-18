@@ -7,19 +7,20 @@ import java.util.Scanner;
  */
 
 public class ej08 {
-	
+
 	static Scanner s = new Scanner(System.in);
-	
+
 	public static int esPar(int p) {
 		System.out.println("Introduce un numero entero por teclado: ");
 		int n = s.nextInt();
-		if(n  % 2 == 0) {
-			System.out.println("El numero " + n*2 + " es par");
+		if (n % 2 == 0) {
+			System.out.println("El numero " + n * 2 + " es par");
 		} else {
-			System.out.println("El numero " + n*3 + " es impar");
+			System.out.println("El numero " + n * 3 + " es impar");
 		}
 		return n;
 	}
+
 	public static void main(String[] args) {
 		esPar(0);
 

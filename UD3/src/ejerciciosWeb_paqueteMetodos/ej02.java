@@ -13,7 +13,7 @@ public class ej02 {
 	static Scanner s = new Scanner(System.in);
 
 	public static boolean esPrimo(int n) {
-		for (int i = 2; i < n / 2; i++) {
+		for (int i = (int) Math.sqrt(n); i > 1; i--) {
 			if (n % i == 0) {
 				return false;
 			}

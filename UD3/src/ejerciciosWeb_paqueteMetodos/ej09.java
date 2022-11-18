@@ -11,19 +11,24 @@ public class ej09 {
 
 	static Scanner s = new Scanner(System.in);
 
-	public static int esPar(int p) {
-		System.out.println("Introduce un numero entero: ");
+	public static void esPar(int p) {
+		System.out.println("Introduce un numero");
 		int n = s.nextInt();
-		if (n % 2 == 0) {
-			System.out.println(n + " - ");
-		} else {
-			n++;
-		}
-		return n;
+		int i = 0;
+		int j = 1;
+		System.out.println("Los numeros pares son ; ");
+		do {
+			if (j % 2 == 0) {
+				System.out.print(j + ",");
+				j++;
+				i++;
+			} else {
+				j++;
+			}
+		} while (i != n);
 	}
 
 	public static void main(String[] args) {
 		esPar(0);
 	}
-
 }
