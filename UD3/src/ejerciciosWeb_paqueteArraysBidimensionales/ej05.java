@@ -24,15 +24,15 @@ public class ej05 {
 		for (int i = 0; i < matriz1.length; i++) {
 			for (int j = 0; j < matriz1[0].length; j++) {
 
-				System.out.println("Escriba el valor para la fila " + i + " y columna " + j + " de la matriz 1");
+				System.out.print("Escriba el valor para la fila " + i + " y columna " + j + " de la matriz 1" + ": ");
 				matriz1[i][j] = s.nextInt();
-				System.out.println("Escriba el valor para la fila " + i + " y columna " + j + " de la matriz 2");
+				System.out.print("Escriba el valor para la fila " + i + " y columna " + j + " de la matriz 2" + ": ");
 				matriz2[i][j] = s.nextInt();
 
 				resultado[i][j] = matriz1[i][j] + matriz2[i][j];
 			}
 		}
-
+		System.out.println();
 		visualizarMatrices(resultado);
 	}
 

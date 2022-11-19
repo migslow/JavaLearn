@@ -32,9 +32,10 @@ public class ej13 {
 		System.out.println("\nLa media de todas las notas es: " + media);
 
 		// Media superior
+		System.out.println("Media Superior: ");
 		for (int i = 0; i < numeros.length; i++) {
 			if(numeros[i] > media) {
-				System.out.println("Alumno numero " + (i + 1)+ " Nota final: " + numeros[i]);
+				System.out.println("Alumno numero " + (i + 1)+ " Nota Superior: " + numeros[i]);
 			}
 		}
 	}

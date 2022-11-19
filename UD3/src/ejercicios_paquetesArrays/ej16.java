@@ -12,9 +12,38 @@ public class ej16 {
 		System.out.println("Introduce el numero de columnas: ");
 		int columnas = s.nextInt();
 		int[][] numeros = new int[filas][columnas];
+		int fila = 0, columna = 0;
+
 		escribirArray(numeros);
+		System.out.println();
 		leerArray(numeros);
-		esMagica(numeros);
+		System.out.println();
+		//
+		int sumaC = calculoColumnas(numeros, fila);
+		int sumaF = calculoFilas(numeros, columna);
+		if (sumaC == sumaF) {
+			System.out.println("Es magica");
+		} else {
+			System.out.println("No es magica");
+		}
+	}
+
+	// Array con suma de filas
+	public static int calculoFilas(int[][] n, int fila) {
+		int suma = 0;
+		for (int j = 0; j < n.length; j++) {
+            suma = suma + n[fila][j];
+        }
+        return suma;
+	}
+
+	// Array con suma de columnas
+	public static int calculoColumnas(int[][] n, int columna) {
+		 int suma = 0;
+	        for (int i = 0; i < n.length; i++) {
+	            suma = suma + n[i][columna];
+	        }
+	        return suma;
 	}
 
 	public static void escribirArray(int[][] n) {
@@ -32,28 +61,7 @@ public class ej16 {
 			for (int j = 0; j < n[i].length; j++) {
 				System.out.print(n[i][j] + "  ");
 			}
-			System.out.println(" ");
+			System.out.println("\t");
 		}
 	}
-
-	public static void esMagica(int[][] n) {
-		int sumaC = 0;
-		int sumaF = 0;
-		for (int i = 0; i < n.length; i++) {
-			sumaF = sumaF = n[i][0];
-			for (int j = 0; i < n[0].length; i++) {
-				sumaC = sumaC + n[0][j];
-
-			}
-		}
-		System.out.println("La suma de las columnas: " + sumaC);
-		System.out.println("La suma de las filas: " + sumaF);
-		if (sumaC == sumaF) {
-			System.out.println("Es magica");
-		} else {
-			System.out.println("No es magica");
-		}
-
-	}
-
 }

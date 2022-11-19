@@ -11,7 +11,7 @@ public class ej14 {
 		int contador = 2;
 		for (int i = 0; i < numeros.length; i++) {
 			numeros[i] = contador;
-			contador+=2;
+			contador = contador + 2;
 		}
 		 for (int i = 0; i < numeros.length; i++) {
 	         System.out.println(numeros[i]);
