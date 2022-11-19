@@ -43,7 +43,5 @@ public class ej12 {
 				System.out.println("Número de u's " + contador[i]);
 			}
 		}
-
 	}// del main
-
 }

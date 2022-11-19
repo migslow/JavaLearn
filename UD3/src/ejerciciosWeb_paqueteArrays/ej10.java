@@ -21,5 +21,4 @@ public class ej10 {
 		promedio = sum / 5;
 		System.out.println("Su promedio es : " + promedio);
 	}
-
 }

@@ -24,6 +24,7 @@ public class ej03 {
 				}
 			}
 		}
+		
 		for(int i = 0; i < numeros.length;i++) {
 			System.out.println(numeros[i]);
 		}

@@ -22,20 +22,20 @@ public class ej01 {
 	}
 
 	public static void posicion(int[] v) {
-		boolean pos = false;
+		boolean pos = true;
 		int contador = 0;
 		System.out.println("\nIntroduce el numero que quieres buscar: ");
 		int dato = s.nextInt();
 		while (contador < v.length) {
 			if (v[contador] == dato) {
-				pos = true;
+				pos = false;
 			}
 			contador++;
 		}
-		if (pos == false) {
-			System.out.println("El numero " + dato + " no se encuentra en el array");
-		} else {
+		if (pos == true) {
 			System.out.println("El numero " + dato + " se encuentra en el array");
+		} else {
+			System.out.println("El numero " + dato + " no se encuentra en el array");
 		}
 	}
 }
