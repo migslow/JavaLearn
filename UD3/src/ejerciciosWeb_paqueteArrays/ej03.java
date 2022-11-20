@@ -2,35 +2,39 @@ package ejerciciosWeb_paqueteArrays;
 
 import java.util.Scanner;
 
-/*
- * Crea un array de una longitud que determine el usuario 
- * y que le permita insertar numeros entre 0 y 10.
- */
-
 public class ej03 {
+
+	static char[] letras = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
+			'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+
+	static String[] codigo = { "· —", "— · · ·", "— · — ·", "— · ·", "·", "· · — ·", "— — ·", "· · · ·", "· ·",
+			"· — — —", "— · —", "· — · ·", "— —", "— ·", "— — —", "· — — ·", "— — · —", "· — ·", "· · ·", "—", "· · —",
+			"· · · —", "· — —", "— · · —", "— · — —", "— — · ·" };
+
+	public static int posicion(char letra) {
+		int p = 0;
+		for (int i = 0; i < letras.length; i++) {
+			if (letras[i] == letra)
+				p = i;
+		}
+		return p;
+	}
 
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
-		System.out.println("Introduce una longitud de numeros enteros: ");
-		int longitud = s.nextInt();
-		int numeros[] = new int[longitud];
-		int num = 0;
-		for (int i = 0; i < numeros.length; i++) {
-			System.out.println("Inserte un numero en la posicion " + i);
-			do {
-				num = s.nextInt();
-				if (!(num >= 0 && num <= 10)) {
-					System.out.println("Error. Solo numeros del 0 al 10. " + "Inserte un numero en la posicion " + i);
-				}
+		System.out.println("intrduzca la cadena a codificar:");
+		String palabra = " ";
 
-			} while (!(num >= 0 && num <= 10));
-			numeros[i] = num;
-		}
-		System.out.println("ESTOS SON LOS NUMEROS ELEGIDOS POR EL USUARIO: ");
-		for (int i = 0; i < numeros.length; i++) {
-			System.out.println(numeros[i]);
+		palabra = s.nextLine();
+		for (int i = 0; i < palabra.length(); i++) {
+			if (palabra.charAt(i) == ' ') {
+				System.out.print("b");
+			} else
+				System.out.print(codigo[posicion(palabra.charAt(i))]);
+			if (palabra.charAt(i) != palabra.length() - 1)
+				System.out.print("b");
 		}
 
-	}
+	} // del main
 
 }

@@ -26,13 +26,15 @@ public class ej08 {
 	}
 	
 	public static int mediaPares(int mp) {
-		int suma = 0;
+		int suma = 0, contador = 0, media = 0;
 		for(int i = 0; i < numeros.length;i++) {
 			if(numeros[i] % 2 == 0) {
 				suma = suma + numeros[i];
+				contador++;
 			}
+			media = suma / contador;
 		}
-		return suma / numeros.length;
+		return media;
 	}
 
 	public static void main(String[] args) {
