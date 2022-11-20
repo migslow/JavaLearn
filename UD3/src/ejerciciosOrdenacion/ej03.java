@@ -20,7 +20,7 @@ public class ej03 {
 
 		// comprobar si hay repetidos
 		for (int i = 0; i < numeros.length; i++) {
-			for (int j = 0; j < numeros.length - 1; j++) {
+			for (int j = 0; j < numeros.length; j++) {
 				if (i != j) {
 					if (numeros[i] == numeros[j]) {
 						numeros[i] = "";

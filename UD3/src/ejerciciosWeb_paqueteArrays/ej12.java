@@ -23,27 +23,24 @@ public class ej12 {
 		for (int i = 0; i < numeros.length; i++) {
 			System.out.print(numeros[i] + " - ");
 		}
-		
+
 		// Media de todos los numeros
-		for(int i = 0; i < numeros.length;i++) {
+		for (int i = 0; i < numeros.length; i++) {
 			suma = suma + numeros[i];
 		}
 		media = suma / numeros.length;
-		
+
 		System.out.println("\nLa media de los numeros es: " + media);
 
-		
 		// Media de los numeros pares
-		for(int i = 0; i < numeros.length;i++) {
-			if(numeros[i] % 2 == 0) {
+		for (int i = 0; i < numeros.length; i++) {
+			if (numeros[i] % 2 == 0) {
 				suma = suma + numeros[i];
 			}
 			media = suma / numeros.length;
 		}
-		System.out.println("\nLa media de los numeros pares es: " + media/5);
-		
-		
-		
+		System.out.println("\nLa media de los numeros pares es: " + media / 5);
+
 	}
 
 }
