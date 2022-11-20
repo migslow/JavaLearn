@@ -1,5 +1,6 @@
 package ejerciciosOrdenacion;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ej03 {
@@ -9,24 +10,29 @@ public class ej03 {
 	public static void main(String[] args) {
 		System.out.println("Introduce la dimension del array: ");
 		int dato = s.nextInt();
-		int[] numeros = new int[dato];
+		String[] numeros = new String[dato];
+
+		// numeros aleatorios
 		for (int i = 0; i < numeros.length; i++) {
 			int n = (int) (Math.random() * 21);
-			System.out.println(n);
+			System.out.print(n + " - ");
 		}
-		
-		for(int i = 0; i < numeros.length;i++) {
-			for(int j = 0; j < numeros.length - 1;j++) {
-				if(i!=j) {
-					if(numeros[i] == numeros[j]) {
-						numeros[j]= ' ';
+
+		// comprobar si hay repetidos
+		for (int i = 0; i < numeros.length; i++) {
+			for (int j = 0; j < numeros.length - 1; j++) {
+				if (i != j) {
+					if (numeros[i] == numeros[j]) {
+						numeros[i] = "";
 					}
 				}
 			}
 		}
-		
-		for(int i = 0; i < numeros.length;i++) {
-			System.out.println(numeros[i]);
+
+		// mostrar el array de forma ascendente
+		Arrays.sort(numeros);
+		for (int i = 0; i < numeros.length; i++) {
+			System.out.print(numeros[i] + " - ");
 		}
 	}
 }
