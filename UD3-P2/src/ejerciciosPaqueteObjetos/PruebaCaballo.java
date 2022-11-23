@@ -9,9 +9,15 @@ public class PruebaCaballo {
 
 		c1.relincha();
 		c1.CorreCon(c2);
-		
+
 		System.out.println(c1);
 		System.out.println(c2);
+
+		System.out.println(c1.compite1(c2).getNombre());
+
+		// Otra forma de mostrar el metodo por pantalla pero no sale el nombre del
+		// caballo
+		// c1.compite2(c2);
 	}
 
 }

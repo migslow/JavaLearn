@@ -10,12 +10,12 @@ public class PruebaCuenta {
 		c1.setSaldo(600);
 		System.out.println(c1.ingreso(100));
 		System.out.println(c1.getSaldo());
-		
+
 		Cuenta c2 = new Cuenta("Raquel Carrera", "ES2222", 0.05, 1200);
 		System.out.println(c1.transferencia(c2, 300));
 		System.out.println("Saldo c1: " + c1.getSaldo());
 		System.out.println("Saldo c2: " + c2.getSaldo());
-		
+
 		System.out.println(c1);
 		System.out.println(c2);
 	}

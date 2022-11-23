@@ -64,15 +64,15 @@ public class Libro {
 	public void setPrestado(boolean prestado) {
 		this.prestado = prestado;
 	}
-	
+
 	public void prestar() {
-		if(prestado == true) {
+		if (prestado == true) {
 			System.out.println("No se puede prestar. Todavia no ha sido devuelto");
 		} else {
 			prestado = true;
 		}
 	}
-	
+
 	public void devolverprestamo() {
 		this.prestado = false;
 	}

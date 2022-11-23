@@ -78,12 +78,10 @@ public class Caballo {
 	public void setPeso(int peso) {
 		this.peso = peso;
 	}
-	
+
 	public void relincha() {
 		System.out.println("¡hiiii, hiiii, hiiii!");
 	}
-	
-	
 
 	public void CorreCon(Caballo contrincante) {
 		if (this.raza.equals("Caballo comun")) {
@@ -96,25 +94,23 @@ public class Caballo {
 			}
 		}
 	}
-	
-	public boolean velocidad(Caballo contrincante, double cantidad) {
-		if (velocidad(contrincante, cantidad) > cantidad) {
-			System.out.println("No es tan rapido");
-		} else if(velocidad(contrincante, cantidad) == cantidad){
-			System.out.println("Tienen la misma velocidad");
+
+	public Caballo compite1(Caballo contrincante) {
+		if (this.velocidad > contrincante.velocidad) {
+			System.out.println("El primer caballo introducido es mas rapido");
+			return this;
 		} else {
-			System.out.println("Es mas rapido que su contrincante");
+			System.out.println("Gana el contrincante");
+			return contrincante;
 		}
 	}
-	
-	public boolean transferencia(Cuenta destino, double cantidad) {
-		boolean resultadoTransferencia = true;
-		if (reintegro(cantidad))
-			destino.ingreso(cantidad);
-		else
-			resultadoTransferencia = false;
 
-		return resultadoTransferencia;
+	public void compite2(Caballo contrincante) {
+		if (this.velocidad > contrincante.velocidad) {
+			System.out.println("El primer caballo introducido es el ganador");
+		} else {
+			System.out.println("Gana el contrincante");
+		}
 	}
 
 	@Override
