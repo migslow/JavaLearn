@@ -97,7 +97,7 @@ public class Caballo {
 
 	public Caballo compite1(Caballo contrincante) {
 		if (this.velocidad > contrincante.velocidad) {
-			System.out.println("El primer caballo introducido es mas rapido");
+			System.out.println("Gana el caballo principal");
 			return this;
 		} else {
 			System.out.println("Gana el contrincante");

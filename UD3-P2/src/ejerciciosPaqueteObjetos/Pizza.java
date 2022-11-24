@@ -64,7 +64,7 @@ public class Pizza {
 
 	@Override
 	public String toString() {
-		return "Pizza " + tipo + " " + tamanyo + "," + estado;
+		return "Pizza " + tipo + " " + tamanyo + ", " + estado;
 	}
 
 }
