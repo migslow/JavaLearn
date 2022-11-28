@@ -23,7 +23,6 @@ public class PruebaZona {
 				System.out.println("Sala Principal: " + SalaPrincipal.getEntradasPorVender());
 				System.out.println("Compra-Venta: " + Compra_Venta.getEntradasPorVender());
 				System.out.println("Vip: " + VIP.getEntradasPorVender());
-				elegir = s.nextInt();
 			}
 			if (elegir == 2) {
 				System.out.println("Para que zona quiereas las entradas: ");
@@ -47,7 +46,7 @@ public class PruebaZona {
 				System.out.println("Has salido del programa");
 				System.exit(0);
 			}
-		} while (elegir <= 1 && elegir >= 3);
+		} while (elegir != 3);
 	}
 
 }
