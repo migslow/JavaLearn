@@ -7,11 +7,9 @@ public class Zona {
 		super();
 		this.entradasPorVender = n;
 	}
-	
-	public void comprobarEntratadas(int n) {
-		if(this.entradasPorVender == 0) {
-			System.out.println("Lo sentimos, no hay entradas");
-		}
+
+	public int getEntradasPorVender() {
+		return entradasPorVender;
 	}
 
 	public void vender(int n) {
