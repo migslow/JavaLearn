@@ -3,19 +3,18 @@ package ejerciciosPaqueteColecciones_I;
 public class PruebaCancion {
 
 	public static void main(String[] args) {
-		
-		Cancion c1 = new Cancion ("Back in Black", "AC/DC");
-		Cancion c2 = new Cancion();
-		
+
+		Cancion c1 = new Cancion("Back in Black", "AC/DC");
+		Cancion c2 = new Cancion("Mandanga Style", "Amador riva");
+		Cancion c3 = new Cancion();
+
+		c3.ponTitulo("Thriller");
+		c3.ponAutor("Michael Jackson");
+		c2.ponAutor("Amador rivas");
+		System.out.println(c3.dameTitulo());
 		System.out.println(c1);
-		c1.dameTitulo();
-		c1.dameAutor();
-		System.out.println();
-		c2.ponTitulo("La macarena");
-		c2.ponAutor("Los del rio");
 		System.out.println(c2);
-		c2.dameTitulo();
-		c2.dameAutor();
+		System.out.println(c3);
 
 	}
 

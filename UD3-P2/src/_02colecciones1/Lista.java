@@ -36,15 +36,15 @@ public class Lista {
 	public Persona recuperar(int pos) {
 		// true si tiene �xito; false si posici�n no v�lida
 		// pos variar� de 1 al n�mero de elementos
-		if ((pos < 1) || (pos > _cont))
+		if ((pos <= 0) || (pos >= _cont))
 			return null;
-		return _array[pos - 1];
+		return _array[pos];
 	}
 
 	public String toString() {
 		String cad = "Elementos de la lista:\n\n";
 		for (int i = 0; i < _cont; i++)
-			cad += _array[i].toString() + "\n";
+			cad = cad + _array[i].toString() + "\n";
 		return cad;
 	}
 }

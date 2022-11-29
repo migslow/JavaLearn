@@ -11,34 +11,20 @@ public class Cancion {
 	}
 
 	public Cancion() {
+		titulo = "";
+		autor = "";
 	}
 
-	public String getTitulo() {
+	public String dameTitulo() {
 		return titulo;
-	}
-
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
-
-	public String getAutor() {
-		return autor;
-	}
-
-	public void setAutor(String autor) {
-		this.autor = autor;
-	}
-
-	public void dameTitulo() {
-		System.out.println(this.titulo);
-	}
-
-	public void dameAutor() {
-		System.out.println(this.autor);
 	}
 
 	public void ponTitulo(String titulo) {
 		this.titulo = titulo;
+	}
+
+	public String dameAutor() {
+		return autor;
 	}
 
 	public void ponAutor(String autor) {
@@ -47,7 +33,7 @@ public class Cancion {
 
 	@Override
 	public String toString() {
-		return "Cancion [titulo=" + titulo + ", autor=" + autor + "]";
+		return "Cancion " + titulo + ", " + autor;
 	}
 
 }
