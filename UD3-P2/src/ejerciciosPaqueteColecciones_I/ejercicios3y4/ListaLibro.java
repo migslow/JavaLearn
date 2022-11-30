@@ -1,62 +1,71 @@
 package ejerciciosPaqueteColecciones_I.ejercicios3y4;
 
 public class ListaLibro {
-	private static final int MAX = 15;
-	private Libro[] libros;
-	private int contador;
+	private final static int MAX = 5;
+	private Libro array[];
+	private int contador = 0;
 
 	public ListaLibro() {
-		libros = new Libro[MAX];
-		contador = 0;
+		array = new Libro[MAX];
 	}
 
-	public int numeroLibros() {
+	public boolean llena() {
+		return contador == MAX;
+	}
+
+	public boolean vacia() {
+		return contador == 0;
+	}
+
+	// numeros de libro que hay en la lista
+	public int length() {
 		return contador;
 	}
 
-	public boolean agregaLibro(Libro l) {
-		if (contador == MAX) {
+	// insertar un libro
+	public boolean insertar(Libro p) {
+		if (contador == MAX)
 			return false;
-		}
-		libros[contador] = l;
+		array[contador] = p;
 		contador++;
 		return true;
 	}
 
-	public Cancion dameCancion(int pos) {
+	// Obtener un libro en una determinado posicion
+	public Libro obtenerLibro(int pos) {
 		if (pos < 1 || pos > contador) {
 			return null;
 		}
-		return libros[pos - 1];
+		return array[pos - 1];
 	}
 
-	public boolean grabarCancion(int pos, Cancion c) {
-		if (pos < 1 || pos > contador) {
-			return false;
-		} else {
-			libros[pos - 1] = c;
-			return true;
-		}
-	}
-
+	// eliminar un libro en una determinada posicin
 	public boolean eliminarLibro(int pos) {
 		if (pos < 1 || pos > contador) {
 			return false;
 		} else {
 			for (int i = pos; i < contador; i++) {
-				libros[i - 1] = libros[i];
+				array[i - 1] = array[i];
 				contador--;
 			}
 			return true;
 		}
 	}
 
-	@Override
-	public String toString() {
-		String cadena = "\nElementos de la lista:\n\n";
-		for (int i = 0; i < contador; i++) {
-			cadena = cadena + libros[i].dameTitulo() + " - " + libros[i].dameAutor() + "\n";
+	// buscar libro distinguiendo de mayusculas y minusculas
+	public int buscarLibro(String string) {
+		if (string.equals(" ")) {
+			System.out.println("Ambas cadenas son iguales");
+		} else {
+			return -1;
 		}
-		return cadena;
+		return contador;
+	}
+
+	public String toString() {
+		String cad = "Elementos de la lista:\n\n";
+		for (int i = 0; i < contador; i++)
+			cad = cad + array[i].toString() + "\n";
+		return cad;
 	}
 }

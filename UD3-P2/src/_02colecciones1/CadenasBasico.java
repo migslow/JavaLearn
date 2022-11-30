@@ -6,7 +6,9 @@ public class CadenasBasico {
 		String nombre1 = "Alberto Carrera";
 		String nombre2 = "Belén Carrera";
 		String nombre3 = "Luis Aldea";
-		System.out.println(nombre1.length()); // =15 caracteres
+		System.out.println(nombre1.length()); // = 15 caracteres
+		System.out.println(nombre2.length()); // = 13 caracteres
+		System.out.println(nombre3.length()); // = 10 caracteres
 		System.out.println(nombre1.toLowerCase());
 		System.out.println(nombre2.toUpperCase());
 		System.out.println(nombre1.compareTo(nombre2)); // IMPORTANTE PARA ORDENAR

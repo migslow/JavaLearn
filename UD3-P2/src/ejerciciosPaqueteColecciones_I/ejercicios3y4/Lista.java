@@ -1,50 +1,71 @@
 package ejerciciosPaqueteColecciones_I.ejercicios3y4;
 
-// Lista.java: una lista de Personas
+import ejerciciosPaqueteColecciones_I.ejercicios1y2.Cancion;
 
 public class Lista {
-	private final static int MAX = 100;
-	private Persona _array[];
-	private int _cont = 0; // Indica la primera posici�n libre
-	// del array. Igual al n�mero de elementos
+	private final static int MAX = 5;
+	private Libro array[];
+	private int contador = 0;
 
 	public Lista() {
-		_array = new Persona[MAX];
+		array = new Libro[MAX];
 	}
 
 	public boolean llena() {
-		return _cont == MAX;
+		return contador == MAX;
 	}
 
 	public boolean vacia() {
-		return _cont == 0;
+		return contador == 0;
 	}
 
+	// numeros de libro que hay en la lista
 	public int length() {
-		return _cont;
+		return contador;
 	}
 
-	public boolean insertar(Persona p) {
-		// Devuelve true si se inserta; false si lista llena
-		if (_cont == MAX)
+	// insertar un libro
+	public boolean insertar(Libro p) {
+		if (contador == MAX)
 			return false;
-		_array[_cont] = p;
-		_cont++;
+		array[contador] = p;
+		contador++;
 		return true;
 	}
 
-	public Persona recuperar(int pos) {
-		// true si tiene �xito; false si posici�n no v�lida
-		// pos variar� de 1 al n�mero de elementos
-		if ((pos <= 0) || (pos >= _cont))
+	// Obtener un libro en una determinado posicion
+	public Libro obtenerLibro(int pos) {
+		if (pos < 1 || pos > contador) {
 			return null;
-		return _array[pos];
+		}
+		return array[pos - 1];
+	}
+
+	// eliminar un libro en una determinada posicin
+	public boolean eliminarLibro(int pos) {
+		if (pos < 1 || pos > contador) {
+			return false;
+		} else {
+			for (int i = pos; i < contador; i++) {
+				array[i - 1] = array[i];
+				contador--;
+			}
+			return true;
+		}
+	}
+
+	// buscar libro distinguiendo de mayusculas y minusculas
+	public int buscarLibro(Libro p) {
+		if(p.equals(p)) {
+			System.out.println("Ambas cadenas son iguales");
+		} 
+		return -1;
 	}
 
 	public String toString() {
 		String cad = "Elementos de la lista:\n\n";
-		for (int i = 0; i < _cont; i++)
-			cad = cad + _array[i].toString() + "\n";
+		for (int i = 0; i < contador; i++)
+			cad = cad + array[i].toString() + "\n";
 		return cad;
 	}
 }
