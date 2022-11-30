@@ -1,4 +1,4 @@
-package ejerciciosPaqueteColecciones_I;
+package ejerciciosPaqueteColecciones_I.ejercicios1y2;
 
 import _02colecciones1.Lista;
 

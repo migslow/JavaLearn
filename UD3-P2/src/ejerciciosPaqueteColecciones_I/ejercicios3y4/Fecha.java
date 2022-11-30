@@ -1,4 +1,4 @@
-package ejerciciosPaqueteColecciones_I;
+package ejerciciosPaqueteColecciones_I.ejercicios3y4;
 
 // Fecha.java: Manejo de fechas
 

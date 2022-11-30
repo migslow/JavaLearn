@@ -1,4 +1,4 @@
-package ejerciciosPaqueteColecciones_I;
+package ejerciciosPaqueteColecciones_I.ejercicios3y4;
 
 public class Libro {
 
@@ -90,7 +90,7 @@ public class Libro {
 
 	@Override
 	public String toString() {
-		return ("Titulo :" + titulo + "\n" + edicion + "a. edicion\n" + "Autor : " + autor + "ISBN  : " + isbn + "\n"
+		return ("Titulo : " + titulo + "\n" + edicion + "a. edicion\n" + "Autor : " + autor + "ISBN  : " + isbn + "\n"
 				+ editorial + ", " + lugar + ", " + fecha + "\n" + paginas + " paginas");
 	}
 
