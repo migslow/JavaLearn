@@ -32,12 +32,14 @@ public class PruebaListaLibro {
 		lib.insertar(l1);
 		lib.insertar(l2);
 		lib.insertar(l3);
-		
+
 		System.out.println(lib.eliminarLibro(2));
 		System.out.println();
-		System.out.println(lib);
+		System.out.println(lib.obtenerLibro(1));
 		System.out.println();
-		System.out.println(lib.buscarLibro("Big Data"));
+		System.out.println(lib);
+		System.out.println(lib.buscarLibro("big"));
+		System.out.println(lib.buscarLibro("Big"));
 	}
 
 }

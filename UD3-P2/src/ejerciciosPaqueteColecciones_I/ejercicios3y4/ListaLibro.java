@@ -54,18 +54,19 @@ public class ListaLibro {
 
 	// buscar libro distinguiendo de mayusculas y minusculas
 	public int buscarLibro(String string) {
-		if (string.equals(" ")) {
-			System.out.println("Ambas cadenas son iguales");
-		} else {
-			return -1;
+		for (int i = 0; i < contador; i++) {
+			if (array[i].getTitulo().toUpperCase().contains(string.toUpperCase())
+					&& array[i].getTitulo().toLowerCase().contains(string.toLowerCase())) {
+				return 1;
+			}
 		}
-		return contador;
+		return -1;
 	}
 
 	public String toString() {
-		String cad = "Elementos de la lista:\n\n";
+		String cadena = "Elementos de la lista:\n\n";
 		for (int i = 0; i < contador; i++)
-			cad = cad + array[i].toString() + "\n";
-		return cad;
+			cadena = cadena + array[i].toString() + "\n\n";
+		return cadena;
 	}
 }
