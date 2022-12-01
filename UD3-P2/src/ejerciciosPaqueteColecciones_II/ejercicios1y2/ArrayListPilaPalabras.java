@@ -1,12 +1,12 @@
 package ejerciciosPaqueteColecciones_II.ejercicios1y2;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 import _03colecciones2.Libro;
 
-public class LinkedListPilaPalabras {
+public class ArrayListPilaPalabras {
 
-	private LinkedList<Palabra> lista = new LinkedList<Palabra>();
+	private ArrayList<Palabra> lista = new ArrayList<Palabra>();
 
 	public boolean pilaPalabrasVacia() {
 		return lista.isEmpty();
@@ -17,7 +17,7 @@ public class LinkedListPilaPalabras {
 	}
 
 	public Palabra desapilarPalabra(Palabra s) {
-		return lista.remove();
+		return lista.remove(0);
 	}
 
 	public Palabra agregarPalabra(Palabra p) {
@@ -42,9 +42,4 @@ public class LinkedListPilaPalabras {
 		}
 	}
 
-	public void imprimirLista() {
-		for(Palabra p: lista) {
-			System.out.println(lista);
-		}
-	}
 }

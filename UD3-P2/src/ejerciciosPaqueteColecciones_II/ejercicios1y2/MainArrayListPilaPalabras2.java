@@ -4,14 +4,14 @@ import java.util.LinkedList;
 
 import _03colecciones2.LinkedListLibros;
 
-public class MainLinkedListPilaPalabras {
+public class MainArrayListPilaPalabras2 {
 
 	public static void main(String[] args) {
 		Palabra s1 = new Palabra("Hola");
 		Palabra s2 = new Palabra("Adios");
 		Palabra s3 = new Palabra("Como estas");
 		
-		LinkedListPilaPalabras a = new LinkedListPilaPalabras();
+		ArrayListPilaPalabras a = new ArrayListPilaPalabras();
 		System.out.println("Agregar Palabras");
 		System.out.println(a.agregarPalabra(s1));
 		System.out.println(a.agregarPalabra(s2));
@@ -26,8 +26,6 @@ public class MainLinkedListPilaPalabras {
 		System.out.println(a.buscar("A"));
 		System.out.println("Volver a comprobar si se a borrado bien y el numero del tamaño");
 		System.out.println(a.NumeropilaPalabras());
-		
-		a.imprimirLista();
 	}
 
 }
