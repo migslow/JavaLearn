@@ -30,27 +30,14 @@ public class ArrayListProducto {
 		return lista.get(pos - 1);
 	}
 	
-	public int buscarProducto(int pos) {
-		boolean encontrado = false;
-		for(int i = 0; i < lista.size();i++) {
-			if(lista.get(i).getNombre().toUpperCase().contains(pos)) {
-				
-			}
+	public boolean buscarProductoPosicion(int pos) {
+		if ((pos < 1) || (pos > _cont) || (_cont == 0)) {
+			return false;
 		}
-		
-		
-		while ((i < lista.size()) && (!encontrado)) {
-			if ((lista.get(i).damePalabra().toUpperCase().contains(parte.toUpperCase()))) {
-				encontrado = true;
-			} else {
-				i++;
-			}
+		for (int i = pos; i < _cont; i++) {
+			_cont--;
 		}
-		if (encontrado) {
-			return i;
-		} else {
-			return -1;
-		}
+		return true;
 	}
 	
 	public int eliminarProducto(int pos) {

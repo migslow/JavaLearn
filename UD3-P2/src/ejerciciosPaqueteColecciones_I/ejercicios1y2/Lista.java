@@ -1,4 +1,4 @@
-package _02colecciones1;
+package ejerciciosPaqueteColecciones_I.ejercicios1y2;
 
 // Lista.java: una lista de Personas
 

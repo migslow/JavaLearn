@@ -1,7 +1,5 @@
 package ejerciciosPaqueteColecciones_I.ejercicios1y2;
 
-import _02colecciones1.Persona;
-
 class CD {
 	private static final int MAX = 15;
 	private Cancion[] canciones;
@@ -12,7 +10,7 @@ class CD {
 		contador = 0;
 	}
 
-	public int numeroConciones() {
+	public int numeroCanciones() {
 		return contador;
 	}
 

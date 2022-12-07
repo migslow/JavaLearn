@@ -21,7 +21,7 @@ public class LinkedListPilaPalabras {
 	}
 
 	public Palabra agregarPalabra(Palabra p) {
-		lista.add(p);;
+		lista.add(p);
 		return p;
 	}
 

@@ -16,21 +16,20 @@ public class PruebaCD {
 		System.out.println(c1);
 		System.out.println(c2);
 		System.out.println(c3);
-		
+
 		System.out.println();
-		
+
 		CD cd = new CD();
 		System.out.println(cd.agregaCancion(c1));
 		System.out.println(cd.agregaCancion(c2));
 		System.out.println(cd.agregaCancion(c3));
 		System.out.println(cd);
-		System.out.println(cd.numeroConciones() + " canciones");
+		System.out.println(cd.numeroCanciones() + " canciones");
 		System.out.println(cd.dameCancion(2));
 		System.out.println(cd.grabarCancion(2, new Cancion("Waka Waka", "Sakira")));
 		System.out.println(cd);
 		System.out.println(cd.eliminarCancion(3));
 		System.out.println(cd);
-		
 
 	}
 
