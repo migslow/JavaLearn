@@ -23,11 +23,15 @@ public class Main {
 		// System.out.println("Tama�o de la lista: " + b.tamanyo()); // 7
 		// b.mostrarCuentas(); // Muestra las 7 cuentas
 		System.out.println(b.contieneCuenta(c1)); // TRUE
+		System.out.println("\nContiene cuenta");
 		System.out.println(b.contieneCuenta(new Cuenta(55, "Leticia", 57000))); // TRUE
 		System.out.println(b.contieneCuenta(new Cuenta(55, "Leticia", 220))); // FALSE
+		System.out.println("\nContiene cuenta 2");
 		System.out.println(b.contieneCuenta2(new Cuenta(50, "Alberto Carrera", -1300))); // TRUE
 		System.out.println(b.contieneCuenta2(new Cuenta(50, "Alberto Carrera", 0))); // FALSE
+		System.out.println("\nBorrar la cuenta por la posicion");
 		System.out.println(b.borrarCuentaPorPosicion(1)); // TRUE BORRA LA PRIMERA CUENTA, LA DE N� 40.
+		System.out.println("\nEl tamaño de la cuenta");
 		System.out.println("Tama�o de la lista: " + b.tamanyo()); // 6
 		System.out.println(b.borrarCuentaPorPosicion(7)); // FALSE, SOLO HAY 6 CUENTAS Y LA �LTIMA ES LA 6
 		System.out.println(b.borrarCuentaPorNumero(30)); // TRUE BORRA LA CUENTA 30

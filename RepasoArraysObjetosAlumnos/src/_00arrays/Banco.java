@@ -66,6 +66,10 @@ public class Banco {
 
 	public boolean contieneCuenta(Cuenta c) {
 		// Se puede hacer recorriendo el array y utilizando el m�todo equals
+		for(int i = 0; i < listaCuentas.length;i++) {
+			listaCuentas.equals(c);
+			return true;
+		}
 		// Si dentro del bucle coincide (equals) la cuenta c con alguna de la lista,
 		// devolver cierto
 		// La siguiente l�nea al bucle se ejecutar� si no ha encontrado la cuenta,

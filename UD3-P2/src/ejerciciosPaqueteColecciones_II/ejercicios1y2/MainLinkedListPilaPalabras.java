@@ -13,9 +13,9 @@ public class MainLinkedListPilaPalabras {
 		
 		LinkedListPilaPalabras a = new LinkedListPilaPalabras();
 		System.out.println("Agregar Palabras");
-		System.out.println(a.agregarPalabra(s1));
-		System.out.println(a.agregarPalabra(s2));
-		System.out.println(a.agregarPalabra(s3));
+		System.out.println(a.apilarPalabra(s1));
+		System.out.println(a.apilarPalabra(s2));
+		System.out.println(a.apilarPalabra(s3));
 		System.out.println("Comprobar si el array esta vacio");
 		System.out.println(a.pilaPalabrasVacia());
 		System.out.println("Comprobar el tamaño del array");
@@ -23,7 +23,7 @@ public class MainLinkedListPilaPalabras {
 		System.out.println("Elimiar una palabra");
 		System.out.println(a.desapilarPalabra(s1));
 		System.out.println("Buscar una palabra");
-		System.out.println(a.buscar("A"));
+		System.out.println(a.buscar("Adios"));
 		System.out.println("Volver a comprobar si se a borrado bien y el numero del tamaño");
 		System.out.println(a.NumeropilaPalabras());
 		

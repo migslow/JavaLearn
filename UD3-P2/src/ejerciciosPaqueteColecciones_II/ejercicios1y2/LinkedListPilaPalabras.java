@@ -3,6 +3,7 @@ package ejerciciosPaqueteColecciones_II.ejercicios1y2;
 import java.util.LinkedList;
 
 import _03colecciones2.Libro;
+import _03colecciones2_2.Persona;
 
 public class LinkedListPilaPalabras {
 
@@ -15,14 +16,13 @@ public class LinkedListPilaPalabras {
 	public int NumeropilaPalabras() {
 		return lista.size();
 	}
-
-	public Palabra desapilarPalabra(Palabra s) {
-		return lista.remove();
+	
+	public boolean apilarPalabra(Palabra p) {
+		return lista.add(p);
 	}
 
-	public Palabra agregarPalabra(Palabra p) {
-		lista.add(p);
-		return p;
+	public boolean desapilarPalabra(Palabra p) {
+		return lista.remove(p);
 	}
 
 	public int buscar(String parte) {
