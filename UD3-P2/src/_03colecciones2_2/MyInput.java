@@ -1,4 +1,4 @@
-package _03colecciones2;
+package _03colecciones2_2;
 
 // MyInput.java: Contain the methods for reading int, double, and
 // string values from the keyboard

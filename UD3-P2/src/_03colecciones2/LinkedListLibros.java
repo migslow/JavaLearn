@@ -6,11 +6,7 @@ import java.util.LinkedList;;
 
 public class LinkedListLibros {
 	// private final static int MAX = 100; no tiene sentido....
-	private LinkedList<Libro> lista;
-
-	public LinkedListLibros() {
-		lista = new LinkedList<Libro>();
-	}
+	private LinkedList<Libro> lista = new LinkedList<Libro>();
 
 	// public boolean llena() { return ... no tiene sentido }
 

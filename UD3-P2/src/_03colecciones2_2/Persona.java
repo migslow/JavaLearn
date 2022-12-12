@@ -1,4 +1,4 @@
-package _03colecciones2;
+package _03colecciones2_2;
 // Persona.java: una clase para representar personas
 
 public class Persona {

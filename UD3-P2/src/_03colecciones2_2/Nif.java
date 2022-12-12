@@ -1,4 +1,4 @@
-package _03colecciones2;
+package _03colecciones2_2;
 // Nif.java: una clase Nif para representar N.I.F.s
 
 public class Nif {

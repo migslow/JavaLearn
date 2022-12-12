@@ -1,5 +1,7 @@
 package _03colecciones2;
 
+import java.util.Objects;
+
 public class Libro {
 	private String titulo;
 	private Persona autor;
@@ -22,7 +24,6 @@ public class Libro {
 	}
 
 	public Libro(String t, Persona p, String i, int pa, int e, String ed, String l, Fecha f) {
-
 		titulo = t;
 		autor = p;
 		isbn = i;
@@ -31,6 +32,15 @@ public class Libro {
 		editorial = ed;
 		lugar = l;
 		fechaEdicion = f;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		Libro other = (Libro) obj;
+		return Objects.equals(autor, other.autor) && edicion == other.edicion
+				&& Objects.equals(editorial, other.editorial) && Objects.equals(fechaEdicion, other.fechaEdicion)
+				&& Objects.equals(isbn, other.isbn) && Objects.equals(lugar, other.lugar) && paginas == other.paginas
+				&& Objects.equals(titulo, other.titulo);
 	}
 
 	public String dameTitulo() {

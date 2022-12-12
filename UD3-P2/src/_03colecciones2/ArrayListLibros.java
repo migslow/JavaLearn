@@ -7,11 +7,7 @@ import java.util.Iterator;
 
 public class ArrayListLibros {
 	// private final static int MAX = 100; no tiene sentido....
-	private ArrayList<Libro> lista;
-
-	public ArrayListLibros() {
-		lista = new ArrayList<Libro>();
-	}
+	private ArrayList<Libro> lista = new ArrayList<Libro>();
 
 	// public boolean llena() { return ... no tiene sentido }
 
@@ -24,7 +20,6 @@ public class ArrayListLibros {
 	}
 
 	public boolean insertarOrden(Libro p) {
-
 		int i = 0;
 		boolean encontrado = false;
 		while ((i < lista.size()) && (!encontrado)) {
@@ -37,7 +32,6 @@ public class ArrayListLibros {
 	}
 
 	public int buscar(String parte) { // Devuelve �ndice, no posici�n
-
 		int i = 0;
 		boolean encontrado = false;
 		while ((i < lista.size()) && (!encontrado)) {
@@ -50,11 +44,23 @@ public class ArrayListLibros {
 			return i;
 		else
 			return -1;
+	}
 
+	public String buscarTodos(String parte) {
+		String encontrados = "Libros que contienen la cadena " + parte + ": " + "\n\n";
+		for (int i = 0; i < lista.size(); i++) {
+			if (lista.get(i).dameTitulo().toLowerCase().contains(parte.toLowerCase())) {
+				encontrados = encontrados + lista.get(i) + "\n-----------------------\n";
+			}
+		}
+		return encontrados;
+	}
+
+	public boolean contiene(Libro p) {
+		return lista.contains(p);
 	}
 
 	public boolean insertar(Libro p) {
-
 		lista.add(p);
 		return true;
 	}
@@ -69,7 +75,6 @@ public class ArrayListLibros {
 	}
 
 	public Libro recuperar(int pos) {
-
 		if ((pos < 1) || (pos > lista.size()))
 			return null;
 		return lista.get(pos - 1);
