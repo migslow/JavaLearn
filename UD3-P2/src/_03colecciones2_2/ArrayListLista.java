@@ -55,7 +55,7 @@ public class ArrayListLista {
 		return borrarPersonaPosicion(posicion);
 	}
 
-	public String buscarApelido(String apellido) {
+	public String buscarApellido(String apellido) {
 		String encontrados = "Lista de personas que contienen la cadena " + apellido + "\n";
 		for (int i = 0; i < tamanyo(); i++) {
 			if(lista.get(i).dameApellidos().toLowerCase().contains(apellido.toLowerCase())) {

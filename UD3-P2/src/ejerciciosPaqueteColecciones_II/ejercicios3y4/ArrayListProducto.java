@@ -8,39 +8,79 @@ public class ArrayListProducto {
 
 	private ArrayList<Producto> lista = new ArrayList<Producto>();
 
-	public int tamanyoLista() {
+	public boolean vacia() {
+		return lista.isEmpty();
+	}
+
+	public int tamanyo() {
 		return lista.size();
 	}
 
-	public ArrayList<Producto> imprimirLista() {
-		for(int i = 0; i < lista.size(); i++) {
-            System.out.println(lista);
-        }
-		return lista;
-	}
-
-	public Producto añadirALaLista(Producto p) {
+	public Producto añadirProducto(Producto p) {
 		lista.add(p);
 		return p;
 	}
-	
-	public Producto recuperarProducto(int pos) {
+
+	// Falta hacer
+	public Producto buscarProductoPosicion(int pos) {
+		if ((pos < 1) || (pos > lista.size()))
+			return null;
+		return lista.get(pos);
+	}
+
+	public Producto recuperarProductoPosicion(int pos) {
 		if ((pos < 1) || (pos > lista.size()))
 			return null;
 		return lista.get(pos - 1);
 	}
-	
-	public boolean buscarProductoPosicion(int pos) {
-		if ((pos < 1) || (pos > _cont) || (_cont == 0)) {
-			return false;
+
+	public Producto eliminarProductoPosicion(int pos) {
+		if ((pos < 1) || (pos > lista.size()))
+			return null;
+		return lista.remove(pos - 1);
+	}
+
+	public String buscarProductoCodigo(int cod) {
+		String encontrados = "Buscnado los productos con el codigo " + cod + "\n";
+		for (int i = 0; i < tamanyo(); i++) {
+			if (lista.get(i).getCodigo() == cod) {
+				encontrados = encontrados + lista.get(i) + "\n";
+			}
 		}
-		for (int i = pos; i < _cont; i++) {
-			_cont--;
+		return encontrados;
+	}
+
+	public String recuperarProductoCodigo(int cod) {
+		String encontrados = "Recuperando los productos con el codigo " + cod;
+		for (int i = 0; i < tamanyo(); i++) {
+			if (lista.get(i).getCodigo() == cod) {
+				encontrados = encontrados + lista.get(i - 1) + "\n";
+			}
 		}
-		return true;
+		return encontrados;
 	}
 	
-	public int eliminarProducto(int pos) {
-		
+	public String borrarProductoCodigo(int cod) {
+		String encontrados = "Eliminando los productos con el codigo " + cod;
+		for (int i = 0; i < tamanyo(); i++) {
+			if (lista.get(i).getCodigo() == cod) {
+				encontrados = encontrados + lista.remove(i - 1) + "\n";
+			}
+		}
+		return encontrados;
+	}
+
+	@Override
+	public String toString() {
+		String mensaje;
+		if (vacia()) {
+			return "La lista de esta vacia";
+		} else {
+			mensaje = tamanyo() + " Productos en la lista: \n-----------------------------------------\n";
+			for (int i = 0; i < tamanyo(); i++) {
+				mensaje = mensaje + lista.get(i) + "\n";
+			}
+		}
+		return mensaje;
 	}
 }
