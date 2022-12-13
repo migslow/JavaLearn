@@ -22,7 +22,7 @@ public class MainArrayListLista {
 		System.out.println(l.borrarPersonaPorDNI(333));
 		System.out.println(l.borrarPersonaPorDNI(4567890));
 		System.out.println(l);
-		System.out.println(l.buscarApelido("carrera"));
+		System.out.println(l.buscarApellido("carrera"));
 	}
 
 }

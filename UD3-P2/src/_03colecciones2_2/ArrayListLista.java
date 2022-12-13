@@ -58,26 +58,51 @@ public class ArrayListLista {
 	public String buscarApellido(String apellido) {
 		String encontrados = "Lista de personas que contienen la cadena " + apellido + "\n";
 		for (int i = 0; i < tamanyo(); i++) {
-			if(lista.get(i).dameApellidos().toLowerCase().contains(apellido.toLowerCase())) {
+			if (lista.get(i).dameApellidos().toLowerCase().contains(apellido.toLowerCase())) {
 				encontrados = encontrados + lista.get(i) + "\n";
 			}
 		}
 		return encontrados;
 	}
 
-	@Override
-	public String toString() {
-		// return "ArrayListLista [lista=" + lista + "]";
-		String mensaje;
-		if (vacia()) {
-			return "La lista de personas esta vacia";
-		} else {
-			mensaje = tamanyo() + " personas en la lista: \n-----------------------------------------\n";
-			for (int i = 0; i < tamanyo(); i++) {
-				mensaje = mensaje + lista.get(i) + "\n";
+	public ArrayList<Persona> buscarPorApellido2(String apellido) {
+		ArrayList<Persona> encontrados = new ArrayList<Persona>();
+		for (int i = 0; i < tamanyo(); i++) {
+			if (lista.get(i).dameApellidos().toLowerCase().contains(apellido.toLowerCase())) {
+				encontrados.add(lista.get(i));
 			}
 		}
-		return mensaje;
+		return encontrados;
+	}
+
+	public boolean cambiarEdad(long dni, int edad) {
+		boolean cambiada = false;
+		int posicion = buscarPersonaPorDNI(dni);
+		Persona p;
+		if (posicion != -1) {
+			p = recuperar(posicion);
+			p.ponEdad(edad);
+			cambiada = true;
+		}
+
+		return cambiada;
+	}
+
+	public int buscarPersona(Persona p) {
+		return (lista.indexOf(p));
+	}
+
+	@Override
+	public String toString() {
+		String cadena = tamanyo() + " personas en la lista: \n-----------------------\n";
+		for (int i = 0; i < tamanyo(); i++) {
+			cadena = cadena + lista.get(i) + "\n";
+		}
+		if (vacia()) {
+			return "La lista de personas está vacia";
+		} else {
+			return cadena;
+		}
 	}
 
 }

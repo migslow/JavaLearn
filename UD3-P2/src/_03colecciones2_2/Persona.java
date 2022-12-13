@@ -1,6 +1,8 @@
 package _03colecciones2_2;
 // Persona.java: una clase para representar personas
 
+import java.util.Objects;
+
 public class Persona {
 	private Nif nif;
 	private int edad;
@@ -81,4 +83,11 @@ public class Persona {
 		System.out.print("Edad: ");
 		edad = MyInput.readInt();
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		Persona other = (Persona) obj;
+		return Objects.equals(nif.dameDni(), other.nif.dameDni());
+	}
+
 }

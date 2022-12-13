@@ -3,6 +3,7 @@ package ejerciciosPaqueteColecciones_II.ejercicios3y4;
 import java.util.ArrayList;
 
 import _03colecciones2.Libro;
+import _03colecciones2_2.Persona;
 
 public class ArrayListProducto {
 
@@ -68,6 +69,19 @@ public class ArrayListProducto {
 			}
 		}
 		return encontrados;
+	}
+	
+	public boolean cambiarPrecio(int codigo, int precio) {
+		boolean cambiada = false;
+		int posicion = buscarProductoCodigo(codigo);
+		Persona p;
+		if (posicion != -1) {
+			p = recuperar(posicion);
+			p.ponEdad(edad);
+			cambiada = true;
+		}
+
+		return cambiada;
 	}
 
 	@Override
