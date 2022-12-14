@@ -6,25 +6,25 @@ package _07mapas;
 import java.util.HashMap;
 
 public class HashMap02 {
-  public static void main(String[] args) {
+	public static void main(String[] args) {
 
-    HashMap<Integer, String> m = new HashMap<Integer, String>();
+		HashMap<Integer, String> m = new HashMap<Integer, String>();
 
-    m.put(156, "Belén Carrera");
-    m.put(921, "Antonio Cepero");      
-    m.put(700, "Pablo Martínez");
-    m.put(219, "Alberto Carrera");
+		m.put(156, "Belï¿½n Carrera");
+		m.put(921, "Antonio Cepero");
+		m.put(700, "Pablo Martï¿½nez");
+		m.put(219, "Alberto Carrera");
 
-    System.out.println(m.get(921)); // Antonio Cepero
-    System.out.println(m.get(700)); // Pablo Martínez
-    System.out.println(m.get(666)); // null
- //
-    int codigo =219;
-    if (m.containsKey(codigo))
-        System.out.println("El código " + codigo + " corresponde a " + m.get(codigo));
-    else 
-        System.out.println("El código " + codigo + " no existe");
-    
-  }// del main
-  
+		System.out.println(m.get(921)); // Antonio Cepero
+		System.out.println(m.get(700)); // Pablo Martï¿½nez
+		System.out.println(m.get(666)); // null
+		//
+		int codigo = 219;
+		if (m.containsKey(codigo))
+			System.out.println("El cï¿½digo " + codigo + " corresponde a " + m.get(codigo));
+		else
+			System.out.println("El cï¿½digo " + codigo + " no existe");
+
+	}// del main
+
 }

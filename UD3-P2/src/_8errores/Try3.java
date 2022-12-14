@@ -1,40 +1,36 @@
 package _8errores;
+
 /**
- * Intentemos provocar también un error de tipo división por cero
- * y pongamos un catch específico para dicho error
+ * Intentemos provocar tambiï¿½n un error de tipo divisiï¿½n por cero y pongamos un
+ * catch especï¿½fico para dicho error
  *
- * Podemos comprobar que se ejecuta el catch correspondiente al tipo de error generado.
- * La línea que lanza el error de índice la hemos comentado para que no lo genere y
- * podamos generar el error de división por cero.
+ * Podemos comprobar que se ejecuta el catch correspondiente al tipo de error
+ * generado. La lï¿½nea que lanza el error de ï¿½ndice la hemos comentado para que
+ * no lo genere y podamos generar el error de divisiï¿½n por cero.
  */
 
-public class Try3{
-	public static void main(String arg[]){
-		int [] array = new int[20];
-		 try
-		 	{
-         	array[56] = 24;	
+public class Try3 {
+	public static void main(String arg[]) {
+		int[] array = new int[20];
+		try {
+			array[56] = 24;
 			int b = 0;
-			int a = 23/b;
-			}
-			/*catch(ArrayIndexOutOfBoundsException excepcion)
-		    {
-		    System.out.println(" Error de índice en un array");
-		    }*/
-		    catch(ArithmeticException excepcion)
-		    {
+			int a = 23 / b;
+		}
+		/*
+		 * catch(ArrayIndexOutOfBoundsException excepcion) {
+		 * System.out.println(" Error de ï¿½ndice en un array"); }
+		 */
+		catch (ArithmeticException excepcion) {
 			System.out.println(" No se puede dividir entre 0");
-		    }
-		    catch (Exception e)
-		 	{
-		    System.out.println("Aquí entro si no lo he atrapado antes");
-		   	System.out.println("Información del error");
-		   	 System.out.println(e.getMessage());
-			 e.printStackTrace();
-		 	}
-		 finally{
-			 System.out.println("Esto se ejecuta seguro pase lo que pase");
-		 }
-		 System.out.println("Continuo por aquí ....");
+		} catch (Exception e) {
+			System.out.println("Aquï¿½ entro si no lo he atrapado antes");
+			System.out.println("Informaciï¿½n del error");
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		} finally {
+			System.out.println("Esto se ejecuta seguro pase lo que pase");
+		}
+		System.out.println("Continuo por aquï¿½ ....");
 	}
 }

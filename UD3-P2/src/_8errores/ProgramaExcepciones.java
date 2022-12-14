@@ -1,22 +1,20 @@
 package _8errores;
 /* 
- *Ejemplo Gestión de Excepciones Java
+ *Ejemplo Gestiï¿½n de Excepciones Java
  *
  */
- 
+
 public class ProgramaExcepciones {
-	public static void main (String [] args){
+	public static void main(String[] args) {
 		try {
 			System.out.println("Intentamos ejecutar el bloque de instrucciones:");
-			System.out.println("Instrucción 1.");
-			int n = Integer.parseInt("M"); //error forzado en tiempo de ejecución.
-			System.out.println("Instrucción 2.");
-			System.out.println("Instrucción 3, etc.");
-		}
-		catch (Exception e) {
+			System.out.println("Instrucciï¿½n 1.");
+			int n = Integer.parseInt("M"); // error forzado en tiempo de ejecuciï¿½n.
+			System.out.println("Instrucciï¿½n 2.");
+			System.out.println("Instrucciï¿½n 3, etc.");
+		} catch (Exception e) {
 			System.out.println("Instrucciones a ejecutar cuando se produce un error");
-		}
-		finally {
+		} finally {
 			System.out.println("Instrucciones a ejecutar finalmente tanto si se producen errores como si no.");
 		}
 	}

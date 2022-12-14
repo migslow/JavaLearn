@@ -1,34 +1,31 @@
 package _8errores;
 /**
- * Escriba un programa que genere un número aleatorio
- * e indique si el número generado es par o impar.
- * El programa utilizará para ello el lanzamiento de una excepción.
+ * Escriba un programa que genere un nï¿½mero aleatorio
+ * e indique si el nï¿½mero generado es par o impar.
+ * El programa utilizarï¿½ para ello el lanzamiento de una excepciï¿½n.
  */
-
 
 /**
- * Escriba un programa que genere un número aleatorio
- * e indique si el número generado es par o impar.
- * El programa utilizará para ello el lanzamiento de una excepción.
+ * Escriba un programa que genere un nï¿½mero aleatorio e indique si el nï¿½mero
+ * generado es par o impar. El programa utilizarï¿½ para ello el lanzamiento de
+ * una excepciï¿½n.
  */
-
 
 public class ExcepcionParImpar {
 
-    public static void main(String args[]){
-    	try{
-    		System.out.println("Generando numero aleatorio .... ");
-			int entero = (int)(Math.random() * 100);
-			if(entero%2 == 0){
-				throw new Exception("Se generó el numero par: " + entero);
-			}else{
-				throw new Exception("Se generó el numero impar: " + entero);
+	public static void main(String args[]) {
+		try {
+			System.out.println("Generando numero aleatorio .... ");
+			int entero = (int) (Math.random() * 100);
+			if (entero % 2 == 0) {
+				throw new Exception("Se generï¿½ el numero par: " + entero);
+			} else {
+				throw new Exception("Se generï¿½ el numero impar: " + entero);
 			}
-			//System.out.println("Esta línea no se ejecutará nunca");
-			// y de hecho me da error de compilación si la pongo
-    	}
-    	catch(Exception e){
+			// System.out.println("Esta lï¿½nea no se ejecutarï¿½ nunca");
+			// y de hecho me da error de compilaciï¿½n si la pongo
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
-    	}
-}
+		}
+	}
 }

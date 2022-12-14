@@ -6,16 +6,16 @@ package _07mapas;
 import java.util.HashMap;
 
 public class HashMap01 {
-  public static void main(String[] args) {
+	public static void main(String[] args) {
 
-    HashMap<Integer, String> m = new HashMap<Integer, String>();
+		HashMap<Integer, String> m = new HashMap<Integer, String>();
 
-    m.put(156, "Belén Carrera");
-    m.put(921, "Antonio Cepero");      
-    m.put(700, "Pablo Martínez");
-    m.put(219, "Alberto Carrera");
-    m.put(700, "Antonino Lasierra");// Cambio del valor para la clave 700
-    System.out.println("Tamaño del mapa: " + m.size());
-    System.out.println("Los elementos de m son: \n" + m);
-  }
+		m.put(156, "Belï¿½n Carrera");
+		m.put(921, "Antonio Cepero");
+		m.put(700, "Pablo Martï¿½nez");
+		m.put(219, "Alberto Carrera");
+		m.put(700, "Antonino Lasierra");// Cambio del valor para la clave 700
+		System.out.println("Tamaï¿½o del mapa: " + m.size());
+		System.out.println("Los elementos de m son: \n" + m);
+	}
 }

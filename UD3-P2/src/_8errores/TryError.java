@@ -1,14 +1,15 @@
 package _8errores;
+
 /**
- * Ejemplo Excepciones con error.
- * Intentamos acceder a una posición de vector erronea
+ * Ejemplo Excepciones con error. Intentamos acceder a una posiciï¿½n de vector
+ * erronea
  */
 
-public class TryError{
-	public static void main(String arg[]){
-		int [] array = new int[20];
-		
-		// Se produce un error al intentar acceder a la posición 26 del vector.
+public class TryError {
+	public static void main(String arg[]) {
+		int[] array = new int[20];
+
+		// Se produce un error al intentar acceder a la posiciï¿½n 26 del vector.
 		array[25] = 24;
 	}
 }
