@@ -1,9 +1,9 @@
 package ejerciciosPaqueteColecciones_II.ejercicios3y4;
 
-public class MainArrayListProducto {
+public class MainLinkedListProducto {
 
 	public static void main(String[] args) {
-		ArrayListProducto lista = new ArrayListProducto();
+		LinkedListProducto lista = new LinkedListProducto();
 		System.out.println(lista.añadirProducto(new Producto(1234567, "Lampara", "Hogar", 127.99, 47)));
 		System.out.println(lista.añadirProducto(new Producto(2345678, "Sofa", "Hogar", 723.99, 12)));
 		System.out.println(lista.añadirProducto(new Producto(3456789, "Cantimplora", "Aventura", 27.99, 147)));

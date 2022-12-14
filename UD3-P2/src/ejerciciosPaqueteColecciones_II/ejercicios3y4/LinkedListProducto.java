@@ -1,13 +1,10 @@
 package ejerciciosPaqueteColecciones_II.ejercicios3y4;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
-import _03colecciones2.Libro;
-import _03colecciones2_2.Persona;
+public class LinkedListProducto {
 
-public class ArrayListProducto {
-
-	private ArrayList<Producto> lista = new ArrayList<Producto>();
+	private LinkedList<Producto> lista = new LinkedList<Producto>();
 
 	public boolean vacia() {
 		return lista.isEmpty();

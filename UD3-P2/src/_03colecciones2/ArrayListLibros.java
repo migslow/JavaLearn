@@ -75,8 +75,9 @@ public class ArrayListLibros {
 	}
 
 	public Libro recuperar(int pos) {
-		if ((pos < 1) || (pos > lista.size()))
+		if ((pos < 1) || (pos > lista.size())) {
 			return null;
+		}
 		return lista.get(pos - 1);
 	}
 
