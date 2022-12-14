@@ -2,11 +2,9 @@ package ejerciciosPaqueteColecciones_II.ejercicios1y2;
 
 import java.util.ArrayList;
 
-import _03colecciones2.Libro;
-
 public class ArrayListPilaPalabras {
 
-	private ArrayList<Palabra> lista = new ArrayList<Palabra>();
+	private ArrayList<String> lista = new ArrayList<String>();
 
 	public boolean pilaPalabrasVacia() {
 		return lista.isEmpty();
@@ -16,30 +14,30 @@ public class ArrayListPilaPalabras {
 		return lista.size();
 	}
 
-	public Palabra desapilarPalabra(Palabra s) {
-		return lista.remove(0);
-	}
-
-	public Palabra agregarPalabra(Palabra p) {
+	public void apilarPalabra(String p) {
 		lista.add(p);
-		return p;
 	}
 
-	public int buscar(String parte) {
-		int i = 0;
-		boolean encontrado = false;
-		while ((i < lista.size()) && (!encontrado)) {
-			if ((lista.get(i).damePalabra().toUpperCase().contains(parte.toUpperCase()))) {
-				encontrado = true;
-			} else {
-				i++;
+	public String desapilarPalabra() {
+		return lista.remove(lista.size() - 1);
+	}
+
+	public String obtenerPalabraCima() {
+		return lista.get(lista.size() - 1);
+	}
+
+	@Override
+	public String toString() {
+		String mensaje;
+		if (pilaPalabrasVacia()) {
+			return "La lista de esta vacia";
+		} else {
+			mensaje = NumeropilaPalabras() + " Productos en la lista: \n-----------------------------------------\n";
+			for (int i = 0; i < NumeropilaPalabras(); i++) {
+				mensaje = mensaje + lista.get(i) + "\n";
 			}
 		}
-		if (encontrado) {
-			return i;
-		} else {
-			return -1;
-		}
+		return mensaje;
 	}
 
 }

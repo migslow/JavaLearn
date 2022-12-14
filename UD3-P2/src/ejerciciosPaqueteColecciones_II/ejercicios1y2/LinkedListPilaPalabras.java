@@ -2,12 +2,9 @@ package ejerciciosPaqueteColecciones_II.ejercicios1y2;
 
 import java.util.LinkedList;
 
-import _03colecciones2.Libro;
-import _03colecciones2_2.Persona;
-
 public class LinkedListPilaPalabras {
 
-	private LinkedList<Palabra> lista = new LinkedList<Palabra>();
+	private LinkedList<String> lista = new LinkedList<String>();
 
 	public boolean pilaPalabrasVacia() {
 		return lista.isEmpty();
@@ -16,35 +13,31 @@ public class LinkedListPilaPalabras {
 	public int NumeropilaPalabras() {
 		return lista.size();
 	}
-	
-	public boolean apilarPalabra(Palabra p) {
-		return lista.add(p);
+
+	public void apilarPalabra(String p) {
+		lista.add(p);
 	}
 
-	public boolean desapilarPalabra(Palabra p) {
-		return lista.remove(p);
+	public String desapilarPalabra() {
+		return lista.remove(lista.size() - 1);
 	}
 
-	public int buscar(String parte) {
-		int i = 0;
-		boolean encontrado = false;
-		while ((i < lista.size()) && (!encontrado)) {
-			if ((lista.get(i).damePalabra().toUpperCase().contains(parte.toUpperCase()))) {
-				encontrado = true;
-			} else {
-				i++;
+	public String obtenerPalabraCima() {
+		return lista.get(lista.size() - 1);
+	}
+
+	@Override
+	public String toString() {
+		String mensaje;
+		if (pilaPalabrasVacia()) {
+			return "La lista de esta vacia";
+		} else {
+			mensaje = NumeropilaPalabras() + " Productos en la lista: \n-----------------------------------------\n";
+			for (int i = 0; i < NumeropilaPalabras(); i++) {
+				mensaje = mensaje + lista.get(i) + "\n";
 			}
 		}
-		if (encontrado) {
-			return i;
-		} else {
-			return -1;
-		}
+		return mensaje;
 	}
 
-	public void imprimirLista() {
-		for(Palabra p: lista) {
-			System.out.println(lista);
-		}
-	}
 }
