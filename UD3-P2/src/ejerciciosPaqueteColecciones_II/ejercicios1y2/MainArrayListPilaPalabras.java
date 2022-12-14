@@ -19,7 +19,7 @@ public class MainArrayListPilaPalabras {
 		System.out.println("\nBuscar una palabra");
 		System.out.println(a.obtenerPalabraCima());
 		System.out.println("\nVolver a comprobar si se a borrado bien y el numero del tamaño");
-		System.out.println(a.NumeropilaPalabras());
+		System.out.println(a);
 
 	}
 
