@@ -11,11 +11,14 @@ public class PruebaUsuario1 {
 		lista.add(new Usuario1("dos", 2));
 		lista.add(new Usuario1("tres", 3));
 		lista.add(new Usuario1("cuatro", 44));
-		System.out.println("\n Imprimo el objeto lista directamente:");
+		Usuario1 u1 = new Usuario1("Luis", 23);
+		Usuario1 u2 = new Usuario1("Alberto", 45);
+		
+		System.out.println("\nImprimo el objeto lista directamente:");
 		System.out.println(lista);
-		System.out.println("\n Imprimo el objeto lista con m�todo;");
+		System.out.println("\nImprimo el objeto lista con m�todo;");
 		imprimirLista(lista);
-		System.out.println("\n Ahora ordenados por nombre...");
+		System.out.println("\nAhora ordenados por nombre...");
 		Collections.sort(lista, new NombreComparator());
 		// metodo que imprime la lista
 		imprimirLista(lista);
@@ -23,6 +26,8 @@ public class PruebaUsuario1 {
 		Collections.sort(lista, new EdadComparator());
 		// metodo que imprime la lista
 		imprimirLista(lista);
+		System.out.println("\nComparando los nombres");
+		System.out.println(u1.compareTo(u2));
 
 	}
 

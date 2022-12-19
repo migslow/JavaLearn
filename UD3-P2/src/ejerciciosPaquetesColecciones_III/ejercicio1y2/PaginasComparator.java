@@ -6,7 +6,8 @@ public class PaginasComparator implements Comparator<Libro>{
 
 	@Override
 	public int compare(Libro o1, Libro o2) {
-		return Integer.valueOf(o1.getPaginas()).compareTo(o2.getPaginas());
+		return o1.getPaginas() - o2.getPaginas();
+		// return Integer.valueOf(o1.getPaginas()).compareTo(o2.getPaginas());
 	}
 
 }

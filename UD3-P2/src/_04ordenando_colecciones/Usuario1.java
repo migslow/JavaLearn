@@ -1,6 +1,6 @@
 package _04ordenando_colecciones;
 
-public class Usuario1 {
+public class Usuario1 implements Comparable<Usuario1> {
 	private String nombre;
 	private int edad;
 
@@ -19,5 +19,11 @@ public class Usuario1 {
 
 	public String toString() {
 		return nombre + " (" + edad + ")";
+	}
+
+	@Override
+	public int compareTo(Usuario1 o) {
+		// return this.edad - o.getEdad();
+		return nombre.compareToIgnoreCase(o.getNombre());
 	}
 }

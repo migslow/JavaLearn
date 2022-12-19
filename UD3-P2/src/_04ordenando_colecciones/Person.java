@@ -1,7 +1,6 @@
 package _04ordenando_colecciones;
 
 public class Person implements Comparable<Person> {
-
 	private int idPersona;
 	private String nombre;
 	private int altura;
@@ -19,8 +18,11 @@ public class Person implements Comparable<Person> {
 
 	@Override
 	public int compareTo(Person o) {
-		return this.nombre.compareTo(o.nombre);
-
+		return altura - o.getAltura();
+		// return idPersona - o.getidPersona(); Ascendente
+		// return -(idPersona - o.getidPersona()); Descendente
+		// return nombre.compareToIgnoreCase(o.getNombre()); Ordenar alfabeticamente
+		
 	}
 
 	public int getIdPersona() {

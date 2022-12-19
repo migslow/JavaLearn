@@ -6,7 +6,8 @@ public class TituloComparator implements Comparator<Libro>{
 
 	@Override
 	public int compare(Libro o1, Libro o2) {
-		return String.valueOf(o1.getTitulo()).compareTo(o2.getTitulo());
+		return o1.getTitulo().compareToIgnoreCase(o2.getTitulo());
+		// return String.valueOf(o1.getTitulo()).compareTo(o2.getTitulo());
 	}
 
 }

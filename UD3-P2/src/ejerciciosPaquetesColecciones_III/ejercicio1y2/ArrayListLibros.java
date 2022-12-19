@@ -17,18 +17,6 @@ public class ArrayListLibros {
 		return lista.size();
 	}
 
-	public boolean insertarOrden(Libro p) {
-		int i = 0;
-		boolean encontrado = false;
-		while ((i < lista.size()) && (!encontrado)) {
-			encontrado = (lista.get(i).getTitulo().compareTo(p.getTitulo())) > 0;
-			if (!encontrado)
-				i++;
-		}
-		lista.add(i, p);
-		return true;
-	}
-
 	public int buscar(String parte) {
 		int i = 0;
 		boolean encontrado = false;
@@ -90,21 +78,21 @@ public class ArrayListLibros {
 		Collections.sort(lista, new PaginasComparator());
 		System.out.println("Lista ordenada por el numero de paginas de todos los libros");
 	}
-	
+
 	public void compararTitulo() {
 		Collections.sort(lista, new TituloComparator());
 		System.out.println("Lista ordenada por el titulo de todos los libros");
 	}
-}
 
-/*
- * public String toString() { String cad = lista.size() +
- * " Elementos de la lista:\n\n"; for (Libro l: lista) cad += l +
- * "\n-----------------------------------------------\n"; return cad; }
- */
-/*
- * public String toString() { String cad = lista.size() +
- * " Elementos de la lista:\n\n"; Iterator it = lista.iterator();
- * while(it.hasNext()) { cad += it.next() +
- * "\n-----------------------------------------------\n"; } return cad; }
- */
+	public void ordenarPorEditorial() {
+		Collections.sort(lista);
+	}
+
+	public void ordenarPorPaginas() {
+		Collections.sort(lista, new PaginasComparator());
+	}
+
+	public void ordenarPorTitulo() {
+		Collections.sort(lista, new TituloComparator());
+	}
+}
