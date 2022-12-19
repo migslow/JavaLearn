@@ -17,9 +17,9 @@ public class MainArrayListLibrosStream {
 
 		ArrayListLibros a = new ArrayListLibros();
 		System.out.println(a.vacia());
-		a.insertarOrden(l1);
-		a.insertarOrden(l2);
-		a.insertarOrden(l3);
+		a.insertar(l1);
+		a.insertar(l2);
+		a.insertar(l3);
 		System.out.println(a.buscarTodos("java"));
 		System.out.println(
 				a.contiene(new Libro("Beginning Java", p1, "0-13-031997-X", 546, 3, "Addison", "Madrid-Espa�a", f1))
