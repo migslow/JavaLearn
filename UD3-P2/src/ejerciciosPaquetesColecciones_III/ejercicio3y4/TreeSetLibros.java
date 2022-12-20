@@ -1,10 +1,9 @@
 package ejerciciosPaquetesColecciones_III.ejercicio3y4;
 
-import java.util.Collections;
-import java.util.HashSet;
+import java.util.TreeSet;
 
-public class HashSetLibros {
-	private HashSet<Libro> lista = new HashSet<Libro>();
+public class TreeSetLibros {
+	private TreeSet<Libro> lista = new TreeSet<Libro>();
 
 	public boolean vacia() {
 		return lista.isEmpty();
@@ -42,7 +41,7 @@ public class HashSetLibros {
 	}
 
 	public String toString() {
-		return "HashSetLibros [lista=" + lista + "]";
+		return "TreeSetLibros [lista=" + lista + "]";
 	}
 
 	/*
