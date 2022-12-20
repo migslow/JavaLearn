@@ -1,4 +1,4 @@
-package ejerciciosPaquetesColecciones_III.ejercicio3y4;
+package ejerciciosPaquetesColecciones_III.ejercicio3_4_5;
 // Persona.java: una clase para representar personas
 
 public class Persona {

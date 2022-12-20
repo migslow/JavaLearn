@@ -1,4 +1,4 @@
-package ejerciciosPaquetesColecciones_III.ejercicio3y4;
+package ejerciciosPaquetesColecciones_III.ejercicio3_4_5;
 // Nif.java: una clase Nif para representar N.I.F.s
 
 public class Nif {

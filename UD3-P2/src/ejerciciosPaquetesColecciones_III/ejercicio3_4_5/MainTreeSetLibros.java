@@ -1,11 +1,11 @@
-package ejerciciosPaquetesColecciones_III.ejercicio3y4;
+package ejerciciosPaquetesColecciones_III.ejercicio3_4_5;
 
 import java.util.HashSet;
 import java.util.Iterator;
 
 import _02colecciones1.Lista;
 
-public class MainHashSetLibros {
+public class MainTreeSetLibros {
 
 	public static void main(String args[]) {
 
@@ -16,7 +16,7 @@ public class MainHashSetLibros {
 		Libro l3 = new Libro("Avanzado c#", new Persona(435762, 31, "Javier", "Hernandez Perez"), "0-13-031997-X", 123,
 				3, "McGraw-Hill", "Madrid-Espa�a", new Fecha(16, 11, 2001));
 
-		HashSetLibros lista = new HashSetLibros();
+		TreeSetLibros lista = new TreeSetLibros();
 		
 		System.out.println("Libros añadidos a la lista");
 		System.out.println(lista.insertar(l1));

@@ -1,4 +1,4 @@
-package ejerciciosPaquetesColecciones_III.ejercicio3y4;
+package ejerciciosPaquetesColecciones_III.ejercicio3_4_5;
 
 import java.util.Collections;
 import java.util.HashSet;

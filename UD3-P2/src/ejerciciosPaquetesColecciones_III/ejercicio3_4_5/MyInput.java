@@ -1,4 +1,4 @@
-package ejerciciosPaquetesColecciones_III.ejercicio3y4;
+package ejerciciosPaquetesColecciones_III.ejercicio3_4_5;
 
 // MyInput.java: Contain the methods for reading int, double, and
 // string values from the keyboard
