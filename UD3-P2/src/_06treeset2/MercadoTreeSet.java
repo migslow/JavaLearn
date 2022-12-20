@@ -17,7 +17,7 @@ public class MercadoTreeSet {
 		Producto res = new Producto("Carne", 3);
 
 		// Definir un TreeSet
-		TreeSet lista = new TreeSet();
+		TreeSet<Producto> lista = new TreeSet<Producto>();
 		lista.add(pan);
 		lista.add(leche);
 		lista.add(manzanas);
@@ -43,9 +43,9 @@ public class MercadoTreeSet {
 		mostrarLista(lista);
 	}
 
-	public static void mostrarLista(TreeSet lista) {
-		System.out.println("Lista del mercado con " + lista.size() + " productos");
-		for (Iterator it = lista.iterator(); it.hasNext();) {
+	public static void mostrarLista(TreeSet<Producto> lista) {
+		System.out.println("\nLista del mercado con " + lista.size() + " productos");
+		for (Iterator<Producto> it = lista.iterator(); it.hasNext();) {
 			Producto producto = (Producto) it.next();
 			System.out.println(producto);
 		}

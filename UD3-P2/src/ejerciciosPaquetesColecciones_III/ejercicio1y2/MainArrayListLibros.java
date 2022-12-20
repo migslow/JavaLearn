@@ -32,5 +32,8 @@ public class MainArrayListLibros {
 		System.out.println("\nComparar por titulo de los libros");
 		a.compararTitulo();
 		System.out.println(a);
+		
+		// Funciones Lambda
+		a.funcionesLambda();
 	}
 }

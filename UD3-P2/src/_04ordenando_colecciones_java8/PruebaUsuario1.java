@@ -7,7 +7,6 @@ public class PruebaUsuario1 {
 
 	public static void main(String[] args) {
 		ArrayList<Usuario1> lista = new ArrayList<Usuario1>();
-
 		lista.add(new Usuario1("uno", 11));
 		lista.add(new Usuario1("dos", 2));
 		lista.add(new Usuario1("tres", 3));
@@ -23,5 +22,11 @@ public class PruebaUsuario1 {
 		lista = lista.stream().sorted((x, y) -> x.getNombre().compareToIgnoreCase(y.getNombre()))
 				.collect(Collectors.toCollection(ArrayList::new));
 		System.out.println(lista);
+		System.out.println();
+		lista.stream()
+				.peek(u -> u.setEdad(u.getEdad() + 1))
+				.filter(u -> u.getEdad() > 10)
+				.collect(Collectors.toCollection(ArrayList::new))
+				.forEach(y -> y.mostrarDatos());
 	}
 }

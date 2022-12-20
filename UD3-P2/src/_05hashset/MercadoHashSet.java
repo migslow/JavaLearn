@@ -26,7 +26,7 @@ public class MercadoHashSet {
 // Aunque son insertados 7 elementos, el HashSet solo contiene 5 
 // Se debe a que un Set no permite elementos duplicados. 
 
-		System.out.println(" Lista del mercado con " + lista.size() + " productos");
+		System.out.println("Lista del mercado con " + lista.size() + " productos");
 
 // Definir Iterator para extraer e imprimir valores 
 
@@ -39,7 +39,7 @@ public class MercadoHashSet {
 // En un HashSet solo se elimina por valor de Objeto 
 
 		lista.remove(manzanas);
-		System.out.println(" Lista del mercado con " + lista.size() + " productos");
+		System.out.println("\nLista del mercado con " + lista.size() + " productos");
 
 		for (Iterator<Producto> it = lista.iterator(); it.hasNext();) {
 			Producto producto = it.next();
@@ -49,6 +49,6 @@ public class MercadoHashSet {
 
 // Eliminar todos los valores 
 		lista.clear();
-		System.out.println(" Lista del mercado con " + lista.size() + " productos");
+		System.out.println("\nLista del mercado con " + lista.size() + " productos");
 	}
 }

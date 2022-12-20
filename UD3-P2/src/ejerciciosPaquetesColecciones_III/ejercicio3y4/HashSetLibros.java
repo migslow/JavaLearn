@@ -1,37 +1,32 @@
-package ejerciciosPaquetesColecciones_III.ejercicio1y2;
+package ejerciciosPaquetesColecciones_III.ejercicio3y4;
 
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
+import java.util.HashSet;
 
-public class ArrayListLibros {
-	private ArrayList<Libro> lista = new ArrayList<Libro>();
+public class HashSetLibros {
+	private HashSet<Libro> lista = new HashSet<Libro>();
 
 	public boolean vacia() {
 		return lista.isEmpty();
 	}
 
-	public int length() {
+	public int tamanyo() {
 		return lista.size();
 	}
 
-	public int buscar(String parte) {
-		int i = 0;
-		boolean encontrado = false;
-		while ((i < lista.size()) && (!encontrado)) {
-			if ((lista.get(i).getTitulo().toUpperCase().indexOf(parte.toUpperCase())) != -1)
-				encontrado = true;
-			else
-				i++;
+	public String buscarLibro(String titulo) {
+		String encontrados = "\nLibros encontrados por el titulo " + titulo + "\n";
+		for (int i = 0; i < tamanyo(); i++) {
+			if (lista.contains(titulo.toLowerCase().compareToIgnoreCase(titulo.toLowerCase()))
+					&& lista.contains(titulo.toUpperCase().compareToIgnoreCase(titulo.toUpperCase()))) {
+				encontrados = encontrados + lista.hashCode() + "\n-----------------------\n";
+			}
 		}
-		if (encontrado)
-			return i;
-		else
-			return -1;
+		return encontrados;
 	}
-
-	public String buscarTodos(String parte) {
-		String encontrados = "Libros que contienen la cadena " + parte + ": " + "\n\n";
+/*
+	public void imprimirLibros() {
+		String encontrados = "Libros que se encuentran en la lista: " + "\n\n";
 		for (int i = 0; i < lista.size(); i++) {
 			if (lista.get(i).getTitulo().toLowerCase().contains(parte.toLowerCase())) {
 				encontrados = encontrados + lista.get(i) + "\n-----------------------\n";
@@ -39,7 +34,7 @@ public class ArrayListLibros {
 		}
 		return encontrados;
 	}
-
+*/
 	public boolean contiene(Libro p) {
 		return lista.contains(p);
 	}
@@ -57,7 +52,7 @@ public class ArrayListLibros {
 			return true;
 		}
 	}
-
+/*
 	public Libro recuperar(int pos) {
 		if ((pos < 1) || (pos > lista.size())) {
 			return null;
@@ -93,7 +88,7 @@ public class ArrayListLibros {
 	public void ordenarPorTitulo() {
 		Collections.sort(lista, new TituloComparator());
 	}
-
+*/
 	public void funcionesLambda() {
 		System.out.println("\nComparar por paginas de los libros con Lambda");
 		lista.stream().sorted((x, y) -> x.getPaginas() - (y.getPaginas())).forEach(y -> y.mostrarDatos());

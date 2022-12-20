@@ -17,11 +17,19 @@ public class Usuario1 {
 		return edad;
 	}
 
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+
 	public String toString() {
 		return nombre + " (" + edad + ")";
 	}
 
 	public void mostrarDatos() {
-		System.out.println(nombre + " - " + edad + " a�os");
+		System.out.println(nombre + " - " + edad + " años");
 	}
 }

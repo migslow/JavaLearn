@@ -2,7 +2,7 @@ package ejerciciosPaquetesColecciones_III.ejercicio3y4;
 
 import java.util.Objects;
 
-public class Libro {
+public class Libro implements Comparable<Libro>{
 	private String titulo;
 	private Persona autor;
 	private String isbn;
@@ -110,6 +110,16 @@ public class Libro {
 	public String toString() {
 		return ("Titulo :" + titulo + "\n" + edicion + "a. edicion\n" + "Autor : " + autor + "ISBN  : " + isbn + "\n"
 				+ editorial + ", " + lugar + ", " + fechaEdicion + "\n" + paginas + " paginas");
+	}
+
+	public void mostrarDatos() {
+		System.out.println(titulo + " - " + paginas + " paginas");
+	}
+
+	// Comparando por editorial
+	@Override
+	public int compareTo(Libro o) {
+		return editorial.compareToIgnoreCase(editorial);
 	}
 
 }

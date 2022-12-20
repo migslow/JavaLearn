@@ -1,7 +1,8 @@
 package _05hashset;
 
-public class Producto {
+import java.util.Objects;
 
+public class Producto {
 	private String nombre;
 	private int cantidad;
 
@@ -10,27 +11,22 @@ public class Producto {
 		cantidad = i;
 	}
 
-	public String toString() {
-		return ("Nombre: " + nombre + " Cantidad: " + cantidad);
-	}
-
 	public String getNombre() {
 		return this.nombre;
 	}
 
-	public boolean equals(Object objeto) {
-		if (objeto == null)
-			return false;
-
-		Producto producto = (Producto) objeto;
-		if (this.getNombre().equals(producto.getNombre()))
-			return true;
-
-		return false;
-	}
-
+	@Override
 	public int hashCode() {
-		return this.getNombre().hashCode();
+		return Objects.hash(cantidad, nombre);
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		Producto other = (Producto) obj;
+		return cantidad == other.cantidad && Objects.equals(nombre, other.nombre);
+	}
+
+	public String toString() {
+		return ("Nombre: " + nombre + " Cantidad: " + cantidad);
+	}
 }

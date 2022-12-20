@@ -16,12 +16,12 @@ public class HashSetEjemplo1 {
 		System.out.println(conjunto);
 		System.out.println("");
 
-		System.out.println("Utilizamos un Iterator para imprimir los elementos");
+		System.out.println("\nUtilizamos un Iterator para imprimir los elementos");
 		Iterator<String> itr = conjunto.iterator();
 		while (itr.hasNext())
 			System.out.println(itr.next());
 
-		System.out.println("Utilizamos un bucle for each para imprimir los elementos");
+		System.out.println("\nUtilizamos un bucle for each para imprimir los elementos");
 		for (String s : conjunto)
 			System.out.println(s);
 
