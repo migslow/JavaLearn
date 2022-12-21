@@ -20,11 +20,11 @@ public class ProgramaExcepcionesMejorado {
 			System.out.println("Intentamos ejecutar el bloque de instrucciones:");
 			System.out.println("Instrucci�n 1.");
 			// int n = Integer.parseInt("M"); //error forzado en tiempo de ejecuci�n.
-			if (esNumero(s))
+			if (esNumero(s)) {
 				n = Integer.parseInt(s);
-			else
+			} else {
 				System.out.println("No puedo convertir " + s);
-
+			}
 			System.out.println("Instrucci�n 2.");
 			System.out.println("Instrucci�n 3, etc.");
 		} catch (Exception e) {
