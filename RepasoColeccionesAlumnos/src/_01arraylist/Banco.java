@@ -7,54 +7,58 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Banco {
-private ArrayList<Cuenta> listaCuentas;
+	private ArrayList<Cuenta> listaCuentas;
 
-public Banco() {
- listaCuentas = new ArrayList<Cuenta>();
-}
+	public Banco() {
+		listaCuentas = new ArrayList<Cuenta>();
+	}
 
-public int tamanyo() {
-	//Devolver el tamaño de listaCuentas
-}
+	public int tamanyo() {
+		return listaCuentas.size();
+	}
 
-public void annadirCuenta(Cuenta c) {
-	  // método add
-}
+	public void annadirCuenta(Cuenta c) {
+		System.out.println(listaCuentas.add(c));
+	}
 
-public boolean borrarCuenta(Cuenta c) {
-	return listaCuentas.remove(c);
-	
-	
-} // de borrarCuenta
+	public boolean borrarCuenta(Cuenta c) {
+		return listaCuentas.remove(c);
 
-public boolean borrarCuentaPorNumero(long c) { // Borrar cuenta por número de cuenta
- // NO HAY PROBLEMA EN NO USAR ITERATOR a la hora de recorrer listaCuentas, 
- //PUES EN EL MOMENTO EN QUE LA ENCUENTRO PARO y DEVUELVO TRUE
-// La instrucción siguiente al bucle anterior se ejecutará si no ha encontrado la cuenta. Poner allí  return false
+	} // de borrarCuenta
 
+	public boolean borrarCuentaPorNumero(long c) { // Borrar cuenta por nï¿½mero de cuenta
+		String encontrados = "Cuentas encontradas por el numero: " + c + "\n\n";
+		for(int i = 0; i < tamanyo();i++) {
+			if(listaCuentas.get(i).getNumero() == c) {
+				encontrados = encontrados + listaCuentas.get(i);
+				return true;
+			}
+		}
+		// NO HAY PROBLEMA EN NO USAR ITERATOR a la hora de recorrer listaCuentas,
+		// PUES EN EL MOMENTO EN QUE LA ENCUENTRO PARO y DEVUELVO TRUE
+// La instrucciï¿½n siguiente al bucle anterior se ejecutarï¿½ si no ha encontrado la cuenta. Poner allï¿½  return false
+		return false;
 
-}
+	}
 // de borrarCuentaPorNumero
 
-public boolean contieneCuenta(Cuenta c) {
-	return listaCuentas.contains(c);
-	
-}// de contieneCuenta
+	public boolean contieneCuenta(Cuenta c) {
+		return listaCuentas.contains(c);
 
-public boolean contieneCuentaMejorado(Cuenta c) {
-	//Muy parecido a contieneCuenta2 de la clase Banco del paquete __00arrays
-}
+	}// de contieneCuenta
+
+	public boolean contieneCuentaMejorado(Cuenta c) {
+		// Muy parecido a contieneCuenta2 de la clase Banco del paquete __00arrays
+	}
 //
 
-public String buscarPorNombre (String n) {
-	 // Muy parecido al del paquete __00arrays
-	
-}// de buscarPorNombre
+	public String buscarPorNombre(String n) {
+		// Muy parecido al del paquete __00arrays
 
+	}// de buscarPorNombre
 
-public void mostrarCuentas() { 
-	  // Idéntico al del paquete __00arrays
-}// de mostrarCuentas
-
+	public void mostrarCuentas() {
+		// Idï¿½ntico al del paquete __00arrays
+	}// de mostrarCuentas
 
 }// de Banco
