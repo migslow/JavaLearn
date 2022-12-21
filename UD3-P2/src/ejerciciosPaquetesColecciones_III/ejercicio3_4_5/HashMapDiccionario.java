@@ -1,8 +1,11 @@
 package ejerciciosPaquetesColecciones_III.ejercicio3_4_5;
 
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class HashMapDiccionario {
+	
+	static Scanner s = new Scanner(System.in);
 	
 	public static void main(String[] args) {
 	HashMap<String, String> traducciones = new HashMap<String, String>();
@@ -38,7 +41,7 @@ public class HashMapDiccionario {
 	public void traduccion(HashMap<String, String> palabra) {
 		for (String clave : palabra.keySet()) {
 			String valor = palabra.get(clave);
-			System.out.println("Clave = " + clave + ", Valor = " + valor);
+			System.out.print("Clave = " + clave + ", Valor = " + valor);
 		}
 	}
 }
