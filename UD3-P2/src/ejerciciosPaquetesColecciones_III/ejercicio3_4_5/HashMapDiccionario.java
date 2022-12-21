@@ -3,6 +3,7 @@ package ejerciciosPaquetesColecciones_III.ejercicio3_4_5;
 import java.util.HashMap;
 
 public class HashMapDiccionario {
+	
 	public static void main(String[] args) {
 	HashMap<String, String> traducciones = new HashMap<String, String>();
 	
@@ -31,5 +32,13 @@ public class HashMapDiccionario {
 	traducciones.put("coche", "car");
 	
     System.out.println(traducciones);
+    
+	}
+	
+	public void traduccion(HashMap<String, String> palabra) {
+		for (String clave : palabra.keySet()) {
+			String valor = palabra.get(clave);
+			System.out.println("Clave = " + clave + ", Valor = " + valor);
+		}
 	}
 }
