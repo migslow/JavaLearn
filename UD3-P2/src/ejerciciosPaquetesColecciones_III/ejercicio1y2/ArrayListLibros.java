@@ -15,21 +15,6 @@ public class ArrayListLibros {
 		return lista.size();
 	}
 
-	public int buscar(String parte) {
-		int i = 0;
-		boolean encontrado = false;
-		while ((i < lista.size()) && (!encontrado)) {
-			if ((lista.get(i).getTitulo().toUpperCase().indexOf(parte.toUpperCase())) != -1)
-				encontrado = true;
-			else
-				i++;
-		}
-		if (encontrado)
-			return i;
-		else
-			return -1;
-	}
-
 	public String buscarTodos(String parte) {
 		String encontrados = "Libros que contienen la cadena " + parte + ": " + "\n\n";
 		for (int i = 0; i < lista.size(); i++) {
