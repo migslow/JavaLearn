@@ -41,7 +41,14 @@ public class Caballo {
 	}
 
 	@Override
+	public boolean equals(Object obj) {
+		Caballo other = (Caballo) obj;
+		return edad == other.edad && Objects.equals(nombre, other.nombre)
+				&& Double.doubleToLongBits(velocidad) == Double.doubleToLongBits(other.velocidad);
+	}
+
+	@Override
 	public String toString() {
-		return "Caballo [nombre=" + nombre + ", edad=" + edad + ", velocidad=" + velocidad + "]";
+		return nombre + ", edad = " + edad + ", velocidad = " + velocidad;
 	}
 }

@@ -1,9 +1,9 @@
 
-public class edadComparable {
+public class edadComparable implements Comparable<Caballo>{
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	@Override
+	public int compareTo(Caballo o) {
+		
 	}
-
+	
 }
