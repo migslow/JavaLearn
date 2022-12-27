@@ -28,8 +28,8 @@ public class Banco {
 
 	public boolean borrarCuentaPorNumero(long c) { // Borrar cuenta por n�mero de cuenta
 		String encontrados = "Cuentas encontradas por el numero: " + c + "\n\n";
-		for(int i = 0; i < tamanyo();i++) {
-			if(listaCuentas.get(i).getNumero() == c) {
+		for (int i = 0; i < tamanyo(); i++) {
+			if (listaCuentas.get(i).getNumero() == c) {
 				encontrados = encontrados + listaCuentas.get(i);
 				return true;
 			}
@@ -49,16 +49,33 @@ public class Banco {
 
 	public boolean contieneCuentaMejorado(Cuenta c) {
 		// Muy parecido a contieneCuenta2 de la clase Banco del paquete __00arrays
+		for (int i = 0; i < tamanyo(); i++) {
+			if (listaCuentas.get(i) == c) {
+				return true;
+			}
+		}
+		return false;
 	}
 //
 
 	public String buscarPorNombre(String n) {
+		String encontrados = "Todos los nombres en contrados por " + n + ": ";
 		// Muy parecido al del paquete __00arrays
+		for (int i = 0; i < tamanyo(); i++) {
+			if (listaCuentas.get(i).getNombre().toLowerCase().contains(n.toLowerCase())) {
+				encontrados = encontrados + listaCuentas.get(i) + "\n-----------------------\n";
+			}
+		}
+		return encontrados;
 
 	}// de buscarPorNombre
 
 	public void mostrarCuentas() {
 		// Id�ntico al del paquete __00arrays
+		String cad = tamanyo() + " Elementos de la lista:\n\n";
+		for (int i = 0; i < listaCuentas.size(); i++)
+			cad = cad + listaCuentas.get(i) + "\n-----------------------------------------------\n";
+		System.out.println(cad);
 	}// de mostrarCuentas
 
 }// de Banco

@@ -22,12 +22,19 @@ public class Main {
 		System.out.println(b.borrarCuentaPorNumero(30)); // TRUE Borro la cuenta n�mero 30
 		System.out.println(b.borrarCuentaPorNumero(25)); // FALSE No Borro una cuenta que no existe
 
+		System.out.println("\nMustra todas las cuentas");
 		b.mostrarCuentas();
-
+		
 		c1 = new Cuenta(60, "Antonino Lasierra", 156000);
+		
+		System.out.println("\nAñade una cuenta");
 		b.annadirCuenta(c1);
+		
+		System.out.println("\nContiene cuenta");
 		System.out.println(b.contieneCuenta(c1)); // TRUE
 		System.out.println(b.contieneCuenta(new Cuenta(40, "Luis Aldea", 19000)));// FALSE
+		
+		System.out.println("\nContiene cuenta mejorado");
 		System.out.println(b.contieneCuentaMejorado(c1)); // TRUE
 		System.out.println(b.contieneCuentaMejorado(new Cuenta(40, "Luis Aldea", 19000)));// TRUE
 		//
