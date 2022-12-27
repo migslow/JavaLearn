@@ -1,3 +1,4 @@
+package RepasoComparatorYComparable;
 import java.util.Comparator;
 
 public class edadComparator implements Comparator<Caballo> {

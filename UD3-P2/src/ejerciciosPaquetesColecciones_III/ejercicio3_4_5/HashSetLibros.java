@@ -36,9 +36,9 @@ public class HashSetLibros {
 		}
 	}
 
-	public boolean insertar(Libro p) {
+	public Libro insertar(Libro p) {
 		lista.add(p);
-		return true;
+		return p;
 	}
 
 	public String toString() {

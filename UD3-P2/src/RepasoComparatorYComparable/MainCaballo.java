@@ -1,3 +1,4 @@
+package RepasoComparatorYComparable;
 
 public class MainCaballo {
 	public static void main(String[] args) {

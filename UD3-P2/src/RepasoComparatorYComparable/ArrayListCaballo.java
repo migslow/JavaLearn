@@ -1,3 +1,4 @@
+package RepasoComparatorYComparable;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -13,8 +14,9 @@ public class ArrayListCaballo {
 		return lista.size();
 	}
 
-	public void insertar(Caballo c) {
+	public Caballo insertar(Caballo c) {
 		lista.add(c);
+		return c;
 	}
 
 	public boolean eliminar(int pos) {
