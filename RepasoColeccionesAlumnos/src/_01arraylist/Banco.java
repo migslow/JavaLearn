@@ -1,81 +1,65 @@
 package _01arraylist;
 
-//Diciembre 2019 - Alberto Carrera
-//Repaso colecciones vistas hasta ahora
-
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.HashSet;
 
 public class Banco {
-	private ArrayList<Cuenta> listaCuentas;
-
-	public Banco() {
-		listaCuentas = new ArrayList<Cuenta>();
-	}
+	private HashSet<Cuenta> listaCuentas = new HashSet<Cuenta>();
 
 	public int tamanyo() {
 		return listaCuentas.size();
 	}
 
 	public void annadirCuenta(Cuenta c) {
-		System.out.println(listaCuentas.add(c));
+		listaCuentas.add(c);
 	}
 
 	public boolean borrarCuenta(Cuenta c) {
 		return listaCuentas.remove(c);
 
-	} // de borrarCuenta
+	}
 
-	public boolean borrarCuentaPorNumero(long c) { // Borrar cuenta por n�mero de cuenta
+	public boolean borrarCuentaPorNumero(long c) {
 		String encontrados = "Cuentas encontradas por el numero: " + c + "\n\n";
-		for (int i = 0; i < tamanyo(); i++) {
-			if (listaCuentas.get(i).getNumero() == c) {
-				encontrados = encontrados + listaCuentas.get(i);
+		for (Cuenta c1 : listaCuentas) {
+			if (c1.getNombre().equals(c1)) {
+				listaCuentas.remove(c1);
 				return true;
 			}
 		}
-		// NO HAY PROBLEMA EN NO USAR ITERATOR a la hora de recorrer listaCuentas,
-		// PUES EN EL MOMENTO EN QUE LA ENCUENTRO PARO y DEVUELVO TRUE
-// La instrucci�n siguiente al bucle anterior se ejecutar� si no ha encontrado la cuenta. Poner all�  return false
+		System.out.println("No he encontrado la cuenta");
 		return false;
-
 	}
-// de borrarCuentaPorNumero
 
 	public boolean contieneCuenta(Cuenta c) {
 		return listaCuentas.contains(c);
-
-	}// de contieneCuenta
+	}
 
 	public boolean contieneCuentaMejorado(Cuenta c) {
-		// Muy parecido a contieneCuenta2 de la clase Banco del paquete __00arrays
-		for (int i = 0; i < tamanyo(); i++) {
-			if (listaCuentas.get(i) == c) {
+		for (Cuenta c1 : listaCuentas) {
+			if (c1.equals(c)) {
 				return true;
 			}
 		}
 		return false;
 	}
-//
 
 	public String buscarPorNombre(String n) {
 		String encontrados = "Todos los nombres en contrados por " + n + ": ";
-		// Muy parecido al del paquete __00arrays
-		for (int i = 0; i < tamanyo(); i++) {
-			if (listaCuentas.get(i).getNombre().toLowerCase().contains(n.toLowerCase())) {
-				encontrados = encontrados + listaCuentas.get(i) + "\n-----------------------\n";
+		for (Cuenta c1 : listaCuentas) {
+			if (c1.getNombre().toLowerCase().contains(n.toLowerCase())
+					&& c1.getNombre().toUpperCase().contains(n.toUpperCase())) {
+				encontrados = encontrados + "\n" + c1 + "\n--------------------------------------------";
 			}
 		}
 		return encontrados;
 
-	}// de buscarPorNombre
+	}
 
 	public void mostrarCuentas() {
-		// Id�ntico al del paquete __00arrays
 		String cad = tamanyo() + " Elementos de la lista:\n\n";
-		for (int i = 0; i < listaCuentas.size(); i++)
-			cad = cad + listaCuentas.get(i) + "\n-----------------------------------------------\n";
+		for (Cuenta c1 : listaCuentas)
+			cad = cad + listaCuentas + "\n-----------------------------------------------\n";
 		System.out.println(cad);
-	}// de mostrarCuentas
+	}
 
-}// de Banco
+}

@@ -20,7 +20,7 @@ public class Main {
 		System.out.println(b.borrarCuenta(new Cuenta(10, "Bel�n Carrera", 75000))); // FALSE
 		System.out.println("\nBorrar Cuenta por numero");
 		System.out.println(b.borrarCuentaPorNumero(30)); // TRUE Borro la cuenta n�mero 30
-		System.out.println(b.borrarCuentaPorNumero(25)); // FALSE No Borro una cuenta que no existe
+		System.out.println(b.borrarCuentaPorNumero(25)); // FALSE No Burro una cuenta que no existe
 
 		System.out.println("\nMustra todas las cuentas");
 		b.mostrarCuentas();
@@ -38,6 +38,7 @@ public class Main {
 		System.out.println(b.contieneCuentaMejorado(c1)); // TRUE
 		System.out.println(b.contieneCuentaMejorado(new Cuenta(40, "Luis Aldea", 19000)));// TRUE
 		//
+		System.out.println();
 		System.out.println(b.buscarPorNombre("CARRERA"));// Imprime cuentas 10 y 50
 
 		// b.mostrarCuentas();

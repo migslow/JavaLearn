@@ -15,6 +15,7 @@ public class Main {
 		b.annadirCuenta(new Cuenta(10, "Bel�n Carrera", 75000));
 		//
 		//
+		/*
 		Cuenta c1 = new Cuenta(55, "Leticia", 57000);
 		b.annadirCuenta(c1);
 
@@ -37,6 +38,7 @@ public class Main {
 		System.out.println(b.borrarCuentaPorNumero(30)); // TRUE BORRA LA CUENTA 30
 		System.out.println("Tama�o de la lista: " + b.tamanyo()); // 5
 		System.out.println(b.borrarCuentaPorNumero(222)); // FALSE NO EXISTE LA CUENTA 222
+		*/
 		System.out.println(b.buscarPorNombre("carrera")); // DEVUELVE LAS CUENTAS DE N� 10 Y 50
 															// Cuenta [numero=50, nombre=Alberto Carrera, saldo=-1300.0]
 															// Cuenta [numero=10, nombre=Bel�n Carrera, saldo=75000.0]
