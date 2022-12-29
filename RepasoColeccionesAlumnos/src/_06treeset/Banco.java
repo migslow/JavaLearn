@@ -1,9 +1,10 @@
-package _05hashset;
+package _06treeset;
 
-import java.util.HashSet;
+import java.util.Collections;
+import java.util.TreeSet;
 
 public class Banco {
-	private HashSet<Cuenta> listaCuentas = new HashSet<Cuenta>();
+	private TreeSet<Cuenta> listaCuentas = new TreeSet<Cuenta>();
 
 	public int tamanyo() {
 		return listaCuentas.size();
@@ -53,6 +54,15 @@ public class Banco {
 			}
 		}
 		return encontrados;
+
+	}
+
+	public void ordenarPorNombreNatural() {
+		Collections.sort(listaCuentas);
+	}
+
+	public void ordenarPorTitulo() {
+		Collections.sort(listaCuentas = new TreeSet<Cuenta>(new NombreComparator()));
 	}
 
 	public void mostrarCuentas() {

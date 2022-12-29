@@ -1,7 +1,5 @@
-package _05hashset;
+package _06treeset;
 // Cuenta.java
-
-import java.util.Objects;
 
 public class Cuenta {
 	private long numero;
@@ -38,13 +36,6 @@ public class Cuenta {
 		saldo = s;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		Cuenta other = (Cuenta) obj;
-		return Objects.equals(nombre, other.nombre) && numero == other.numero
-				&& Double.doubleToLongBits(saldo) == Double.doubleToLongBits(other.saldo);
-	}
-
 	void imprimeCuenta() {
 		System.out.println(numero + " " + nombre + " " + saldo);
 	}
@@ -52,6 +43,16 @@ public class Cuenta {
 	@Override
 	public String toString() {
 		return "Cuenta [numero=" + numero + ", nombre=" + nombre + ", saldo=" + saldo + "]";
+	}
+	
+	public int CompareTo(Cuenta c) {
+		return nombre.compareToIgnoreCase(nombre);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		Cuenta other = (Cuenta) obj;
+		return (numero == other.numero && nombre.equals(other.nombre) && saldo == other.saldo);
 	}
 
 }

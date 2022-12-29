@@ -3,18 +3,15 @@ package _02linkedlist;
 import java.util.LinkedList;
 
 public class Banco {
-	private LinkedList<Cuenta> listaCuentas;
-
-	public Banco() {
-		listaCuentas = new LinkedList<Cuenta>();
-	}
+	private LinkedList<Cuenta> listaCuentas = new LinkedList<Cuenta>();
 
 	public int tamanyo() {
 		return listaCuentas.size();
 	}
 
 	public void annadirCuenta(Cuenta c) {
-		System.out.println(listaCuentas.add(c));
+		listaCuentas.add(c);
+		System.out.println(c);
 	}
 
 	public boolean borrarCuenta(Cuenta c) {

@@ -26,7 +26,6 @@ public class Banco {
 		return true;
 	}
 
-//Borrar cuenta por la POSICI�N en el ARRAY que le paso (Si le paso la 1, se trata de la pos 0 del array...)
 	public boolean borrarCuentaPorPosicion(int pos) {
 		if (pos < 1 || pos > contador) {
 			return false;
@@ -38,17 +37,23 @@ public class Banco {
 		return true;
 	}
 
-// de borrarCuentaPorPosicion
-
-	public int buscarPorNumero(long num) { // Busca cuenta por n�mero de cuenta, devuelve la posici�n (-1 si no la
-											// encuentra)
+	public int buscarPorNumero(long num) {
+		int cont = 0;
+		for (int i = 0; i < contador; i++) {
+			if (listaCuentas[i].getNumero() == num) {
+				listaCuentas[i + 1] = listaCuentas[i];
+				contador++;
+				return 1;
+			}
+		}
+// Busca cuenta por n�mero de cuenta, devuelve la posici�n (-1 si no la encuentra)
 // Si la posici�n del array donde la encuentra es la 0, devuelve 1, si es la 1 devuelve 2....
 // Recorrer el array para comprobar si existe un n�mero de cuenta que coincide con num
 // Si lo encuentra devolver la posici�n+1
 // La siguiente l�nea al bucle anterior no se ejecutar� si lo ha encontrado
 // Por eso, poner all� return -1 para indicar que si llega all� es porque no lo ha encontrado
 
-		return 11111111; // Cambiar
+		return -1;
 
 	}// de buscarPorNumero
 
@@ -65,26 +70,21 @@ public class Banco {
 // de borrarCuentaPorNumero
 
 	public boolean contieneCuenta(Cuenta c) {
-		// Se puede hacer recorriendo el array y utilizando el m�todo equals
-		for(int i = 0; i < listaCuentas.length;i++) {
-			listaCuentas.equals(c);
-			return true;
+		for (int i = 0; i < contador; i++) {
+			if(listaCuentas[i].equals(c)) {
+				return true;
+			}
 		}
-		// Si dentro del bucle coincide (equals) la cuenta c con alguna de la lista,
-		// devolver cierto
-		// La siguiente l�nea al bucle se ejecutar� si no ha encontrado la cuenta,
-		// entonces poner all� que
-		// devuelva false
-
-		return false; // Cambiar
-	} // de ContieneCuenta
+		return false;
+	}
 
 	public boolean contieneCuenta2(Cuenta c) {
-		// Es muy parecido al anterior pero sin utilizar el m�todo equals, un poco m�s
-		// largo
-		// Una cuenta coincidir� con la que buscamos si son iguales los 3 atributos...
-		// En lugar de usar equals comprobar que coinciden los 3 atributos....
-		return false; // Cambiar
+		for (int i = 0; i < contador; i++) {
+			if(listaCuentas[i].getNombre() == c) {
+				return true;
+			}
+		}
+		return false;
 	}
 //
 
@@ -102,8 +102,10 @@ public class Banco {
 	}// de buscarPorNombre
 
 	public void mostrarCuentas() {
-		// Recorrer toda la lista y por cada cuenta llamar al m�todo imprimeCuenta
-		// Basta con un for (int i = 0;.....
-	}// de mostrarCuentas
+		for (int i = 0; i < contador; i++) {
+			listaCuentas[i].imprimeCuenta();
+			System.out.print("\n");
+		}
+	}
 
 }// de Banco

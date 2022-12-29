@@ -1,9 +1,9 @@
 package _01arraylist;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 
 public class Banco {
-	private HashSet<Cuenta> listaCuentas = new HashSet<Cuenta>();
+	private ArrayList<Cuenta> listaCuentas = new ArrayList<Cuenta>();
 
 	public int tamanyo() {
 		return listaCuentas.size();
@@ -11,6 +11,7 @@ public class Banco {
 
 	public void annadirCuenta(Cuenta c) {
 		listaCuentas.add(c);
+		System.out.println(c);
 	}
 
 	public boolean borrarCuenta(Cuenta c) {
@@ -52,14 +53,14 @@ public class Banco {
 			}
 		}
 		return encontrados;
-
 	}
 
 	public void mostrarCuentas() {
-		String cad = tamanyo() + " Elementos de la lista:\n\n";
-		for (Cuenta c1 : listaCuentas)
-			cad = cad + listaCuentas + "\n-----------------------------------------------\n";
-		System.out.println(cad);
+		String mensaje = tamanyo() + " Elementos de la lista:";
+		for (int i = 0; i < tamanyo(); i++) {
+			mensaje = mensaje + "\n" + listaCuentas.get(i) + "\n--------------------------------------------";
+		}
+		System.out.println(mensaje);
 	}
 
 }
