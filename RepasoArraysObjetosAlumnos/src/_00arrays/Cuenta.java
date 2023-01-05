@@ -40,12 +40,12 @@ public class Cuenta {
 	}
 
 	void imprimeCuenta() {
-		System.out.println(numero + " " + nombre + " " + saldo);
+		System.out.println(numero + ", " + nombre + ", " + saldo);
 	}
 
 	@Override
 	public String toString() {
-		return "Cuenta [numero=" + numero + ", nombre=" + nombre + ", saldo=" + saldo + "]";
+		return numero + ", " + nombre + ", " + saldo;
 	}
 
 	@Override

@@ -1,6 +1,7 @@
 package _06treeset;
 
 import java.util.Collections;
+import java.util.List;
 import java.util.TreeSet;
 
 public class Banco {
@@ -62,7 +63,7 @@ public class Banco {
 	}
 
 	public void ordenarPorTitulo() {
-		Collections.sort(listaCuentas = new TreeSet<Cuenta>(new NombreComparator()));
+		Collections.sort((List<Cuenta>) (listaCuentas = new TreeSet<Cuenta>(new NombreComparator())));
 	}
 
 	public void mostrarCuentas() {
