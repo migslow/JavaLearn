@@ -4,8 +4,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.TreeSet;
 
-public class Banco {
-	private TreeSet<Cuenta> listaCuentas = new TreeSet<Cuenta>();
+public class Banco<T> {
+	TreeSet<Cuenta> listaCuentas;
+
+	public Banco() {
+		listaCuentas = new TreeSet<Cuenta>(new NombreComparator());
+	}
 
 	public int tamanyo() {
 		return listaCuentas.size();
@@ -22,7 +26,6 @@ public class Banco {
 	}
 
 	public boolean borrarCuentaPorNumero(long c) {
-		String encontrados = "Cuentas encontradas por el numero: " + c + "\n\n";
 		for (Cuenta c1 : listaCuentas) {
 			if (c1.getNombre().equals(c1)) {
 				listaCuentas.remove(c1);
@@ -58,19 +61,18 @@ public class Banco {
 
 	}
 
-	public void ordenarPorNombreNatural() {
-		Collections.sort(listaCuentas);
-	}
-
-	public void ordenarPorTitulo() {
-		Collections.sort((List<Cuenta>) (listaCuentas = new TreeSet<Cuenta>(new NombreComparator())));
-	}
-
+	/*
+	 * public void ordenarPorNombreNatural() { Collections.sort(listaCuentas); }
+	 * 
+	 * public void ordenarPorTitulo() { Collections.sort(listaCuentas, new
+	 * NombreComparator()); }
+	 */
 	public void mostrarCuentas() {
-		String cad = tamanyo() + " Elementos de la lista:\n\n";
-		for (Cuenta c1 : listaCuentas)
-			cad = cad + listaCuentas + "\n-----------------------------------------------\n";
-		System.out.println(cad);
-	}
+		String mensaje = tamanyo() + " Elementos en la lista\n";
+		for (Cuenta c1 : listaCuentas) {
+			mensaje = mensaje + listaCuentas + "\n------------------------------------------------\n";
+		}
+		System.out.println(mensaje);
+	}// de mostrarCuentas
 
 }

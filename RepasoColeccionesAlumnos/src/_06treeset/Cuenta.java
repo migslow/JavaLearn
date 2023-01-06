@@ -42,17 +42,17 @@ public class Cuenta {
 
 	@Override
 	public String toString() {
-		return "Cuenta [numero=" + numero + ", nombre=" + nombre + ", saldo=" + saldo + "]";
-	}
-	
-	public int CompareTo(Cuenta c) {
-		return nombre.compareToIgnoreCase(nombre);
+		return numero + ", " + nombre + ", " + saldo;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
 		Cuenta other = (Cuenta) obj;
 		return (numero == other.numero && nombre.equals(other.nombre) && saldo == other.saldo);
+	}
+
+	public int compareTo(Cuenta c) {
+		return nombre.compareToIgnoreCase(c.nombre);
 	}
 
 }
