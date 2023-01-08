@@ -1,5 +1,7 @@
 package FullRepaso;
 
+import java.util.Objects;
+
 public class Vehiculo {
 	private String Fabricante;
 	private String Nombre;
@@ -88,9 +90,24 @@ public class Vehiculo {
 	}
 
 	@Override
+	public int hashCode() {
+		return Objects.hash(Color, Fabricante, Nombre, caballosPotencia, kilometros, numPuertas, numRuedas,
+				velocidadMaxima);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		Vehiculo other = (Vehiculo) obj;
+		return Objects.equals(Color, other.Color) && Objects.equals(Fabricante, other.Fabricante)
+				&& Objects.equals(Nombre, other.Nombre) && caballosPotencia == other.caballosPotencia
+				&& kilometros == other.kilometros && numPuertas == other.numPuertas && numRuedas == other.numRuedas
+				&& velocidadMaxima == other.velocidadMaxima;
+	}
+
+	@Override
 	public String toString() {
-		return Fabricante + ", " + Nombre + ", " + Color + ", " + kilometros + ", " + velocidadMaxima + ", " + numPuertas
-				+ ", " + numRuedas + ", " + caballosPotencia;
+		return Fabricante + ", " + Nombre + ", " + Color + ", " + kilometros + ", " + velocidadMaxima + ", "
+				+ numPuertas + ", " + numRuedas + ", " + caballosPotencia;
 	}
 
 }

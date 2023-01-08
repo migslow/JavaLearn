@@ -1,6 +1,7 @@
 package FullRepaso;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import ejerciciosPaquetesColecciones_III.ejercicio1y2.Libro;
 
@@ -230,9 +231,10 @@ public class ArrayListVehiculo {
 		return cvMedia;
 	}
 
-	public boolean borrarKilometraje(int km, int numero) {
+	public boolean borrarKilometraje(String fabi, String nom, int km, int numero) {
 		for (int i = 0; i < tamanyo(); i++) {
-			if (lista.get(i).getKilometros() == km) {
+			if (lista.get(i).getFabricante() == fabi && lista.get(i).getNombre() == nom
+					&& lista.get(i).getKilometros() == km) {
 				lista.get(i).setKilometros(lista.get(i).getKilometros() - numero);
 				return true;
 			}
@@ -240,7 +242,44 @@ public class ArrayListVehiculo {
 		return false;
 	}
 
+	public boolean aumentarCV(String fabi, String nom, int cv, int numero) {
+		for (int i = 0; i < tamanyo(); i++) {
+			if (lista.get(i).getFabricante() == fabi && lista.get(i).getNombre() == nom
+					&& lista.get(i).getCaballosPotencia() == cv) {
+				lista.get(i).setCaballosPotencia(lista.get(i).getCaballosPotencia() + numero);
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public boolean aumentarVelocidad(String fabi, String nom, int velo, int numero) {
+		for (int i = 0; i < tamanyo(); i++) {
+			if (lista.get(i).getFabricante() == fabi && lista.get(i).getNombre() == nom
+					&& lista.get(i).getVelocidadMaxima() == velo) {
+				lista.get(i).setVelocidadMaxima(lista.get(i).getVelocidadMaxima() + numero);
+				return true;
+			}
+		}
+		return false;
+	}
+
 	// COMPARACIONES
+
+	public void compararFabricante() {
+		Collections.sort(lista, new FabricanteComparator());
+		System.out.println("Todos los fabricante ordenados: ");
+	}
+
+	public void compararCV() {
+		Collections.sort(lista, new CVComparator());
+		System.out.println("Todos los coches ordenados por CV: ");
+	}
+
+	public void compararVelocidad() {
+		Collections.sort(lista, new VelocidadComparator());
+		System.out.println("Todos los coches ordenados por su velocidad: ");
+	}
 
 	// IMPRIMIR
 
