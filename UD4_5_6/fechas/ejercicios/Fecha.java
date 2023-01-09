@@ -1,4 +1,4 @@
-package personal;
+package ejercicios;
 
 // Fecha.java: Manejo de fechas
 
