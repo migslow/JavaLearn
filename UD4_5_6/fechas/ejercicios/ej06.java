@@ -18,13 +18,10 @@ public class ej06 {
 		Arrays.sort(a1);
 		Arrays.sort(a2);
 
-		if (a1.length == a2.length) {
-			if (Arrays.equals(a1, a2)) {
-				System.out.println(p1 + " y " + p2 + " son palabras anagramas");
-			}
+		if (Arrays.equals(a1, a2)) {
+			System.out.println(p1 + " y " + p2 + " son palabras anagramas");
 		} else {
 			System.out.println(p1 + " y " + p2 + " no son palabras anagramas");
-
 		}
 
 	}
