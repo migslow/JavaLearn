@@ -58,7 +58,7 @@ public class Multimedia {
 
 	@Override
 	public String toString() {
-		return titulo + ", " + autor + ", " + formato + ", " + duracion;
+		return "Titulo: " + titulo + ", Autor: " + autor + ",  Formato: " + formato + ", Duracion: " + duracion;
 	}
 
 }

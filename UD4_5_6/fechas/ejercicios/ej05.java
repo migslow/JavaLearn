@@ -11,7 +11,7 @@ public class ej05 {
 		System.out.println("\nIntroduce la palabra a buscar: ");
 		String p = s.nextLine();
 		int contador = 0;
-		
+
 		int pos = f.indexOf(p);
 		while (pos != -1) {
 			pos = f.indexOf(p, pos + 1);
