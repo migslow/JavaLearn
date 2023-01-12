@@ -1,14 +1,12 @@
 package FullRepaso;
 
-import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Iterator;
 
-import ejerciciosPaquetesColecciones_III.ejercicio1y2.Libro;
+public class HashSetVehiculo {
 
-public class ArrayListVehiculo {
-
-	ArrayList<Vehiculo> lista = new ArrayList<Vehiculo>();
+	HashSet<Vehiculo> lista = new HashSet<Vehiculo>();
 
 	public boolean vacia() {
 		return lista.isEmpty();
@@ -27,7 +25,7 @@ public class ArrayListVehiculo {
 		return v;
 	}
 
-	public boolean contiene(Libro p) {
+	public boolean contiene(Vehiculo p) {
 		return lista.contains(p);
 	}
 

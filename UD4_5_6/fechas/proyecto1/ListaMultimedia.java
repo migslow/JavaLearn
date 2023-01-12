@@ -30,7 +30,7 @@ public class ListaMultimedia {
 		return total;
 	}
 	
-	public String buscarPorGenero(Disco g) {
+	public int buscarPorGenero(Disco g) {
 		String mensaje = tamanyo() + " Todos los discos encontrados por " + g + ": ";
 		for(Multimedia m : lista) {
 			if(m.g)

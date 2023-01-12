@@ -1,14 +1,12 @@
 package FullRepaso;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.TreeSet;
 
-import ejerciciosPaquetesColecciones_III.ejercicio1y2.Libro;
+public class TreeSetVehiculo {
 
-public class ArrayListVehiculo {
-
-	ArrayList<Vehiculo> lista = new ArrayList<Vehiculo>();
+	TreeSet<Vehiculo> lista = new TreeSet<Vehiculo>();
 
 	public boolean vacia() {
 		return lista.isEmpty();
@@ -27,17 +25,8 @@ public class ArrayListVehiculo {
 		return v;
 	}
 
-	public boolean contiene(Libro p) {
+	public boolean contiene(Vehiculo p) {
 		return lista.contains(p);
-	}
-
-	public boolean buscarPorPosicion(int pos) {
-		if (pos < 1 || pos > tamanyo() || vacia()) {
-			return false;
-		} else {
-			lista.get(pos);
-			return true;
-		}
 	}
 
 	public boolean eliminarPorPosicion(int pos) {
@@ -53,10 +42,9 @@ public class ArrayListVehiculo {
 
 	public String buscarPorFabricante(String parte) {
 		String mensaje = "\nTodos los vehiculos de la lista buscados por " + parte + ": ";
-		for (int i = 0; i < tamanyo(); i++) {
-			if (lista.get(i).getFabricante().toLowerCase().contains(parte.toLowerCase())
-					&& lista.get(i).getFabricante().toUpperCase().contains(parte.toUpperCase())) {
-				mensaje = mensaje + "\n" + lista.get(i) + "\n-----------------------------------------------------";
+		for (Vehiculo v : lista) {
+			if(v.getFabricante().toLowerCase().contains(parte.toLowerCase())) {
+				mensaje = mensaje + "\n" + v + "\n--------------------------------------------------------";
 			}
 		}
 		return mensaje;
@@ -64,7 +52,7 @@ public class ArrayListVehiculo {
 
 	public String borrarPorFabricante(String parte) {
 		String mensaje = "\nTodos los coches que se van a borrar por " + parte + ": ";
-		for (int i = 0; i < tamanyo(); i++) {
+		for () {
 			if (lista.get(i).getFabricante().toLowerCase().contains(parte.toLowerCase())
 					&& lista.get(i).getFabricante().toUpperCase().contains(parte.toUpperCase())) {
 				mensaje = mensaje + "\n" + lista.get(i) + "\n--------------------------------------------------------";

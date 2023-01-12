@@ -1,9 +1,9 @@
 package FullRepaso;
 
-public class PruebaArrayListVehiculo {
+public class PruebaTreeSetVehiculo {
 
 	public static void main(String[] args) {
-		ArrayListVehiculo a = new ArrayListVehiculo();
+		TreeSetVehiculo a = new TreeSetVehiculo();
 
 		System.out.println("Comprobar si la lista esta vacia");
 		System.out.println(a.vacia());

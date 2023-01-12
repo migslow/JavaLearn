@@ -1,9 +1,9 @@
 package FullRepaso;
 
-public class PruebaArrayListVehiculo {
+public class PruebaHashSetVehiculo {
 
 	public static void main(String[] args) {
-		ArrayListVehiculo a = new ArrayListVehiculo();
+		HashSetVehiculo a = new HashSetVehiculo();
 
 		System.out.println("Comprobar si la lista esta vacia");
 		System.out.println(a.vacia());

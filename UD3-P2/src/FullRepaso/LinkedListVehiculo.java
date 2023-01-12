@@ -1,14 +1,14 @@
 package FullRepaso;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.LinkedList;
 
 import ejerciciosPaquetesColecciones_III.ejercicio1y2.Libro;
 
-public class ArrayListVehiculo {
+public class LinkedListVehiculo {
 
-	ArrayList<Vehiculo> lista = new ArrayList<Vehiculo>();
+	LinkedList<Vehiculo> lista = new LinkedList<Vehiculo>();
 
 	public boolean vacia() {
 		return lista.isEmpty();
