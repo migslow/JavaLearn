@@ -19,9 +19,6 @@ public class PruebaTreeSetVehiculo {
 		System.out.println("\nTamaño de la lista: ");
 		System.out.println(a.tamanyo());
 
-		System.out.println("\nEliminar por posicion: ");
-		System.out.println(a.eliminarPorPosicion(2));
-
 		System.out.println("\nTamaño de la lista: ");
 		System.out.println(a.tamanyo());
 		a.mostrarTodo();

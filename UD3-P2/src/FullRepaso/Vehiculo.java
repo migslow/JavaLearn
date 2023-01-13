@@ -2,7 +2,7 @@ package FullRepaso;
 
 import java.util.Objects;
 
-public class Vehiculo {
+public class Vehiculo implements Comparable<Vehiculo>{
 	private String Fabricante;
 	private String Nombre;
 	private String Color;
@@ -108,5 +108,10 @@ public class Vehiculo {
 	public String toString() {
 		return Fabricante + ", " + Nombre + ", " + Color + ", " + kilometros + ", " + velocidadMaxima + ", "
 				+ numPuertas + ", " + numRuedas + ", " + caballosPotencia;
+	}
+
+	@Override
+	public int compareTo(Vehiculo o) {
+		return getKilometros() - o.getKilometros();
 	}
 }
