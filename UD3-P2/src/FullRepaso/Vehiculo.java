@@ -2,8 +2,6 @@ package FullRepaso;
 
 import java.util.Objects;
 
-import _04ordenando_colecciones.Person;
-
 public class Vehiculo {
 	private String Fabricante;
 	private String Nombre;
@@ -111,9 +109,4 @@ public class Vehiculo {
 		return Fabricante + ", " + Nombre + ", " + Color + ", " + kilometros + ", " + velocidadMaxima + ", "
 				+ numPuertas + ", " + numRuedas + ", " + caballosPotencia;
 	}
-	
-	public int compareTo(Vehiculo v) {
-		return kilometros - v.getKilometros();
-	}
-
 }

@@ -1,6 +1,5 @@
 package FullRepaso;
 
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 
@@ -29,15 +28,6 @@ public class HashSetVehiculo {
 		return lista.contains(p);
 	}
 
-	public boolean buscarPorPosicion(int pos) {
-		if (pos < 1 || pos > tamanyo() || vacia()) {
-			return false;
-		} else {
-			lista.get(pos);
-			return true;
-		}
-	}
-
 	public boolean eliminarPorPosicion(int pos) {
 		if (pos < 1 || pos > tamanyo() || vacia()) {
 			return false;
@@ -51,10 +41,9 @@ public class HashSetVehiculo {
 
 	public String buscarPorFabricante(String parte) {
 		String mensaje = "\nTodos los vehiculos de la lista buscados por " + parte + ": ";
-		for (int i = 0; i < tamanyo(); i++) {
-			if (lista.get(i).getFabricante().toLowerCase().contains(parte.toLowerCase())
-					&& lista.get(i).getFabricante().toUpperCase().contains(parte.toUpperCase())) {
-				mensaje = mensaje + "\n" + lista.get(i) + "\n-----------------------------------------------------";
+		for (Vehiculo v : lista) {
+			if (v.getFabricante().toLowerCase().contains(parte.toLowerCase())) {
+				mensaje = mensaje + "\n" + v + "\n--------------------------------------------------------";
 			}
 		}
 		return mensaje;
@@ -62,10 +51,10 @@ public class HashSetVehiculo {
 
 	public String borrarPorFabricante(String parte) {
 		String mensaje = "\nTodos los coches que se van a borrar por " + parte + ": ";
-		for (int i = 0; i < tamanyo(); i++) {
-			if (lista.get(i).getFabricante().toLowerCase().contains(parte.toLowerCase())
-					&& lista.get(i).getFabricante().toUpperCase().contains(parte.toUpperCase())) {
-				mensaje = mensaje + "\n" + lista.get(i) + "\n--------------------------------------------------------";
+		for (Vehiculo v : lista) {
+			if (v.getFabricante().toLowerCase().contains(parte.toLowerCase())
+					&& v.getFabricante().toUpperCase().contains(parte.toUpperCase())) {
+				mensaje = mensaje + "\n" + v + "\n--------------------------------------------------------";
 			}
 		}
 		return mensaje;
@@ -73,10 +62,10 @@ public class HashSetVehiculo {
 
 	public String buscarPorNombre(String parte) {
 		String mensaje = "\nTodos los vehiculos de la lista buscados por " + parte + ": ";
-		for (int i = 0; i < tamanyo(); i++) {
-			if (lista.get(i).getNombre().toLowerCase().contains(parte.toLowerCase())
-					&& lista.get(i).getNombre().toUpperCase().contains(parte.toUpperCase())) {
-				mensaje = mensaje + "\n" + lista.get(i) + "\n-----------------------------------------------------";
+		for (Vehiculo v : lista) {
+			if (v.getNombre().toLowerCase().contains(parte.toLowerCase())
+					&& v.getNombre().toUpperCase().contains(parte.toUpperCase())) {
+				mensaje = mensaje + "\n" + v + "\n-----------------------------------------------------";
 			}
 		}
 		return mensaje;
@@ -84,10 +73,10 @@ public class HashSetVehiculo {
 
 	public String borrarPorNombre(String parte) {
 		String mensaje = "\nTodos los coches que se van a borrar por " + parte + ": ";
-		for (int i = 0; i < tamanyo(); i++) {
-			if (lista.get(i).getNombre().toLowerCase().contains(parte.toLowerCase())
-					&& lista.get(i).getNombre().toUpperCase().contains(parte.toUpperCase())) {
-				mensaje = mensaje + "\n" + lista.get(i) + "\n--------------------------------------------------------";
+		for (Vehiculo v : lista) {
+			if (v.getNombre().toLowerCase().contains(parte.toLowerCase())
+					&& v.getNombre().toUpperCase().contains(parte.toUpperCase())) {
+				mensaje = mensaje + "\n" + v + "\n--------------------------------------------------------";
 			}
 		}
 		return mensaje;
@@ -95,10 +84,10 @@ public class HashSetVehiculo {
 
 	public String buscarPorColor(String parte) {
 		String mensaje = "\nTodos los vehiculos de la lista buscados por " + parte + ": ";
-		for (int i = 0; i < tamanyo(); i++) {
-			if (lista.get(i).getColor().toLowerCase().contains(parte.toLowerCase())
-					&& lista.get(i).getColor().toUpperCase().contains(parte.toUpperCase())) {
-				mensaje = mensaje + "\n" + lista.get(i) + "\n-----------------------------------------------------";
+		for (Vehiculo v : lista) {
+			if (v.getColor().toLowerCase().contains(parte.toLowerCase())
+					&& v.getColor().toUpperCase().contains(parte.toUpperCase())) {
+				mensaje = mensaje + "\n" + v + "\n-----------------------------------------------------";
 			}
 		}
 		return mensaje;
@@ -106,10 +95,10 @@ public class HashSetVehiculo {
 
 	public String borrarPorColor(String parte) {
 		String mensaje = "\nTodos los coches que se van a borrar por " + parte + ": ";
-		for (int i = 0; i < tamanyo(); i++) {
-			if (lista.get(i).getColor().toLowerCase().contains(parte.toLowerCase())
-					&& lista.get(i).getColor().toUpperCase().contains(parte.toUpperCase())) {
-				mensaje = mensaje + "\n" + lista.get(i) + "\n--------------------------------------------------------";
+		for (Vehiculo v : lista) {
+			if (v.getColor().toLowerCase().contains(parte.toLowerCase())
+					&& v.getColor().toUpperCase().contains(parte.toUpperCase())) {
+				mensaje = mensaje + "\n" + v + "\n-----------------------------------------------------";
 			}
 		}
 		return mensaje;
@@ -117,9 +106,9 @@ public class HashSetVehiculo {
 
 	public String buscarPorKilometros(int kilo) {
 		String mensaje = "\nTodos los coches encontrados con el kilometraje " + kilo + ": ";
-		for (int i = 0; i < tamanyo(); i++) {
-			if (lista.get(i).getKilometros() == kilo) {
-				mensaje = mensaje + "\n" + lista.get(i) + "\n---------------------------------------------------------";
+		for (Vehiculo v : lista) {
+			if (v.getKilometros() == kilo) {
+				mensaje = mensaje + "\n" + v + "\n---------------------------------------------------------";
 			}
 		}
 		return mensaje;
@@ -127,9 +116,9 @@ public class HashSetVehiculo {
 
 	public String buscarPorVelocidad(int velo) {
 		String mensaje = "\nTodos los coches encontrados con la velocidad " + velo + ": ";
-		for (int i = 0; i < tamanyo(); i++) {
-			if (lista.get(i).getVelocidadMaxima() == velo) {
-				mensaje = mensaje + "\n" + lista.get(i) + "\n---------------------------------------------------------";
+		for (Vehiculo v : lista) {
+			if (v.getVelocidadMaxima() == velo) {
+				mensaje = mensaje + "\n" + v + "\n---------------------------------------------------------";
 			}
 		}
 		return mensaje;
@@ -137,9 +126,9 @@ public class HashSetVehiculo {
 
 	public String buscarPorNumeroPuertas(int pur) {
 		String mensaje = "\nTodos los coches encontrados con el numero de puertas " + pur + ": ";
-		for (int i = 0; i < tamanyo(); i++) {
-			if (lista.get(i).getNumPuertas() == pur) {
-				mensaje = mensaje + "\n" + lista.get(i) + "\n---------------------------------------------------------";
+		for (Vehiculo v : lista) {
+			if (v.getNumPuertas() == pur) {
+				mensaje = mensaje + "\n" + v + "\n---------------------------------------------------------";
 			}
 		}
 		return mensaje;
@@ -147,9 +136,9 @@ public class HashSetVehiculo {
 
 	public String buscarPorNumeroRuedas(int rue) {
 		String mensaje = "\nTodos los coches encontrados con el numero de ruedas " + rue + ": ";
-		for (int i = 0; i < tamanyo(); i++) {
-			if (lista.get(i).getNumRuedas() == rue) {
-				mensaje = mensaje + "\n" + lista.get(i) + "\n---------------------------------------------------------";
+		for (Vehiculo v : lista) {
+			if (v.getNumRuedas() == rue) {
+				mensaje = mensaje + "\n" + v + "\n---------------------------------------------------------";
 			}
 		}
 		return mensaje;
@@ -157,9 +146,9 @@ public class HashSetVehiculo {
 
 	public String buscarPorCV(int cv) {
 		String mensaje = "\nTodos los coches encontrados con el numero de caballos de potencia " + cv + ": ";
-		for (int i = 0; i < tamanyo(); i++) {
-			if (lista.get(i).getCaballosPotencia() == cv) {
-				mensaje = mensaje + "\n" + lista.get(i) + "\n---------------------------------------------------------";
+		for (Vehiculo v : lista) {
+			if (v.getCaballosPotencia() == cv) {
+				mensaje = mensaje + "\n" + v + "\n---------------------------------------------------------";
 			}
 		}
 		return mensaje;
@@ -169,9 +158,9 @@ public class HashSetVehiculo {
 
 	public int KilometrosMax() {
 		int kiloMax = 0;
-		for (int i = 0; i < tamanyo(); i++) {
-			if (lista.get(i).getKilometros() > kiloMax) {
-				kiloMax = lista.get(i).getKilometros();
+		for (Vehiculo v : lista) {
+			if (v.getKilometros() > kiloMax) {
+				kiloMax = v.getKilometros();
 			}
 		}
 		return kiloMax;
@@ -179,8 +168,8 @@ public class HashSetVehiculo {
 
 	public int KilometrosMedia() {
 		int kilometrosTotal = 0, kilometrosMedia = 0;
-		for (int i = 0; i < tamanyo(); i++) {
-			kilometrosTotal = kilometrosTotal + lista.get(i).getKilometros();
+		for (Vehiculo v : lista) {
+			kilometrosTotal = kilometrosTotal + v.getKilometros();
 		}
 		if (tamanyo() > 0) {
 			kilometrosMedia = kilometrosTotal / tamanyo();
@@ -190,9 +179,9 @@ public class HashSetVehiculo {
 
 	public int velocidadMaxima() {
 		int veloMax = 0;
-		for (int i = 0; i < tamanyo(); i++) {
-			if (lista.get(i).getVelocidadMaxima() > veloMax) {
-				veloMax = lista.get(i).getVelocidadMaxima();
+		for (Vehiculo v : lista) {
+			if (v.getVelocidadMaxima() > veloMax) {
+				veloMax = v.getVelocidadMaxima();
 			}
 		}
 		return veloMax;
@@ -200,8 +189,8 @@ public class HashSetVehiculo {
 
 	public int velocidadMedia() {
 		int velocidadTotal = 0, velocidadMedia = 0;
-		for (int i = 0; i < tamanyo(); i++) {
-			velocidadTotal = velocidadTotal + lista.get(i).getVelocidadMaxima();
+		for (Vehiculo v : lista) {
+			velocidadTotal = velocidadTotal + v.getVelocidadMaxima();
 		}
 		if (tamanyo() > 0) {
 			velocidadMedia = velocidadTotal / tamanyo();
@@ -211,9 +200,9 @@ public class HashSetVehiculo {
 
 	public int CVMaximos() {
 		int cvMax = 0;
-		for (int i = 0; i < tamanyo(); i++) {
-			if (lista.get(i).getCaballosPotencia() > cvMax) {
-				cvMax = lista.get(i).getCaballosPotencia();
+		for (Vehiculo v : lista) {
+			if (v.getCaballosPotencia() > cvMax) {
+				cvMax = v.getCaballosPotencia();
 			}
 		}
 		return cvMax;
@@ -221,8 +210,8 @@ public class HashSetVehiculo {
 
 	public int CVMedia() {
 		int cvTotal = 0, cvMedia = 0;
-		for (int i = 0; i < tamanyo(); i++) {
-			cvTotal = cvTotal + lista.get(i).getCaballosPotencia();
+		for (Vehiculo v : lista) {
+			cvTotal = cvTotal + v.getCaballosPotencia();
 		}
 		if (tamanyo() > 0) {
 			cvMedia = cvTotal / tamanyo();
@@ -231,10 +220,9 @@ public class HashSetVehiculo {
 	}
 
 	public boolean borrarKilometraje(String fabi, String nom, int km, int numero) {
-		for (int i = 0; i < tamanyo(); i++) {
-			if (lista.get(i).getFabricante() == fabi && lista.get(i).getNombre() == nom
-					&& lista.get(i).getKilometros() == km) {
-				lista.get(i).setKilometros(lista.get(i).getKilometros() - numero);
+		for (Vehiculo v : lista) {
+			if (v.getFabricante() == fabi && v.getNombre() == nom && v.getKilometros() == km) {
+				v.setKilometros(v.getKilometros() - numero);
 				return true;
 			}
 		}
@@ -242,10 +230,10 @@ public class HashSetVehiculo {
 	}
 
 	public boolean aumentarCV(String fabi, String nom, int cv, int numero) {
-		for (int i = 0; i < tamanyo(); i++) {
-			if (lista.get(i).getFabricante() == fabi && lista.get(i).getNombre() == nom
-					&& lista.get(i).getCaballosPotencia() == cv) {
-				lista.get(i).setCaballosPotencia(lista.get(i).getCaballosPotencia() + numero);
+		for (Vehiculo v : lista) {
+			if (v.getFabricante() == fabi && v.getNombre() == nom
+					&& v.getCaballosPotencia() == cv) {
+				v.setCaballosPotencia(v.getCaballosPotencia() + numero);
 				return true;
 			}
 		}
@@ -253,10 +241,10 @@ public class HashSetVehiculo {
 	}
 
 	public boolean aumentarVelocidad(String fabi, String nom, int velo, int numero) {
-		for (int i = 0; i < tamanyo(); i++) {
-			if (lista.get(i).getFabricante() == fabi && lista.get(i).getNombre() == nom
-					&& lista.get(i).getVelocidadMaxima() == velo) {
-				lista.get(i).setVelocidadMaxima(lista.get(i).getVelocidadMaxima() + numero);
+		for (Vehiculo v : lista) {
+			if (v.getFabricante() == fabi && v.getNombre() == nom
+					&& v.getVelocidadMaxima() == velo) {
+				v.setVelocidadMaxima(v.getVelocidadMaxima() + numero);
 				return true;
 			}
 		}
@@ -264,7 +252,7 @@ public class HashSetVehiculo {
 	}
 
 	// COMPARACIONES
-
+	/*
 	public void compararFabricante() {
 		Collections.sort(lista, new FabricanteComparator());
 		System.out.println("Todos los fabricante ordenados: ");
@@ -279,7 +267,7 @@ public class HashSetVehiculo {
 		Collections.sort(lista, new VelocidadComparator());
 		System.out.println("Todos los coches ordenados por su velocidad: ");
 	}
-
+	*/
 	/*
 	 * public void ordenacionNatural() { Collections.sort(null); }
 	 */
@@ -288,8 +276,8 @@ public class HashSetVehiculo {
 
 	public void mostrarTodo() {
 		String encontrados = "\n" + tamanyo() + " Elementos de la lista";
-		for (int i = 0; i < tamanyo(); i++) {
-			encontrados = encontrados + "\n" + lista.get(i) + "\n-----------------------------------------";
+		for (Vehiculo v : lista) {
+			encontrados = encontrados + "\n" + v + "\n-----------------------------------------";
 		}
 		System.out.println(encontrados);
 	}
