@@ -37,7 +37,9 @@ public class Main {
 		System.out.println("\nContiene cuenta mejorado");
 		System.out.println(b.contieneCuentaMejorado(c1)); // TRUE
 		System.out.println(b.contieneCuentaMejorado(new Cuenta(40, "Luis Aldea", 19000)));// TRUE
-		//
+		
+		System.out.println();
+		
 		System.out.println(b.buscarPorNombre("CARRERA"));// Imprime cuentas 10 y 50
 
 		// b.mostrarCuentas();

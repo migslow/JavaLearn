@@ -1,7 +1,7 @@
 package _06treeset;
 // Cuenta.java
 
-public class Cuenta {
+public class Cuenta implements Comparable<Cuenta>{
 	private long numero;
 	private String nombre;
 	private double saldo;
@@ -51,8 +51,9 @@ public class Cuenta {
 		return (numero == other.numero && nombre.equals(other.nombre) && saldo == other.saldo);
 	}
 
-	public int compareTo(Cuenta c) {
-		return nombre.compareToIgnoreCase(c.nombre);
+	@Override
+	public int compareTo(Cuenta o) {
+		return (int) (getNumero() - o.getNumero());
 	}
 
 }

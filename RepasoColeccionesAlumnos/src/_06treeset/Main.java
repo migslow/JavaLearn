@@ -23,7 +23,7 @@ public class Main {
 		System.out.println("\nBorrar cuenta por numero");
 		System.out.println(b.borrarCuentaPorNumero(30)); //TRUE Borro la cuenta n�mero 30
 		System.out.println(b.borrarCuentaPorNumero(25)); //FALSE No Borro una cuenta que no existe
-		
+		System.out.println();
 		b.mostrarCuentas();
 		
 		c1 = new Cuenta(60, "Antonino Lasierra", 156000);

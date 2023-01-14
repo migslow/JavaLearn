@@ -4,12 +4,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.TreeSet;
 
-public class Banco<T> {
-	TreeSet<Cuenta> listaCuentas;
-
-	public Banco() {
-		listaCuentas = new TreeSet<Cuenta>(new NombreComparator());
-	}
+public class Banco {
+	TreeSet<Cuenta> listaCuentas = new TreeSet<Cuenta>(new NombreComparator());
 
 	public int tamanyo() {
 		return listaCuentas.size();
@@ -17,7 +13,6 @@ public class Banco<T> {
 
 	public void annadirCuenta(Cuenta c) {
 		listaCuentas.add(c);
-		System.out.println(c);
 	}
 
 	public boolean borrarCuenta(Cuenta c) {
@@ -27,12 +22,12 @@ public class Banco<T> {
 
 	public boolean borrarCuentaPorNumero(long c) {
 		for (Cuenta c1 : listaCuentas) {
-			if (c1.getNombre().equals(c1)) {
+			if (c1.getNumero() == c) {
 				listaCuentas.remove(c1);
 				return true;
 			}
 		}
-		System.out.println("No he encontrado la cuenta");
+		System.out.println("No se puede borrar la cuenta");
 		return false;
 	}
 
@@ -62,15 +57,18 @@ public class Banco<T> {
 	}
 
 	/*
-	 * public void ordenarPorNombreNatural() { Collections.sort(listaCuentas); }
-	 * 
-	 * public void ordenarPorTitulo() { Collections.sort(listaCuentas, new
-	 * NombreComparator()); }
-	 */
+	public void ordenarPorNombreNatural() {
+		Collections.sort(listaCuentas);
+	}
+
+	public void ordenarPorNombre() {
+		Collections.sort(listaCuentas, new NombreComparator());
+	}
+	*/
 	public void mostrarCuentas() {
 		String mensaje = tamanyo() + " Elementos en la lista\n";
 		for (Cuenta c1 : listaCuentas) {
-			mensaje = mensaje + listaCuentas + "\n------------------------------------------------\n";
+			mensaje = mensaje + c1 + "\n------------------------------------------------\n";
 		}
 		System.out.println(mensaje);
 	}// de mostrarCuentas

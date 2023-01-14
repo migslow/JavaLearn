@@ -36,6 +36,8 @@ public class Main {
 		System.out.println("\nBuscar por numero de cuenta");
 		System.out.println(b.buscarPorNumero(30));
 		
+		System.out.println("\nHasta aqui bien");
+		
 		System.out.println("\nBorrar la cuenta por la posicion");
 		System.out.println(b.borrarCuentaPorPosicion(1)); // TRUE BORRA LA PRIMERA CUENTA, LA DE N� 40.
 		
@@ -44,6 +46,7 @@ public class Main {
 		
 		System.out.println("\nBorrar cuenta por posicion y numero");
 		System.out.println(b.borrarCuentaPorPosicion(7)); // FALSE, SOLO HAY 6 CUENTAS Y LA �LTIMA ES LA 6
+		System.out.println();
 		System.out.println(b.borrarCuentaPorNumero(30)); // TRUE BORRA LA CUENTA 30
 		
 		System.out.println("\nTamaño de la lista: " + b.tamanyo()); // 5

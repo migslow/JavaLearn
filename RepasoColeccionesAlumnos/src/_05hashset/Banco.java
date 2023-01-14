@@ -22,7 +22,7 @@ public class Banco {
 	public boolean borrarCuentaPorNumero(long c) {
 		String encontrados = "Cuentas encontradas por el numero: " + c + "\n\n";
 		for (Cuenta c1 : listaCuentas) {
-			if (c1.getNombre().equals(c1)) {
+			if (c1.getNumero() == c) {
 				listaCuentas.remove(c1);
 				return true;
 			}

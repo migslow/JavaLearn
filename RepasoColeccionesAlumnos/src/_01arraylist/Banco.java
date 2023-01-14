@@ -21,13 +21,13 @@ public class Banco {
 
 	public boolean borrarCuentaPorNumero(long c) {
 		String encontrados = "Cuentas encontradas por el numero: " + c + "\n\n";
-		for (Cuenta c1 : listaCuentas) {
-			if (c1.getNombre().equals(c1)) {
-				listaCuentas.remove(c1);
+		for (int i = 0; i < tamanyo(); i++) {
+			if (listaCuentas.get(i).getNumero() == c) {
+				listaCuentas.remove(c);
 				return true;
 			}
 		}
-		System.out.println("No he encontrado la cuenta");
+		System.out.println("No se puede borrar la cuenta");
 		return false;
 	}
 

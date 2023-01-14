@@ -6,12 +6,8 @@ package _00arrays;
 
 public class Banco {
 	private static final int MAX = 100;
-	private Cuenta[] listaCuentas;
+	private Cuenta[] listaCuentas = new Cuenta[MAX];;
 	private int contador = 0;
-
-	public Banco() {
-		listaCuentas = new Cuenta[MAX];
-	}
 
 	public int tamanyo() {
 		return contador;
@@ -27,11 +23,12 @@ public class Banco {
 	}
 
 	public boolean borrarCuentaPorPosicion(int pos) {
-		if (pos < 1 || pos > tamanyo()) {
+		if (pos < 1 || pos > tamanyo() || pos == 0) {
 			return false;
 		}
 		for (int i = pos; i < tamanyo(); i++) {
 			listaCuentas[i - 1] = listaCuentas[i];
+			contador--;
 		}
 		return true;
 	}
@@ -40,6 +37,7 @@ public class Banco {
 		for (int i = 0; i < tamanyo(); i++) {
 			if (listaCuentas[i].getNumero() == num) {
 				listaCuentas[i + 1] = listaCuentas[i];
+				System.out.println(listaCuentas[i].getNombre());
 				return 1;
 			}
 		}
@@ -53,6 +51,7 @@ public class Banco {
 			for (int i = 0; i < tamanyo(); i++) {
 				if (listaCuentas[i].getNumero() == num) {
 					listaCuentas[i] = listaCuentas[i - 1];
+					System.out.println(listaCuentas[i].getNumero());
 				}
 			}
 		}
@@ -81,7 +80,7 @@ public class Banco {
 		String encontrados = "Todas las cuentas encontradas por " + n + ": " + "\n\n";
 		for (int i = 0; i < tamanyo(); i++) {
 			if (listaCuentas[i].getNombre().toLowerCase().contains(n.toLowerCase())) {
-				encontrados = encontrados + listaCuentas[i] + "\n----------------------------\n";
+				encontrados = encontrados + listaCuentas[i] + "\n-----------------------------------------------\n";
 			}
 		}
 		return encontrados;
