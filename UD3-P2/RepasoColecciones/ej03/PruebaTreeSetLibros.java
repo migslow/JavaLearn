@@ -9,7 +9,6 @@ public class PruebaTreeSetLibros {
 
 		Libro l2 = new Libro("Beginning Java", p1, "0-13-031997-X", 546, 3, "Addison", "Madrid-Espa�a", f1);
 		Libro l3 = new Libro("Avanzado c#", p1, "0-13-031997-X", 546, 3, "McGraw-Hill", "Madrid-Espa�a", f1);
-
 		TreeSetLibros a = new TreeSetLibros();
 		System.out.println(a.vacia());
 		System.out.println(a.insertar(l1));
