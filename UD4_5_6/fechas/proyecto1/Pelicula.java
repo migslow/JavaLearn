@@ -9,8 +9,8 @@ public class Pelicula extends Multimedia {
 		super(titulo, autor, formato, duracion);
 		this.actorPrincipal = actorPrincipal;
 		this.actrizPrincipal = actrizPrincipal;
-		
-		if((this.actorPrincipal == null) && (this.actrizPrincipal== null)) {
+
+		if ((this.actorPrincipal == null) && (this.actrizPrincipal == null)) {
 			throw new IllegalArgumentException("Ambos no pueden ser null");
 		}
 	}

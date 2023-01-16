@@ -17,6 +17,12 @@ public class PruebaListaMultimedia {
 		
 		System.out.println("\nDuracion total: ");
 		System.out.println(lista.duracionTotal());
+		
+		System.out.println("\nCanciones por el genero rock: ");
+		System.out.println(lista.buscarPorGenero("rock"));
+		
+		System.out.println("\nCuantas peliculas no tienes actriz principal: ");
+		System.out.println(lista.peliculasSinActriz());
 
 	}
 
