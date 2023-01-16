@@ -1,5 +1,7 @@
 package FullRepaso;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 
@@ -231,8 +233,7 @@ public class HashSetVehiculo {
 
 	public boolean aumentarCV(String fabi, String nom, int cv, int numero) {
 		for (Vehiculo v : lista) {
-			if (v.getFabricante() == fabi && v.getNombre() == nom
-					&& v.getCaballosPotencia() == cv) {
+			if (v.getFabricante() == fabi && v.getNombre() == nom && v.getCaballosPotencia() == cv) {
 				v.setCaballosPotencia(v.getCaballosPotencia() + numero);
 				return true;
 			}
@@ -242,8 +243,7 @@ public class HashSetVehiculo {
 
 	public boolean aumentarVelocidad(String fabi, String nom, int velo, int numero) {
 		for (Vehiculo v : lista) {
-			if (v.getFabricante() == fabi && v.getNombre() == nom
-					&& v.getVelocidadMaxima() == velo) {
+			if (v.getFabricante() == fabi && v.getNombre() == nom && v.getVelocidadMaxima() == velo) {
 				v.setVelocidadMaxima(v.getVelocidadMaxima() + numero);
 				return true;
 			}
@@ -252,25 +252,8 @@ public class HashSetVehiculo {
 	}
 
 	// COMPARACIONES
-	/*
-	public void compararFabricante() {
-		Collections.sort(lista, new FabricanteComparator());
-		System.out.println("Todos los fabricante ordenados: ");
-	}
 
-	public void compararCV() {
-		Collections.sort(lista, new CVComparator());
-		System.out.println("Todos los coches ordenados por CV: ");
-	}
-
-	public void compararVelocidad() {
-		Collections.sort(lista, new VelocidadComparator());
-		System.out.println("Todos los coches ordenados por su velocidad: ");
-	}
-	*/
-	/*
-	 * public void ordenacionNatural() { Collections.sort(null); }
-	 */
+	
 
 	// IMPRIMIR
 

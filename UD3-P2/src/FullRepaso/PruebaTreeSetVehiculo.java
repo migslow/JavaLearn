@@ -75,19 +75,7 @@ public class PruebaTreeSetVehiculo {
 
 		System.out.println("\nAumentar CV");
 		System.out.println(a.aumentarVelocidad("BMW", "Serie 4 Coupe", 310, 20));
-		/*
-		System.out.println("\nOrdenado por fabricante");
-		a.compararFabricante();
-		a.mostrarTodo();
-
-		System.out.println("\nOrdenado por CV");
-		a.compararCV();
-		a.mostrarTodo();
-
-		System.out.println("\nOrdenado por Velocidad");
-		a.compararVelocidad();
-		a.mostrarTodo();
-		*/
+		
 		System.out.println("\nMuestra la lista con iterator: ");
 		a.mostrarIterator();
 

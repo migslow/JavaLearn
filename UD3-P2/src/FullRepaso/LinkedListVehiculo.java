@@ -282,9 +282,9 @@ public class LinkedListVehiculo {
 		System.out.println("Todos los coches ordenados por su velocidad: ");
 	}
 
-	/*
-	 * public void ordenacionNatural() { Collections.sort(null); }
-	 */
+	public void ordenacionNatural() {
+		Collections.sort(lista);
+	}
 
 	// IMPRIMIR
 
