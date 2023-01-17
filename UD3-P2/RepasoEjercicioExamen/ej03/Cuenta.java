@@ -1,6 +1,6 @@
 package ej03;
 
-public class Cuenta {
+public class Cuenta implements Comparable<Cuenta>{
 
 	private long numero;
 	private String nombre;
@@ -40,6 +40,11 @@ public class Cuenta {
 	@Override
 	public String toString() {
 		return "Cuenta [numero=" + numero + ", nombre=" + nombre + ", saldo=" + saldo + "]";
+	}
+
+	@Override
+	public int compareTo(Cuenta o) {
+		return (int) (numero - o.getNumero());
 	}
 
 }
