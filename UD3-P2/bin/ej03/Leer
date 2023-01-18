@@ -1,0 +1,19 @@
+1. Utilizar la colleccion que quieras (ArrayList, LinkedList, HashSet o TreeSet).
+
+2. Define la coleccion en la clase Banco.
+
+3. Metodos :
+	1. crearCuenta == (añadirCuenta)
+	2. mostrarCuenta y mostrarCuentaIterator
+	3. anyadirCuenta por numero de cuenta
+	4. borrarCuenta (Cuenta c)
+	5. ingresoDineroCuenta
+	6. ordenacion natural y clase comparator ordenarPorNumero
+	7. muestra el tamaño de la lista
+	8. existeCuenta
+	9. saldoMedio
+	10. buscarCuentaPorNumero
+	11. buscarPorNombre
+	12. retirarDinero
+	
+4. Pruebalo en el Main

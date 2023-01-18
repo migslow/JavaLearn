@@ -4,44 +4,30 @@ public class Libro extends Biblioteca implements Prestable {
 
 	private boolean prestado;
 
-	public Libro(int codigo, String titulo, int añoPublicacion) {
-		super(codigo, titulo, añoPublicacion);
+	public Libro() {
+		super();
+		prestado = false;
+	}
+
+	public Libro(String codigo, String titulo, int año, boolean prestado) {
+		super(codigo, titulo, año);
+
 		this.prestado = false;
-	}
-
-	public boolean isPrestado() {
-		return prestado;
-	}
-
-	public void setPrestado(boolean prestado) {
-		this.prestado = prestado;
-	}
-
-	@Override
-	public int getCodigo() {
-		return super.getCodigo();
-	}
-
-	@Override
-	public int getAñoPublicacion() {
-		return super.getAñoPublicacion();
 	}
 
 	@Override
 	public String toString() {
-		return super.toString() + ", " + prestado;
+		return super.toString() + " prestado: " + prestado + "\n";
 	}
 
 	@Override
 	public void prestar() {
 		prestado = true;
-
 	}
 
 	@Override
 	public void devolver() {
 		prestado = false;
-
 	}
 
 	@Override
