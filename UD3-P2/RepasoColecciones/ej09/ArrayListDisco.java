@@ -18,6 +18,11 @@ public class ArrayListDisco {
 	public boolean contiene(Disco c) {
 		return lista.contains(c);
 	}
+	
+	public Disco crearDisco(Disco d) {
+		lista.add(d);
+		return d;
+	}
 
 	public boolean anyadirDisco(Disco c) {
 		for (Disco d : lista) {
@@ -75,8 +80,8 @@ public class ArrayListDisco {
 	public String buscarPorGenero(String t) {
 		String mensaje = "\nElementos de la lista encontrados por " + t + ": ";
 		for (Disco d : lista) {
-			if (d.getTitulo().toLowerCase().contains(t.toLowerCase())
-					&& d.getTitulo().toUpperCase().contains(t.toUpperCase())) {
+			if (d.getGenero().toLowerCase().contains(t.toLowerCase())
+					&& d.getGenero().toUpperCase().contains(t.toUpperCase())) {
 				mensaje = mensaje + "\n" + d + "\n---------------------------------------------------------------";
 			}
 		}
@@ -106,7 +111,7 @@ public class ArrayListDisco {
 	public boolean cambiarDuracion(int d, double o) {
 		for (Disco dis : lista) {
 			if (dis.getCodigo() == d) {
-				dis.setDuracion(dis.getDuracion() + o);
+				dis.setDuracion(o);
 				return true;
 			}
 		}
