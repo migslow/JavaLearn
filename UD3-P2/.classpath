@@ -7,5 +7,6 @@
 	<classpathentry kind="src" path="RepasoExcepciones"/>
 	<classpathentry kind="src" path="RepasoColeccionesAlumnos1"/>
 	<classpathentry kind="src" path="RepasoArraysObjetosAlumnos"/>
+	<classpathentry kind="src" path="RepasoColeccionesAlumnos2"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
