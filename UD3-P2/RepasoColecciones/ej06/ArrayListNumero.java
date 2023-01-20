@@ -19,7 +19,7 @@ public class ArrayListNumero {
 	public Numero anyadirNumero(Numero n) {
 		if(tamanyoLista() > 0) {
 			int NA = (int) (Math.random() * 100);
-			lista.add(NA, n);	
+			lista.add(NA, n);
 		}
 		return n;
 	}

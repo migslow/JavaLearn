@@ -1,8 +1,0 @@
-La clase Cuenta contiene método compareTo:
-
-public int compareTo(Cuenta arg0) { // ORDENACIÓN NATURAL POR NUMERO
-	return (int) (numero - arg0.getNumero());
-	
-}
-que hace que cuando se le pida ordenar, sin ningún otro argumento, se ordene por lo que allí aparece, es decir
-por número de cuenta
