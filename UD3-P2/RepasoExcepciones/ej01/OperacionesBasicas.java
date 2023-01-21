@@ -80,7 +80,7 @@ public class OperacionesBasicas {
 			resultado = n1 / n2;
 			System.out.println("La division es " + resultado);
 		} catch (Exception e) {
-			System.out.println("ERROR");
+			System.out.println("No puedes dividir por 0");
 		}
 		return resultado;
 	}
