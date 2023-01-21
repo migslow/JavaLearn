@@ -1,3 +1,4 @@
+package ej14;
 import java.util.HashMap;
 
 public class ej14 {
