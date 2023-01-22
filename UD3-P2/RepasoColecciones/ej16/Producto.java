@@ -1,7 +1,6 @@
 package ej16;
 
 public class Producto {
-
 	private String nombre;
 	private int cantidad;
 
@@ -19,17 +18,17 @@ public class Producto {
 		this.nombre = nombre;
 	}
 
-	public double getPrecio() {
+	public int getCantidad() {
 		return cantidad;
 	}
 
-	public void setPrecio(double precio) {
+	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
 
 	@Override
 	public String toString() {
-		return "Producto: " + nombre + "\nCantidad: " + cantidad;
+		return "Producto [nombre=" + nombre + ", cantidad=" + cantidad + "]";
 	}
 
 }

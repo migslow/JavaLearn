@@ -34,8 +34,6 @@ public class OperacionesBasicas {
 		case 4:
 			division(n1, n2);
 			break;
-		default:
-			System.out.println("No has introduce un numero entre 1 y 4");
 		}
 	}
 
