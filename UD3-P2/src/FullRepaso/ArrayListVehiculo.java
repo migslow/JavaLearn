@@ -67,7 +67,8 @@ public class ArrayListVehiculo {
 		for (int i = 0; i < tamanyo(); i++) {
 			if (lista.get(i).getFabricante().toLowerCase().contains(parte.toLowerCase())
 					&& lista.get(i).getFabricante().toUpperCase().contains(parte.toUpperCase())) {
-				mensaje = mensaje + "\n" + lista.get(i) + "\n--------------------------------------------------------";
+				mensaje = mensaje + "\n" + lista.remove(i - 1)
+						+ "\n--------------------------------------------------------";
 			}
 		}
 		return mensaje;
@@ -89,7 +90,8 @@ public class ArrayListVehiculo {
 		for (int i = 0; i < tamanyo(); i++) {
 			if (lista.get(i).getNombre().toLowerCase().contains(parte.toLowerCase())
 					&& lista.get(i).getNombre().toUpperCase().contains(parte.toUpperCase())) {
-				mensaje = mensaje + "\n" + lista.get(i) + "\n--------------------------------------------------------";
+				mensaje = mensaje + "\n" + lista.remove(i - 1)
+						+ "\n--------------------------------------------------------";
 			}
 		}
 		return mensaje;
@@ -111,7 +113,8 @@ public class ArrayListVehiculo {
 		for (int i = 0; i < tamanyo(); i++) {
 			if (lista.get(i).getColor().toLowerCase().contains(parte.toLowerCase())
 					&& lista.get(i).getColor().toUpperCase().contains(parte.toUpperCase())) {
-				mensaje = mensaje + "\n" + lista.get(i) + "\n--------------------------------------------------------";
+				mensaje = mensaje + "\n" + lista.remove(i - 1)
+						+ "\n--------------------------------------------------------";
 			}
 		}
 		return mensaje;

@@ -9,6 +9,7 @@ public class HashMapLibreta {
 	public static void main(String[] args) {
 		agregarContacto("Miguel", "1234");
 		agregarContacto("Jaime", "123465");
+		System.out.println();
 		obtenerNumero("Miguel");
 		eliminarContacto("Jaime");
 		mostrarLista();
