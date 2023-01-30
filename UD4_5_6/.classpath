@@ -4,5 +4,7 @@
 	<classpathentry kind="src" path="fechas"/>
 	<classpathentry kind="src" path="cadenas_envoltorios"/>
 	<classpathentry kind="src" path="herencias_interfaces_polimorfismo"/>
+	<classpathentry kind="src" path="RepasoFechas"/>
+	<classpathentry kind="src" path="RepasoHerenciasYInterfaces"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
