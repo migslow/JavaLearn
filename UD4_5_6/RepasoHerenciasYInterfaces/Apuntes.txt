@@ -1,0 +1,5 @@
+final => constante, no puede tener mas clases descendientes, no se puede sobreescribir de sus descendientes
+static => vale para todos
+abstact => no puede crear objetos de esa clase, hay que implenentarlos si los quieres usar ( public abstract float importeNomina())
+atributo instancia => son los propios (private String nombre)
+
