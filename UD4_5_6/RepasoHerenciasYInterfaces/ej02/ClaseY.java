@@ -1,9 +1,10 @@
 package ej02;
 
-public class Y extends B {
+public class ClaseY extends ClaseB {
 	private String t;
 
-	public Y(int cuenta, String t) {
+	public ClaseY(String s, String t) {
+		super(s);
 		this.t = t;
 	}
 
@@ -17,7 +18,7 @@ public class Y extends B {
 
 	@Override
 	public String toString() {
-		return super.toString() + "Y [t=" + t + "]";
+		return "t=" + t + super.toString();
 	}
 
 }
