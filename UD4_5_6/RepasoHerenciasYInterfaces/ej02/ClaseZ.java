@@ -37,7 +37,5 @@ public final class ClaseZ extends ClaseB implements Comparable<ClaseZ>, Saludar 
 		} else if (LocalTime.now().getHour() > 20 && LocalTime.now().getHour() < 7) {
 			System.out.println("Buenas noches");
 		}
-
 	}
-
 }
