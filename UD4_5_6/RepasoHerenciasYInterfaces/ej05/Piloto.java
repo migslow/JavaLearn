@@ -1,20 +1,19 @@
 package ej05;
 
-import java.util.Comparator;
-
-public class Piloto extends Persona implements Comparator<PodiosComparator> {
+public class Piloto extends Persona {
 
 	private String escuderia;
-	private int podios;
-	private int GranPremio;
-	private static int carreras;
+	private static int podios;
+	private static int GranPremio;
+	private static int pilotos;
 
-	public Piloto(int edad, String nacionalidad, String escuderia, int podios, int granPremio) {
-		super(edad, nacionalidad);
+	public Piloto(String nombre, String apellido, int edad, String nacionalidad, String escuderia, int podios,
+			int granPremio) {
+		super(nombre, apellido, edad, nacionalidad);
 		this.escuderia = escuderia;
 		this.podios = podios;
 		GranPremio = granPremio;
-		carreras++;
+		pilotos++;
 	}
 
 	public String getEscuderia() {
@@ -41,24 +40,18 @@ public class Piloto extends Persona implements Comparator<PodiosComparator> {
 		GranPremio = granPremio;
 	}
 
-	public static int getCarreras() {
-		return carreras;
+	public static int getPilotos() {
+		return pilotos;
 	}
 
-	public static void setCarreras(int carreras) {
-		Piloto.carreras = carreras;
+	public static void setPilotos(int pilotos) {
+		Piloto.pilotos = pilotos;
 	}
 
 	@Override
 	public String toString() {
 		return super.toString() + "Piloto [escuderia=" + escuderia + ", podios=" + podios + ", GranPremio=" + GranPremio
 				+ "]";
-	}
-
-	@Override
-	public int compare(PodiosComparator o1, PodiosComparator o2) {
-		// TODO Auto-generated method stub
-		return 0;
 	}
 
 }

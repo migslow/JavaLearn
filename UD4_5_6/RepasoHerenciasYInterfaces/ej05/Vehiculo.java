@@ -5,9 +5,9 @@ public class Vehiculo extends Piloto {
 	private String provedoresMotor;
 	private int cv;
 
-	public Vehiculo(int edad, String nacionalidad, String escuderia, int podios, int granPremio, String constructores,
-			String provedoresMotor, int cv) {
-		super(edad, nacionalidad, escuderia, podios, granPremio);
+	public Vehiculo(String nombre, String apellido, int edad, String nacionalidad, String escuderia, int podios,
+			int granPremio, String constructores, String provedoresMotor, int cv) {
+		super(nombre, apellido, edad, nacionalidad, escuderia, podios, granPremio);
 		this.constructores = constructores;
 		this.provedoresMotor = provedoresMotor;
 		this.cv = cv;
@@ -39,8 +39,7 @@ public class Vehiculo extends Piloto {
 
 	@Override
 	public String toString() {
-		return super.toString() + "Vehiculo [constructores=" + constructores + ", provedoresMotor=" + provedoresMotor
-				+ ", cv=" + cv + "]";
+		return "Vehiculo [constructores=" + constructores + ", provedoresMotor=" + provedoresMotor + ", cv=" + cv + "]";
 	}
 
 }
