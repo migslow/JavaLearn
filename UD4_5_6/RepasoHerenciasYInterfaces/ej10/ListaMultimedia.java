@@ -9,20 +9,11 @@ public class ListaMultimedia {
 		lista.add(m);
 	}
 
-	public double duracionTotal() {
-		double total = 0;
-		for (Multimedia m : lista) {
-			total = total + m.getDuracion();
-		}
-		return total;
-	}
-
-	public int generoTotal(String genero) {
+	public int cuentaPrestados() {
 		int total = 0;
-		for (Multimedia m : lista) {
-			if (m instanceof Disco) {
-				if (((Disco) m).getGenero().toLowerCase().contains(genero.toLowerCase())
-						&& ((Disco) m).getGenero().toUpperCase().contains(genero.toUpperCase())) {
+		for(Multimedia m : lista) {
+			if(m instanceof DiscoPrestable) {
+				if(((DiscoPrestable) m).prestado()) {
 					total++;
 				}
 			}
