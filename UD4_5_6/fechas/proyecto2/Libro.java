@@ -11,7 +11,6 @@ public class Libro extends Biblioteca implements Prestable {
 
 	public Libro(String codigo, String titulo, int año, boolean prestado) {
 		super(codigo, titulo, año);
-
 		this.prestado = false;
 	}
 
