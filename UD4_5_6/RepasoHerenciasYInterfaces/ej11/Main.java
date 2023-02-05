@@ -22,8 +22,7 @@ public class Main {
 		l.insertar(y1);
 		l.insertar(y2);
 		l.recorrer();
-		System.out.println(l.cuentaZ());
-		
+		System.out.println(l.cuentaZ());	
 
 	}
 
