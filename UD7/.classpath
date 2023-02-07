@@ -7,5 +7,9 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="MANEJO_DE_FICHEROS"/>
+	<classpathentry kind="src" path="FILE_TO_STRING"/>
+	<classpathentry kind="src" path="CLASE_FILE_EJEMPLOS"/>
+	<classpathentry kind="src" path="SERIALIZACION_PERSISTENCIA_EJEMPLOS"/>
+	<classpathentry kind="src" path="INTERFACES_GRAFICAS_SENCILLAS"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
