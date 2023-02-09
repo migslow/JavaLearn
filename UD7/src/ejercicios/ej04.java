@@ -5,23 +5,23 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class ej04 {
-
 	public static void main(String[] args) throws IOException {
 		Scanner s = new Scanner(System.in);
-		FileReader fr = null;
-		int aux = 0;
-		System.out.println("Escribe el nombre del fichero anteriormente creado: ");
-		String fichero = s.nextLine();
-		fr = new FileReader("Ficheros//" + fichero + ".txt");
-		while ((aux = fr.read()) != -1) {
-			if ((char) aux == 32) {
-				
-			} else {
-				System.out.print((char) aux);
+		System.out.println("Introduce el nombre del fichero creado: ");
+		String nombre = s.nextLine();
+		try {
+			int caracter;
+			FileReader fr = new FileReader("Ficheros//" + nombre + ".txt");
+			while ((caracter = fr.read()) != -1) {
+				if (caracter != ' ')
+					System.out.print((char) (caracter));
+
 			}
-			aux = fr.read();
+			fr.close();
+
+		} catch (IOException io) {
+			System.out.println("ha ocurrido un error");
 		}
-		fr.close();
 	}
 
 }

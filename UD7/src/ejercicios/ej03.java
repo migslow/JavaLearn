@@ -14,9 +14,7 @@ public class ej03 {
 		String fichero = s.nextLine();
 		fr = new FileReader("Ficheros//" + fichero + ".txt");
 		while ((aux = fr.read()) != -1) {
-			if ((char) aux >1) {
 				contador++;
-			}
 			aux = fr.read();
 		}
 
