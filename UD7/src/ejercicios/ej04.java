@@ -10,7 +10,7 @@ public class ej04 {
 		System.out.println("Introduce el nombre del fichero creado: ");
 		String nombre = s.nextLine();
 		try {
-			int caracter;
+			int caracter = 0;
 			FileReader fr = new FileReader("Ficheros//" + nombre + ".txt");
 			while ((caracter = fr.read()) != -1) {
 				if (caracter != ' ')
