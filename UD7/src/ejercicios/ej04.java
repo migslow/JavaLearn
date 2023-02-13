@@ -13,7 +13,7 @@ public class ej04 {
 			int caracter = 0;
 			FileReader fr = new FileReader("Ficheros//" + nombre + ".txt");
 			while ((caracter = fr.read()) != -1) {
-				if (caracter != ' ')
+				if (caracter != 32)
 					System.out.print((char) (caracter));
 
 			}

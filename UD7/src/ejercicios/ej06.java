@@ -1,10 +1,10 @@
 package ejercicios;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 public class ej06 {
 
@@ -12,9 +12,9 @@ public class ej06 {
 		try {
 			String aux;
 			BufferedReader br = new BufferedReader(new FileReader(nombre));
-			PrintWriter pw = new PrintWriter(new FileWriter("Ficheros/mayusculas.txt"));
+			BufferedWriter pw = new BufferedWriter(new FileWriter("Ficheros/mayusculas2.txt"));
 			while ((aux = br.readLine()) != null)
-				pw.println(aux.toUpperCase());
+				pw.write(aux.toUpperCase());
 			br.close();
 			pw.close();
 		} catch (IOException e) {

@@ -18,7 +18,7 @@ public class ej09 {
 				}
 			}
 		} catch (Exception e) {
-			System.out.println("A ocurrido un problema");
+			System.out.println("A ocurrido un problema " + e.getMessage());
 		}
 	}
 

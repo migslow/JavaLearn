@@ -1,4 +1,5 @@
 package Examen_4;
+
 import java.util.Scanner;
 
 public class Main4a {
@@ -17,14 +18,12 @@ public class Main4a {
 			}
 		}
 		System.out.println("\nLa palabra mas larga tiene " + max + " caracteres y son: ");
-		
+
 		for (String c : cadena) {
-			if(c.length() == max) {
+			if (c.length() == max) {
 				System.out.println(c);
 			}
 		}
-		
-		
 	}
 
 }

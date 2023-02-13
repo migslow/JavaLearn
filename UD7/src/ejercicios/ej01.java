@@ -14,8 +14,8 @@ public class ej01 {
 			String aux;
 			BufferedReader br = new BufferedReader(new FileReader(nombre));
 			while ((aux = br.readLine()) != null) {
-				contador++;
 				suma = suma + Double.parseDouble(aux);
+				contador++;
 			}
 			media = suma / contador;
 			System.out.println("La suma total es " + suma + " y la media es " + media);
