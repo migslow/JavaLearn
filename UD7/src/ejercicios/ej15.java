@@ -1,13 +1,15 @@
-package FILE;
+package ejercicios;
 
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
 
-public class EjemploClaseFile {
-	public static void main(String arg[]) {
+public class ej15 {
+
+	public static void main(String[] args) {
 		String directorio;
-		if (arg.length > 0)
-			directorio = arg[0];
+		if (args.length > 0)
+			directorio = args[0];
 		else
 			directorio = ".";
 		File actual = new File(directorio);
@@ -29,15 +31,14 @@ public class EjemploClaseFile {
 			if (archivo.isFile()) {
 				System.out.println(archivo.getName());
 			}
-			
+
 		}
 		System.out.println("\nDirectorios: ");
 		for (File archivo : archivos) {
 			if (archivo.isDirectory()) {
 				System.out.println(archivo.getName());
 			}
-			
+
 		}
 	}
-
 }
