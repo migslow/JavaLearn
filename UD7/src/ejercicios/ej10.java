@@ -16,7 +16,7 @@ public class ej10 {
 				destino.write(i);
 				i = origen.read();
 			}
-			origen.close();
+			origen.close();  
 			destino.close();
 		} catch (Exception e) {
 			System.out.println("A ocurrido un problema" + e.getMessage());
