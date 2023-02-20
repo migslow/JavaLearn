@@ -8,10 +8,11 @@ public class ej15 {
 
 	public static void main(String[] args) {
 		String directorio;
-		if (args.length > 0)
+		if (args.length > 0) {
 			directorio = args[0];
-		else
+		} else {
 			directorio = ".";
+		}
 		File actual = new File(directorio);
 		System.out.println("El directorio es: ");
 		try {

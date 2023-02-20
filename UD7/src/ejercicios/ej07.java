@@ -13,7 +13,7 @@ public class ej07 {
 			String cadena = "1 Agosto 2021";
 			DataOutputStream dis = new DataOutputStream(new FileOutputStream("Ficheros/" + nombre1 + ".dat"));
 			dis.writeUTF(cadena);
-			for(int i = 0; i < 23;i++) {
+			for (int i = 0; i < 23; i++) {
 				dis.writeInt(i);
 			}
 			dis.close();

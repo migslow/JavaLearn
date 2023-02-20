@@ -10,11 +10,9 @@ import java.util.List;
  */
 public class Lectura01 {
 	public static void main(String[] args) {
-
 		try {
 			// Codificaci�n del fichero autor --> UTF-8
 			List<String> listaLineas = Files.readAllLines(Paths.get("Ficheros/Quijote.txt"));
-
 			// for(int i=0; i< listaLineas.size();i++)
 			// System.out.println(listaLineas.get(i));
 			for (String linea : listaLineas)

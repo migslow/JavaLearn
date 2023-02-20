@@ -29,14 +29,14 @@ public class EjemploClaseFile {
 			if (archivo.isFile()) {
 				System.out.println(archivo.getName());
 			}
-			
+
 		}
 		System.out.println("\nDirectorios: ");
 		for (File archivo : archivos) {
 			if (archivo.isDirectory()) {
 				System.out.println(archivo.getName());
 			}
-			
+
 		}
 	}
 
