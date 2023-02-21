@@ -6,7 +6,7 @@ import java.util.Date;
 public class EjemploSerializacionObjeto {
 	public static void main(String[] args) {
 		try {
-			FileOutputStream fos = new FileOutputStream("D:\\prueba.txt");
+			FileOutputStream fos = new FileOutputStream("Ficheros/prueba.dat");
 			ObjectOutputStream sos = new ObjectOutputStream(fos);
 			sos.writeObject("Hoy es");
 			sos.writeObject(new Date());

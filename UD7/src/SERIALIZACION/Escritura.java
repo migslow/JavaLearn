@@ -6,16 +6,13 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 
 public class Escritura {
-
 	public static void main(String[] args) {
-
 		FileOutputStream fos = null;
 		ObjectOutputStream salida = null;
 		Persona p;
-
 		try {
 			// Se crea el fichero
-			fos = new FileOutputStream("d://personas.dat");
+			fos = new FileOutputStream("Ficheros/personas.dat");
 			salida = new ObjectOutputStream(fos);
 			// Se crea el primer objeto Persona
 			p = new Persona("12345678A", "Alberto Carrera Mart�n", 30); // Ya le gustar�a....
@@ -29,21 +26,21 @@ public class Escritura {
 			p = new Persona("78234212Z", "Leticia Garc�a Quevedo", 23);
 			// Se escribe el objeto en el fichero
 			salida.writeObject(p);
-
 		} catch (FileNotFoundException e) {
 			System.out.println("1" + e.getMessage());
 		} catch (IOException e) {
 			System.out.println("2" + e.getMessage());
 		} finally {
 			try {
-				if (fos != null)
+				if (fos != null) {
 					fos.close();
-				if (salida != null)
+				}
+				if (salida != null) {
 					salida.close();
+				}
 			} catch (IOException e) {
 				System.out.println("3" + e.getMessage());
 			}
 		}
-
 	}
 }

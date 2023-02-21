@@ -6,28 +6,20 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class ej12 {
-
+public class ej13 {
 	public static void main(String[] args) {
 		try {
 			int aux;
-			FileReader fr = new FileReader("Ficheros/personas.dat");
-			FileWriter fw = new FileWriter("Ficheros/personasEncriptado.dat");
+			FileReader fr = new FileReader("Ficheros/miguelEncriptado.txt");
 			while ((aux = fr.read()) != -1) {
-				if (aux < ('Z') && aux >= ('A') || aux < ('z') && aux >= ('a')) {
-					fw.write(aux + 1);
-				} else {
-					fw.write(aux);
-				}
+				System.out.println((char)(aux-1));
+				fr.read();
 			}
-			fw.close();
 			fr.close();
-
 		} catch (FileNotFoundException e) {
 			System.out.println("La ruta introducida no existe");
 		} catch (IOException e) {
 			System.out.println("Ha ocurrido un problema " + e.getMessage());
 		}
 	}
-
 }

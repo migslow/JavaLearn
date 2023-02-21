@@ -7,16 +7,12 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 
 public class Lectura {
-
 	public static void main(String[] args) {
-
 		FileInputStream fis = null;
 		ObjectInputStream entrada = null;
 		Persona p;
-
 		try {
-
-			fis = new FileInputStream("d://personas.dat");
+			fis = new FileInputStream("Ficheros/personas.dat");
 			entrada = new ObjectInputStream(fis);
 			p = (Persona) entrada.readObject(); // es necesario el casting
 			System.out.println(p.getNif() + " " + p.getNombre() + " " + p.getEdad());
@@ -42,6 +38,5 @@ public class Lectura {
 				System.out.println(e.getMessage());
 			}
 		}
-
 	}
 }

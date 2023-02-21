@@ -6,7 +6,7 @@ import java.util.Date;
 public class EjemploDeserializacionObjeto {
 	public static void main(String[] args) {
 		try {
-			FileInputStream fis = new FileInputStream("D:\\Prueba.txt");
+			FileInputStream fis = new FileInputStream("Ficheros/prueba.dat");
 			ObjectInputStream sis = new ObjectInputStream(fis);
 			System.out.println((String) sis.readObject());
 			System.out.println((Date) sis.readObject());
