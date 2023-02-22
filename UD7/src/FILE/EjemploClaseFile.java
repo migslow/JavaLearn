@@ -11,7 +11,7 @@ public class EjemploClaseFile {
 		else
 			directorio = ".";
 		File actual = new File(directorio);
-		System.out.println("El directorio es: ");
+		System.out.println("El directorio es: "); 
 		try {
 			if (actual.isDirectory())
 				System.out.println(actual.getCanonicalPath());

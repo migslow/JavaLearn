@@ -16,11 +16,11 @@ public class ej15 {
 		File actual = new File(directorio);
 		System.out.println("El directorio es: ");
 		try {
-			if (actual.isDirectory())
+			if (actual.isDirectory()) {
 				System.out.println(actual.getCanonicalPath());
-			else
+			} else {
 				System.out.println("No es un directorio");
-
+			}
 		} catch (IOException e) {
 			System.out.println("Ha ocurrido un error");
 			e.printStackTrace();
@@ -32,14 +32,12 @@ public class ej15 {
 			if (archivo.isFile()) {
 				System.out.println(archivo.getName());
 			}
-
 		}
 		System.out.println("\nDirectorios: ");
 		for (File archivo : archivos) {
 			if (archivo.isDirectory()) {
 				System.out.println(archivo.getName());
 			}
-
 		}
 	}
 }

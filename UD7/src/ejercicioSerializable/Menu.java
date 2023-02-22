@@ -14,22 +14,42 @@ public class Menu {
 
 	static Scanner s = new Scanner(System.in);
 	static ArrayList<Clientes> lista = new ArrayList<Clientes>();
-	
+
 	public static void main(String[] args) {
 		System.out.println("Introduce el nombre del fichero donde se van a introducir los clientes: ");
 		String nombreFichero = s.nextLine();
 		String ruta = "Ficheros/" + nombreFichero;
-		escrituraFichero(ruta);
-		System.out.println("\nLectura del fichero: ");
-		lecturaFichero(ruta);
-		System.out.println("\nLectura de morosos: ");
-		lecturaFicheroMorosos(ruta);
-		System.out.println("\nDar de baja por nif: ");
-		try {
-			darBajaPorNif();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		Scanner scanner = new Scanner(System.in);
+		int opcion = 0;
+		while (opcion != 5) {
+			System.out.println("===== MENÚ =====");
+			System.out.println("1. Escritura de fichero");
+			System.out.println("2. Lectura de fichero");
+			System.out.println("3. Modificacion de un cliente dentro del fichero");
+			System.out.println("4. Dar de baja a un cliente dentro de un fichero");
+			System.out.println("5. Salir");
+			System.out.print("Introduce un numero entre el 1 y el 5: ");
+			opcion = scanner.nextInt();
+			switch (opcion) {
+			case 1:
+				escrituraFichero(ruta);
+				break;
+			case 2:
+				lecturaFichero(ruta);
+				break;
+			case 3:
+				modificarCliente(null);
+				break;
+			case 4:
+				darBajaPorNif();
+				break;
+			case 5:
+				System.out.println("Has salido del menu");
+				break;
+			default:
+				System.out.println("Opción no válida");
+				break;
+			}
 		}
 	}
 
@@ -108,9 +128,9 @@ public class Menu {
 			entrada = new ObjectInputStream(new FileInputStream("Ficheros/ventas.dat"));
 			p = (Clientes) entrada.readObject();
 			while (true) {
-				if(p.isMoroso() == true)
-				System.out.println(p.getNombreCompleto() + " " + p.getTelefono() + " " + p.getDireccion() + " "
-						+ p.getNif() + " " + p.isMoroso());
+				if (p.isMoroso() == true)
+					System.out.println(p.getNombreCompleto() + " " + p.getTelefono() + " " + p.getDireccion() + " "
+							+ p.getNif() + " " + p.isMoroso());
 				p = (Clientes) entrada.readObject();
 			}
 		} catch (FileNotFoundException e) {
@@ -141,7 +161,7 @@ public class Menu {
 		}
 	}
 
-	public static void darBajaPorNif() throws IOException {
+	public static void darBajaPorNif() {
 		System.out.println("Introduzca el nif del cliente que desea borrar:");
 		String nif = s.nextLine();
 		for (Clientes c : lista) {
@@ -151,4 +171,3 @@ public class Menu {
 		}
 	}
 }
-
