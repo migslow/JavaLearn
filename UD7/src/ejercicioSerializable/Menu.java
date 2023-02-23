@@ -19,17 +19,17 @@ public class Menu {
 		System.out.println("Introduce el nombre del fichero donde se van a introducir los clientes: ");
 		String nombreFichero = s.nextLine();
 		String ruta = "Ficheros/" + nombreFichero;
-		Scanner scanner = new Scanner(System.in);
-		int opcion = 0;
-		while (opcion != 5) {
-			System.out.println("===== MENÚ =====");
+		while (true) {
+			System.out.println("\n===== MENÚ PRINCIPAL =====");
 			System.out.println("1. Escritura de fichero");
 			System.out.println("2. Lectura de fichero");
-			System.out.println("3. Modificacion de un cliente dentro del fichero");
-			System.out.println("4. Dar de baja a un cliente dentro de un fichero");
-			System.out.println("5. Salir");
-			System.out.print("Introduce un numero entre el 1 y el 5: ");
-			opcion = scanner.nextInt();
+			System.out.println("3. Lectura de clientes morosos");
+			System.out.println("4. Modificacion de un cliente dentro del fichero");
+			System.out.println("5. Dar de baja a un cliente dentro de un fichero");
+			System.out.println("6. Salir");
+			System.out.print("Introduce un numero entre el 1 y el 6: ");
+			int opcion = s.nextInt();
+			s.nextLine();
 			switch (opcion) {
 			case 1:
 				escrituraFichero(ruta);
@@ -38,14 +38,17 @@ public class Menu {
 				lecturaFichero(ruta);
 				break;
 			case 3:
-				modificarCliente(null);
+				lecturaFicheroMorosos(ruta);
 				break;
 			case 4:
-				darBajaPorNif();
+				modificarCliente(null);
 				break;
 			case 5:
-				System.out.println("Has salido del menu");
+				darBajaPorNif();
 				break;
+			case 6:
+				System.out.println("Has salido del menu");
+				System.exit(-1);
 			default:
 				System.out.println("Opción no válida");
 				break;
@@ -56,23 +59,41 @@ public class Menu {
 	public static void escrituraFichero(String ruta) {
 		FileOutputStream fos = null;
 		ObjectOutputStream salida = null;
-		Clientes p;
 		try {
 			fos = new FileOutputStream(ruta);
 			salida = new ObjectOutputStream(fos);
-			p = new Clientes("Alberto Carrera Mart�n", "4982349823", "4 Puertas", "A4234234234", true);
-			salida.writeObject(p);
-			p = new Clientes("Miguel Ovejero Piedrafita", "4982349823", "5 Puertas", "B4234234234", false);
-			salida.writeObject(p);
-			p = new Clientes("David Cano Escario", "2332349823", "6 Puertas", "C4234234234", true);
-			salida.writeObject(p);
-			p = new Clientes("Alberto Lores Quintana", "231231823", "7 Puertas", "D4234234234", false);
-			salida.writeObject(p);
-			p = new Clientes("Pablo Motos Motos", "456245362", "8 Puertas", "E4234234234", true);
-			salida.writeObject(p);
-			p = new Clientes("Maria Camion Camion", "2435234523", "9 Puertas", "F4234234234", true);
-			salida.writeObject(p);
-			salida.close();
+			int opcion = 0;
+			while (opcion != 2) {
+				System.out.println("\n===== MENÚ ESCRITURA FICHERO =====");
+				System.out.println("1. Crear cliente");
+				System.out.println("2. Volver al menu principal");
+				System.out.print("Introduce un numero entre el 1 y el 2: ");
+				opcion = s.nextInt();
+				s.nextLine();
+				switch (opcion) {
+				case 1:
+					System.out.println("Introduce el nombre completo del nuevo cliente: ");
+					String nombreCompleto = s.nextLine();
+					System.out.println("Introduce el telefono del cliente: ");
+					String telefono = s.nextLine();
+					System.out.println("Introduce la direccion del cliente: ");
+					String direccion = s.nextLine();
+					System.out.println("Introduce el nif del cliente: ");
+					String nif = s.nextLine();
+					System.out.println("¿Es moroso? (true o false)");
+					boolean moroso = s.nextBoolean();
+					Clientes p = new Clientes(nombreCompleto, telefono, direccion, nif, moroso);
+					salida.writeObject(p);
+					salida.close();
+					break;
+				case 2:
+					System.out.println("Has vuelto al menu principal");
+					break;
+				default:
+					System.out.println("Opcion no valida");
+					break;
+				}
+			}
 		} catch (FileNotFoundException e) {
 			System.out.println("La ruta no existe");
 		} catch (IOException e) {
