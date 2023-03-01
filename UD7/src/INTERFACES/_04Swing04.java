@@ -8,11 +8,8 @@ public class _04Swing04 extends JFrame {
 
 	public _04Swing04() {
 		super("Ejemplo de Layout");
-		// Configurar componentes:
 		panel = this.getContentPane();
-		// GridLayout
 		panel.setLayout(new GridLayout(4, 3, 5, 5));
-		// Add buttons to the frame
 		for (int i = 1; i <= 10; i++)
 			panel.add(new JButton(Integer.toString(i)));
 		setSize(200, 200);

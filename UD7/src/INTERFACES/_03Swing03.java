@@ -8,9 +8,7 @@ public class _03Swing03 extends JFrame {
 
 	public _03Swing03() {
 		super("Ejemplo de Layout");
-		// Configurar componentes:
 		panel = this.getContentPane();
-		// BorderLayout
 		panel.setLayout(new BorderLayout(5, 10));
 		panel.add(new JButton("1"), BorderLayout.EAST);
 		panel.add(new JButton("2"), BorderLayout.SOUTH);

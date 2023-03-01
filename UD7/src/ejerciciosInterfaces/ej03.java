@@ -66,7 +66,7 @@ public class ej03 extends JFrame {
 
 	class OyenteBoton implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			while (!isEntero(getName()) && !isReal(getName())) {
+			try {
 				if (e.getSource().equals(botonSuma) || e.getSource().equals(botonResta)
 						|| e.getSource().equals(botonMultiplicar) || e.getSource().equals(botonDivision)) {
 					if (e.getSource().equals(botonSuma)) {
@@ -75,7 +75,7 @@ public class ej03 extends JFrame {
 					} else if (e.getSource().equals(botonResta)) {
 						Double resultado = Double.parseDouble(n1.getText()) - Double.parseDouble(n2.getText());
 						calculo.setText(resultado.toString());
-					} else if (e.getSource() .equals(botonMultiplicar)) {
+					} else if (e.getSource().equals(botonMultiplicar)) {
 						Double resultado = Double.parseDouble(n1.getText()) * Double.parseDouble(n2.getText());
 						calculo.setText(resultado.toString());
 					} else if (e.getSource().equals(botonDivision)) {
@@ -83,31 +83,12 @@ public class ej03 extends JFrame {
 						calculo.setText(resultado.toString());
 					}
 				}
+			} catch (NumberFormatException nfe) {
+				JOptionPane.showMessageDialog(null,
+						"No has introducido un numero entero o real. Vuelve a introducirlo bien", "Error",
+						JOptionPane.INFORMATION_MESSAGE);
 			}
 		}
 	}
 
-	private static boolean isEntero(String n) {
-		try {
-			Integer.parseInt(n);
-			return true;
-		} catch (NumberFormatException nfe) {
-			JOptionPane.showMessageDialog(null,
-					"No has introducido un numero entero o real. Vuelve a introducirlo bien", "Error",
-					JOptionPane.INFORMATION_MESSAGE);
-			return false;
-		}
-	}
-
-	private static boolean isReal(String n) {
-		try {
-			Double.parseDouble(n);
-			return true;
-		} catch (NumberFormatException nfe) {
-			JOptionPane.showMessageDialog(null,
-					"No has introducido un numero entero o real. Vuelve a introducirlo bien", "Error",
-					JOptionPane.INFORMATION_MESSAGE);
-			return false;
-		}
-	}
 }

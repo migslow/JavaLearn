@@ -21,8 +21,7 @@ public class _05Swing05 extends JFrame implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		// Toolkit.getDefaultToolkit().beep();
-		JOptionPane.showMessageDialog(panel, "Has pulsado el bot�n", "Lo hiciste! ", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(panel, "Has pulsado el botón", "Lo hiciste! ", JOptionPane.INFORMATION_MESSAGE);
 
 	}
 

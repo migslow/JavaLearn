@@ -36,7 +36,8 @@ public class ej04 extends JFrame {
 		validar = new JButton("Validar");
 		validar.setBounds(120, 80, 150, 20);
 		panel.add(validar);
-		
+		validar.addActionListener(new oyenteBotonValidar());
+
 		setSize(300, 200);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -45,13 +46,18 @@ public class ej04 extends JFrame {
 	public static void main(String[] args) {
 		ej04 ventana = new ej04();
 	}
-	
-	public class oyenteBotonValidar implements ActionListener{
+
+	public class oyenteBotonValidar implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-			
+			String usuario = "dam";
+			String contraseña = "1234";
+			if(s1.getText().equals(usuario) && s2.getText().equals(contraseña)) {
+				setTitle("Validacion Correcta");
+			} else {
+				setTitle("Validacion Incorrecta");
+			}
 		}
-		
+
 	}
 
 }

@@ -8,9 +8,7 @@ public class _02Swing02 extends JFrame {
 
 	public _02Swing02() {
 		super("Ejemplo de Layout");
-		// Configurar componentes ;
 		panel = this.getContentPane();
-		// Configurar layout ;
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 20));
 		for (int i = 1; i <= 10; i++)
 			panel.add(new JButton("Componente " + i));
