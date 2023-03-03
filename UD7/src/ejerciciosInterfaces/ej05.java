@@ -1,5 +1,6 @@
 package ejerciciosInterfaces;
 
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,11 +9,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class ej05 extends JFrame {
 	Container panel;
-	JButton jb_suma, jb_resta, jb_multiplicacion, jb_division;
+	JButton jb_suma, jb_resta, jb_multiplicacion, jb_division, jb_imagenExit, jb_imagenAbout;
 	JTextField jtf_n1, jtf_n2, jtf_calculo;
 	JLabel jl_etiqueta1, jl_etiqueta2, jl_resultado, jl_imagenCalculadora;
 
@@ -48,22 +50,39 @@ public class ej05 extends JFrame {
 		panel.add(jtf_n1);
 		panel.add(jtf_n2);
 		panel.add(jtf_calculo);
+		jtf_calculo.setForeground(Color.RED);
 
 		// JBUTTON
 		jb_suma = new JButton("+");
 		jb_resta = new JButton("-");
 		jb_multiplicacion = new JButton("*");
 		jb_division = new JButton("/");
+		jb_imagenExit = new JButton();
+		jb_imagenAbout = new JButton();
 		jb_suma.setBounds(220, 120, 50, 30);
 		jb_resta.setBounds(220, 160, 50, 30);
 		jb_multiplicacion.setBounds(220, 200, 50, 30);
 		jb_division.setBounds(220, 240, 50, 30);
+		jb_imagenExit.setBounds(100, 220, 80, 60);
+		jb_imagenAbout.setBounds(100, 290, 100, 60);
 		panel.add(jb_suma);
 		panel.add(jb_resta);
 		panel.add(jb_multiplicacion);
 		panel.add(jb_division);
+		ImageIcon iconoExit = new ImageIcon("Imagenes/puerta.jpg");
+		jb_imagenExit.setIcon(iconoExit);
+		ImageIcon iconoAbout = new ImageIcon("Imagenes/hombre.png");
+		jb_imagenAbout.setIcon(iconoAbout);
+		panel.add(jb_imagenExit);
+		panel.add(jb_imagenAbout);
 
 		// ActionListener
+		jb_suma.addActionListener(new oyenteBoton());
+		jb_resta.addActionListener(new oyenteBoton());
+		jb_multiplicacion.addActionListener(new oyenteBoton());
+		jb_division.addActionListener(new oyenteBoton());
+		jb_imagenExit.addActionListener(new oyenteImagenExit());
+		jb_imagenAbout.addActionListener(new oyenteImagenAbout());
 
 		setSize(500, 500);
 		setVisible(true);
@@ -72,7 +91,6 @@ public class ej05 extends JFrame {
 
 	public static void main(String[] args) {
 		ej05 ventana = new ej05();
-
 	}
 
 	class oyenteBoton implements ActionListener {
@@ -80,17 +98,46 @@ public class ej05 extends JFrame {
 			try {
 				if (e.getSource().equals(jb_suma) || e.getSource().equals(jb_resta)
 						|| e.getSource().equals(jb_multiplicacion) || e.getSource().equals(jb_division)) {
-					if(e.getSource().equals(jb_suma)) {
-						Double resultado = Double.parseDouble(.getText()) + Double.parseDouble(n2.getText());
-						calculo.setText(resultado.toString());
+					if (e.getSource().equals(jb_suma)) {
+						Double resultado = Double.parseDouble(jtf_n1.getText()) + Double.parseDouble(jtf_n2.getText());
+						jtf_calculo.setText(resultado.toString());
+					} else if (e.getSource().equals(jb_resta)) {
+						Double resultado = Double.parseDouble(jtf_n1.getText()) - Double.parseDouble(jtf_n2.getText());
+						jtf_calculo.setText(resultado.toString());
+					} else if (e.getSource().equals(jb_multiplicacion)) {
+						Double resultado = Double.parseDouble(jtf_n1.getText()) * Double.parseDouble(jtf_n2.getText());
+						jtf_calculo.setText(resultado.toString());
+					} else if (e.getSource().equals(jb_division)) {
+						Double resultado = Double.parseDouble(jtf_n1.getText()) / Double.parseDouble(jtf_n2.getText());
+						jtf_calculo.setText(resultado.toString());
 					}
 				}
-			} catch (Exception e2) {
+			} catch (NumberFormatException nfe) {
+				JOptionPane.showMessageDialog(null,
+						"No has introducido un numero entero o real. Vuelve a introducirlo bien", "Error",
+						JOptionPane.INFORMATION_MESSAGE);
 
 			}
 
 		}
 
+	}
+
+	class oyenteImagenExit implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			if (e.getSource().equals(jb_imagenExit)) {
+				System.exit(0);
+			}
+		}
+	}
+
+	class oyenteImagenAbout implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			if (e.getSource().equals(jb_imagenAbout)) {
+				JOptionPane.showMessageDialog(null, "Es una calculadora con las 4 opraciones basicas", "Informacion",
+						JOptionPane.INFORMATION_MESSAGE);
+			}
+		}
 	}
 
 }
