@@ -45,10 +45,7 @@ class PanelDatos extends JPanel {
 
 }
 
-public class Ejercicio11 extends JFrame implements ActionListener
-
-{
-
+public class Ejercicio11 extends JFrame implements ActionListener {
 	Container p;
 	List lista;
 	JButton a;
@@ -63,24 +60,17 @@ public class Ejercicio11 extends JFrame implements ActionListener
 		p.setLayout(new FlowLayout());
 		p.add(a);
 		p.add(lista);
-		{
-
-		}
-
 	}
 
 	public void actionPerformed(ActionEvent ae) {
-
 		pd = new PanelDatos();
 		pd.setVisible(true);
-
 		if (JOptionPane.showConfirmDialog(this, pd, "Introduzca datos:", JOptionPane.OK_CANCEL_OPTION,
 				JOptionPane.PLAIN_MESSAGE) == JOptionPane.OK_OPTION) {
 			String nom = pd.campoNombre.getText();
 			String ape = pd.campoApellidos.getText();
 			lista.add("    " + nom + " " + ape);
 		}
-
 	}
 
 	public static void main(String[] args) {
@@ -88,6 +78,5 @@ public class Ejercicio11 extends JFrame implements ActionListener
 		ag.setSize(200, 200);
 		ag.setVisible(true);
 		ag.setDefaultCloseOperation(EXIT_ON_CLOSE);
-
 	}
 }
