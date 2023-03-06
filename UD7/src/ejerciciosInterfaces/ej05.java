@@ -50,6 +50,7 @@ public class ej05 extends JFrame {
 		panel.add(jtf_n1);
 		panel.add(jtf_n2);
 		panel.add(jtf_calculo);
+		jtf_calculo.setEditable(false);
 		jtf_calculo.setForeground(Color.RED);
 
 		// JBUTTON
@@ -81,8 +82,8 @@ public class ej05 extends JFrame {
 		jb_resta.addActionListener(new oyenteBoton());
 		jb_multiplicacion.addActionListener(new oyenteBoton());
 		jb_division.addActionListener(new oyenteBoton());
-		jb_imagenExit.addActionListener(new oyenteImagenExit());
-		jb_imagenAbout.addActionListener(new oyenteImagenAbout());
+		jb_imagenExit.addActionListener(new oyenteBoton());
+		jb_imagenAbout.addActionListener(new oyenteBoton());
 
 		setSize(500, 500);
 		setVisible(true);
@@ -97,7 +98,8 @@ public class ej05 extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			try {
 				if (e.getSource().equals(jb_suma) || e.getSource().equals(jb_resta)
-						|| e.getSource().equals(jb_multiplicacion) || e.getSource().equals(jb_division)) {
+						|| e.getSource().equals(jb_multiplicacion) || e.getSource().equals(jb_division)
+						|| e.getSource().equals(jb_imagenAbout) || e.getSource().equals(jb_imagenExit)) {
 					if (e.getSource().equals(jb_suma)) {
 						Double resultado = Double.parseDouble(jtf_n1.getText()) + Double.parseDouble(jtf_n2.getText());
 						jtf_calculo.setText(resultado.toString());
@@ -110,34 +112,21 @@ public class ej05 extends JFrame {
 					} else if (e.getSource().equals(jb_division)) {
 						Double resultado = Double.parseDouble(jtf_n1.getText()) / Double.parseDouble(jtf_n2.getText());
 						jtf_calculo.setText(resultado.toString());
+					} else if (e.getSource().equals(jb_imagenExit)) {
+						System.exit(0);
+					} else if (e.getSource().equals(jb_imagenAbout)) {
+						JOptionPane.showMessageDialog(null, "Es una calculadora con las 4 opraciones basicas",
+								"Informacion", JOptionPane.INFORMATION_MESSAGE);
 					}
 				}
 			} catch (NumberFormatException nfe) {
 				JOptionPane.showMessageDialog(null,
 						"No has introducido un numero entero o real. Vuelve a introducirlo bien", "Error",
 						JOptionPane.INFORMATION_MESSAGE);
-
 			}
 
 		}
 
-	}
-
-	class oyenteImagenExit implements ActionListener {
-		public void actionPerformed(ActionEvent e) {
-			if (e.getSource().equals(jb_imagenExit)) {
-				System.exit(0);
-			}
-		}
-	}
-
-	class oyenteImagenAbout implements ActionListener {
-		public void actionPerformed(ActionEvent e) {
-			if (e.getSource().equals(jb_imagenAbout)) {
-				JOptionPane.showMessageDialog(null, "Es una calculadora con las 4 opraciones basicas", "Informacion",
-						JOptionPane.INFORMATION_MESSAGE);
-			}
-		}
 	}
 
 }
