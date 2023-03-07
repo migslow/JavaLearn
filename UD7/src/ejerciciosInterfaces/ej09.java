@@ -47,7 +47,6 @@ public class ej09 extends JFrame implements ChangeListener {
 
 	public static void main(String[] args) {
 		ej09 ventana = new ej09();
-
 	}
 
 	@Override

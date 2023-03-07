@@ -55,14 +55,14 @@ public class ej08 extends JFrame implements ChangeListener {
 	@Override
 	public void stateChanged(ChangeEvent e) {
 		String cad = "";
-		if (jcb_check1.isSelected() == true) {
+		if (jcb_check1.isSelected()) {
 			cad = cad + "Ingles-";
 		}
-		if (jcb_check2.isSelected() == true) {
+		if (jcb_check2.isSelected()) {
 			cad = cad + "Frances-";
 		}
-		if (jcb_check3.isSelected() == true) {
-			cad = cad + "Aleman-";
+		if (jcb_check3.isSelected()) {
+			cad = cad + "Aleman";
 		}
 		jl_texto2.setText(cad);
 	}
