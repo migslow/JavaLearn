@@ -1,6 +1,7 @@
 package ejercicioSerializable;
 
 import java.io.EOFException;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -15,10 +16,30 @@ public class Menu {
 	static Scanner s = new Scanner(System.in);
 	static ArrayList<Clientes> lista = new ArrayList<Clientes>();
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException, IOException {
 		System.out.println("Introduce el nombre del fichero donde se van a introducir los clientes: ");
 		String nombreFichero = s.nextLine();
-		String ruta = "Ficheros/" + nombreFichero;
+		String ruta = "Ficheros\\" + nombreFichero;
+		File f = new File(ruta);
+		if (f.exists()) {
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(ruta));
+			try {
+				while (true) {
+					lista.add((Clientes) ois.readObject());
+				} // del while
+			} catch (EOFException e) {
+				ois.close();
+			}
+
+			catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				System.out.println("No encontrada la clase a la hora de leer clientes del fichero");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				System.out.println("Ocurrió un error I/O al leer los clientes");
+			}
+		} // del if
+
 		while (true) {
 			System.out.println("\n===== MENÚ PRINCIPAL =====");
 			System.out.println("1. Crear cliente");
@@ -60,7 +81,6 @@ public class Menu {
 						System.out.println("El cliente con el nif " + nuevo.getNif() + " no esta creado");
 					}
 				}
-
 				break;
 			case 5:
 				darBajaPorNif();
@@ -92,11 +112,12 @@ public class Menu {
 		Clientes p = new Clientes(nombreCompleto, telefono, direccion, nif, moroso);
 		for (Clientes c : lista) {
 			if (c.getNif().equalsIgnoreCase(p.getNif())) {
-				System.out.println("El usuario con el " + p.getNif() + " ya existe");
+				System.out.println("El usuario con el nif " + p.getNif() + " ya existe");
 			} else {
 				lista.add(p);
 			}
 		}
+
 	}
 
 	public static void escrituraFichero(String ruta) {
@@ -106,7 +127,7 @@ public class Menu {
 			fos = new FileOutputStream(ruta);
 			salida = new ObjectOutputStream(fos);
 			for (Clientes c : lista) {
-				salida.writeObject(c); 
+				salida.writeObject(c);
 			}
 		} catch (FileNotFoundException e) {
 			System.out.println("La ruta no existe");
@@ -128,6 +149,7 @@ public class Menu {
 
 	public static void consultarClientes(String ruta) {
 		System.out.println("Clientes guardados: ");
+		escrituraFichero(ruta);
 		for (Clientes c : lista) {
 			System.out.println(c);
 		}
@@ -152,7 +174,7 @@ public class Menu {
 	}
 
 	public static void darBajaPorNif() {
-		System.out.println("Introduzca el nif del cliente que desea borrar:");
+		System.out.println("Introduzca el nif del cliente que deseas borrar:");
 		String nif = s.nextLine();
 		for (Clientes c : lista) {
 			if (c.getNif().equalsIgnoreCase(nif)) {

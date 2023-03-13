@@ -58,4 +58,10 @@ public class Clientes implements Serializable {
 		this.moroso = moroso;
 	}
 
+	@Override
+	public String toString() {
+		return "Clientes [nombreCompleto=" + nombreCompleto + ", telefono=" + telefono + ", direccion=" + direccion
+				+ ", nif=" + nif + ", moroso=" + moroso + "]";
+	}
+
 }
