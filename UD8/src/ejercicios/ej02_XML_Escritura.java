@@ -14,7 +14,7 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.DOMImplementation;
-import org.w3c.dom.Document;
+import org.w3c.dom.Document; 
 import org.w3c.dom.Element;
 import org.w3c.dom.Text;
 
@@ -25,7 +25,7 @@ public class ej02_XML_Escritura {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
 			DOMImplementation implementation = builder.getDOMImplementation();
-			Document documento = implementation.createDocument(null, "departamentos", null);
+			Document documento = implementation.createDocument(null, "Trabajo", null);
 			documento.setXmlVersion("1.0");
 			Element departamentos = documento.createElement("departamentos");
 			Element departamento = documento.createElement("departamento");
@@ -48,18 +48,14 @@ public class ej02_XML_Escritura {
 			localidad.appendChild(textLocalidad);
 			departamento.appendChild(localidad);
 
-			// A�ado al elemento coches el elemento coche
 			departamentos.appendChild(departamento);
 
-			// A�ado al root el elemento coches
 			documento.getDocumentElement().appendChild(departamentos);
 
-			// Asocio el source con el Document
 			Source source = new DOMSource(documento);
-			// Creo el Result, indicado que fichero se va a crear
+
 			Result result = new StreamResult(new File("Ficheros/departamentos.xml"));
 
-			// Creo un transformer, se crea el fichero XML
 			Transformer transformer = TransformerFactory.newInstance().newTransformer();
 			transformer.transform(source, result);
 

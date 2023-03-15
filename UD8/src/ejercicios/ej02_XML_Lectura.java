@@ -29,7 +29,7 @@ public class ej02_XML_Lectura {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
 			Document documento = builder.parse(new File("Ficheros/departamentos.xml"));
-			NodeList listaDepartamentos = documento.getElementsByTagName("coche");
+			NodeList listaDepartamentos = documento.getElementsByTagName("departamento");
 
 			for (int i = 0; i < listaDepartamentos.getLength(); i++) {
 				Node nodo = listaDepartamentos.item(i);
@@ -40,7 +40,7 @@ public class ej02_XML_Lectura {
 						Node hijo = hijos.item(j);
 						if (hijo.getNodeType() == Node.ELEMENT_NODE) {
 							System.out
-									.println("Propiedad: " + hijo.getNodeName() + ", Valor: " + hijo.getTextContent());
+									.println("Propiedad: " + hijo.getNodeName() + " | Valor: " + hijo.getTextContent());
 						}
 
 					}
