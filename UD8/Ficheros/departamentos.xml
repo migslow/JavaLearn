@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<departamentos>
+	<departamentos>
+		<departamento>
+			<NumDepartamento>1</NumDepartamento>
+			<nombre>informatica</nombre>
+			<localidad>zaragoza</localidad>
+		</departamento>
+	</departamentos>
+</departamentos>

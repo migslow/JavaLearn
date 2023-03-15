@@ -54,10 +54,7 @@ public class ej02 {
 				escrituraFichero(ruta);
 				break;
 			case 3:
-				System.out.println("\nDepartamentos: ");
-				for (Departamento d : lista) {
-					System.out.println(d);
-				}
+				consultarDepartamentos(ruta);
 				break;
 			case 4:
 				System.out.println("Has salido del menu");
@@ -80,19 +77,42 @@ public class ej02 {
 		System.out.println("Introduce la localidad del departamento: ");
 		String localidad = s.next();
 		Departamento d = new Departamento(numero, nombre, localidad);
-		for (Departamento p : lista) {
-			lista.add(d);
-		}
+		lista.add(d);
+
 	}
 
 	public static void escrituraFichero(String ruta) throws IOException {
-		FileOutputStream fos = new FileOutputStream(ruta);
-		ObjectOutputStream salida = new ObjectOutputStream(fos);
-		for (Departamento d : lista) {
-			salida.writeObject(d);
+		FileOutputStream fos = null;
+		ObjectOutputStream salida = null;
+		try {
+			fos = new FileOutputStream(ruta);
+			salida = new ObjectOutputStream(fos);
+			for (Departamento d : lista) {
+				salida.writeObject(d);
+			}
+		} catch (FileNotFoundException e) {
+			System.out.println("La ruta no existe");
+		} catch (IOException e) {
+			System.out.println("Ha ocurrido un problema de E/S");
+		} finally {
+			try {
+				if (fos != null) {
+					fos.close();
+				}
+				if (salida != null) {
+					salida.close();
+				}
+			} catch (IOException e) {
+				System.out.println("Ha ocurrido un problema de E/S");
+			}
 		}
-		fos.close();
-		salida.close();
+	}
+
+	public static void consultarDepartamentos(String ruta) throws IOException {
+		System.out.println("\nDepartamentos: ");
+		for (Departamento p : lista) {
+			System.out.println(p);
+		}
 	}
 
 }
