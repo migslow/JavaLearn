@@ -20,8 +20,8 @@ public class ej20 {
 			BufferedReader br1 = new BufferedReader(new FileReader(nombre1));
 			BufferedReader br2 = new BufferedReader(new FileReader(nombre2));
 			while ((aux1 = br1.readLine()) != null && (aux2 = br2.readLine()) != null) {
-				contador1 = contador1 + Integer.parseInt(aux1);
-				contador2 = contador2 + Integer.parseInt(aux2);
+				contador1 = contador1 + aux1.length();
+				contador2 = contador2 + aux2.length();
 			}
 			System.out.println("El primer fichero tiene una longitud de " + contador1 + " caracteres");
 			System.out.println("El segundo fichero tiene una longitud de " + contador2 + " caracteres");
