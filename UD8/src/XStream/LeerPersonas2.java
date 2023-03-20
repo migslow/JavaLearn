@@ -8,22 +8,19 @@ import java.util.Iterator;
 import java.util.List;
 import com.thoughtworks.xstream.XStream;
 
-public class LeerPersonas {
+public class LeerPersonas2 {
 	public static void main(String[] args) throws IOException{
 		XStream xstream = new XStream();
-		xstream.alias("ListaPersonasMunicipio",ListaPersonas.class);
+		xstream.alias("ListaPersonasMunicipio",List.class); //<-----
 		xstream.alias("DatosPersona", Persona.class);
-		xstream.addImplicitCollection(ListaPersonas.class, "lista");
+		//xstream.addImplicitCollection(ListaPersonas.class, "lista"); //<-----
 		
-		ListaPersonas listadoTodas = (ListaPersonas) 
-									xstream.fromXML
-									(new FileReader("Ficheros/personas.xml"));
+		ArrayList<Persona> listadoTodas = (ArrayList<Persona>) xstream.fromXML //<-----
+									(new FileReader("Fichero\\Personas2.xml")); //<-----
 		System.out.println("N�mero de Personas: " +
-									listadoTodas.getListaPersonas().size());
-		List<Persona> listaPersonas=new ArrayList<Persona>();
-		listaPersonas=listadoTodas.getListaPersonas();
+									listadoTodas.size()); //<-----
 		
-		Iterator iterador = listaPersonas.listIterator();
+		Iterator iterador = listadoTodas.listIterator();
 		while (iterador.hasNext()){
 			Persona p= (Persona) iterador.next();
 			System.out.println("Nombre: " + p.getNombre() + 

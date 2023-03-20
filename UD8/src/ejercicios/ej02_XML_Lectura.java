@@ -42,13 +42,10 @@ public class ej02_XML_Lectura {
 							System.out
 									.println("Propiedad: " + hijo.getNodeName() + " | Valor: " + hijo.getTextContent());
 						}
-
 					}
 					System.out.println("");
 				}
-
 			}
-
 		} catch (ParserConfigurationException | SAXException | IOException ex) {
 			System.out.println(ex.getMessage());
 		}

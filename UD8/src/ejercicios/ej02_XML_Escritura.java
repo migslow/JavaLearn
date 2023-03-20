@@ -25,7 +25,7 @@ public class ej02_XML_Escritura {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
 			DOMImplementation implementation = builder.getDOMImplementation();
-			Document documento = implementation.createDocument(null, "Trabajo", null);
+			Document documento = implementation.createDocument(null, "trabajo", null);
 			documento.setXmlVersion("1.0");
 			Element departamentos = documento.createElement("departamentos");
 			Element departamento = documento.createElement("departamento");
