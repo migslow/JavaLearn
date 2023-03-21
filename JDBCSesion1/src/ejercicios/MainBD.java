@@ -18,7 +18,7 @@ public class MainBD {
 			System.exit(-1);
 		}
 		
-		System.out.println("Introduce el nombre de la localidad a buscar (Tiene que ser exacta al escribirla): ");
+		System.out.println("Introduce el nombre de la localidad a buscar (Tiene que ser exacta al escribirla ): ");
 		String nombreLocalidad = s.nextLine();
 		ArrayList <Socio> todosSocios1 = bd.consultarPorLocalidad(nombreLocalidad);
 		if (todosSocios1.size()!=0) {
