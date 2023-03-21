@@ -35,9 +35,8 @@ public class MainBD {
 				System.out.println(l);
 		} else
 			System.out.println("Lista de todos los libros vacia");
-		
+
 		ResultSet todosSocios3 = bd.consultarTodosResultSet();
-		
 
 		try {
 			bd.desconectar();
