@@ -66,7 +66,7 @@ public class AccesoBdatos {
 
 	public ResultSet consultarTodosResultSet() throws SQLException {
 		Statement consulta = conecta.createStatement();
-		return consulta.executeQuery("SELECT * FROM Libros");
+		return consulta.executeQuery("SELECT * FROM socio");
 	}
 
 	public void desconectar() throws SQLException {

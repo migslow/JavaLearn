@@ -1,5 +1,6 @@
 package ejercicios;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -8,7 +9,7 @@ public class MainBD {
 
 	static Scanner s = new Scanner(System.in);
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		AccesoBdatos bd = new AccesoBdatos();
 
 		try {
@@ -34,6 +35,9 @@ public class MainBD {
 				System.out.println(l);
 		} else
 			System.out.println("Lista de todos los libros vacia");
+		
+		ResultSet todosSocios3 = bd.consultarTodosResultSet();
+		
 
 		try {
 			bd.desconectar();
