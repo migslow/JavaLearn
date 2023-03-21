@@ -75,10 +75,10 @@ public class ej14 {
 			public void actionPerformed(ActionEvent e) {
 				String usuario = "dam";
 				String contraseña = "1234";
-				if(textFieldUsuario.getText().equals(usuario) && textFieldContraseña.getText().equals(contraseña)) {
-					setTitle("Validacion Correcta");
+				if (textFieldUsuario.getText().equals(usuario) && textFieldContraseña.getText().equals(contraseña)) {
+					frmIniciarSesion.setTitle("Validacion Correcta");
 				} else {
-					setTitle("Validacion Incorrecta");
+					frmIniciarSesion.setTitle("Validacion Incorrecta");
 				}
 
 			}
