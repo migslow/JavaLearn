@@ -1,4 +1,4 @@
-package ejercicios;
+package ejercicios01;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -36,7 +36,7 @@ public class MainBD {
 		} else
 			System.out.println("Lista de todos los libros vacia");
 
-		ResultSet todosSocios3 = bd.consultarTodosResultSet();
+		//  bd.consultarTodosResultSet(bd.consultarTodosResultSet());
 
 		try {
 			bd.desconectar();

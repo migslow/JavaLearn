@@ -1,4 +1,4 @@
-package ejercicios;
+package ejercicios01;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -61,12 +61,18 @@ public class AccesoBdatos {
 			System.out.println("A ocurrido un problema con la consulta");
 		}
 		return lista;
-
 	}
 
 	public ResultSet consultarTodosResultSet() throws SQLException {
 		Statement consulta = conecta.createStatement();
 		return consulta.executeQuery("SELECT * FROM socio");
+	}
+
+	public static void imprimirDatosResultSet(ResultSet rs) throws SQLException {
+		while (rs.next()) {
+			System.out.println(rs.getInt(1) + " - " + rs.getString(2) + " - " + rs.getInt(3) + " - " + rs.getInt(4)
+					+ " - " + rs.getString(5));
+		}
 	}
 
 	public void desconectar() throws SQLException {
