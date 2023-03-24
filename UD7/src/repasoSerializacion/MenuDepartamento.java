@@ -21,10 +21,15 @@ public class MenuDepartamento {
 		String ruta = "FicherosRepaso/" + nombreFichero;
 		File f = new File(ruta);
 		if (f.exists()) {
-			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(ruta));
-			while (true) {
-				lista.add((Departamento) ois.readObject());
+			try {
+				ObjectInputStream ois = new ObjectInputStream(new FileInputStream(ruta));
+				while (true) {
+					lista.add((Departamento) ois.readObject());
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
 			}
+
 		}
 		while (true) {
 			System.out.println("=================MENU=================");
@@ -47,10 +52,25 @@ public class MenuDepartamento {
 				consultarDepartamentos();
 				break;
 			case 4:
-
+				System.out.println("Introduce el ID del departamento: ");
+				int numeroID = s.nextInt();
+				System.out.println("Introduce el nombre del departamento: ");
+				String nombre = s.next();
+				System.out.println("Introduce el numero de empleados dentro de ese departamento: ");
+				int numeroEmpleados = s.nextInt();
+				System.out.println("Introduce la ubicacion del departamento dentro de la empresa: ");
+				String ubicacion = s.next();
+				System.out.println("Introduce el presupuesto anual que se destina a ese departamento: ");
+				double presupuestoAnual = s.nextDouble();
+				Departamento dNuevo = new Departamento(numeroID, nombre, numeroEmpleados, ubicacion, presupuestoAnual);
+				for (Departamento d : lista) {
+					if (d.getNombre().equalsIgnoreCase(dNuevo.getNombre())) {
+						modificarDepartamento(dNuevo);
+					}
+				}
 				break;
 			case 5:
-
+				darDeBajaDepartamento();
 				break;
 			case 6:
 				System.out.println("Has salido del menu");
@@ -82,11 +102,34 @@ public class MenuDepartamento {
 	public static void escrituraFichero(String ruta) throws IOException {
 		FileOutputStream fos = new FileOutputStream(ruta);
 		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		for (Departamento d : lista) {
+			oos.writeObject(d);
+		}
 	}
-	
+
 	public static void consultarDepartamentos() {
-		for(Departamento d : lista) {
+		for (Departamento d : lista) {
 			System.out.println(d);
+		}
+	}
+
+	public static void modificarDepartamento(Departamento dNuevo) {
+		for (Departamento d : lista) {
+			if (d.getNombre().equalsIgnoreCase(dNuevo.getNombre())) {
+				lista.remove(d);
+				lista.add(dNuevo);
+			}
+		}
+	}
+
+	public static void darDeBajaDepartamento() {
+		System.out.println("Introduce el numero identificador del departamento: ");
+		int numeroID = s.nextInt();
+		for (Departamento d : lista) {
+			if (d.getNumeroID() == numeroID) {
+				lista.remove(d);
+			}
+
 		}
 	}
 
