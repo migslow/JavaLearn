@@ -1,29 +1,29 @@
-package repasoSerializacion;
+package ejercicioSerializable;
 
 import java.io.Serializable;
 
 public class Departamento implements Serializable {
-	private int numeroID;
+	private int numDepartamento;
 	private String nombre;
-	private int numeroEmpleados;
-	private String ubicacion;
-	private double presupuestoAnual;
+	private String localidad;
 
-	public Departamento(int numeroID, String nombre, int numeroEmpleados, String ubicacion, double presupuestoAnual) {
+	public Departamento() {
 		super();
-		this.numeroID = numeroID;
+	}
+
+	public Departamento(int numDepartamento, String nombre, String localidad) {
+		super();
+		this.numDepartamento = numDepartamento;
 		this.nombre = nombre;
-		this.numeroEmpleados = numeroEmpleados;
-		this.ubicacion = ubicacion;
-		this.presupuestoAnual = presupuestoAnual;
+		this.localidad = localidad;
 	}
 
-	public int getNumeroID() {
-		return numeroID;
+	public int getNumDepartamento() {
+		return numDepartamento;
 	}
 
-	public void setNumeroID(int numeroID) {
-		this.numeroID = numeroID;
+	public void setNumDepartamento(int numDepartamento) {
+		this.numDepartamento = numDepartamento;
 	}
 
 	public String getNombre() {
@@ -34,34 +34,18 @@ public class Departamento implements Serializable {
 		this.nombre = nombre;
 	}
 
-	public int getNumeroEmpleados() {
-		return numeroEmpleados;
+	public String getLocalidad() {
+		return localidad;
 	}
 
-	public void setNumeroEmpleados(int numeroEmpleados) {
-		this.numeroEmpleados = numeroEmpleados;
-	}
-
-	public String getUbicacion() {
-		return ubicacion;
-	}
-
-	public void setUbicacion(String ubicacion) {
-		this.ubicacion = ubicacion;
-	}
-
-	public double getPresupuestoAnual() {
-		return presupuestoAnual;
-	}
-
-	public void setPresupuestoAnual(double presupuestoAnual) {
-		this.presupuestoAnual = presupuestoAnual;
+	public void setLocalidad(String localidad) {
+		this.localidad = localidad;
 	}
 
 	@Override
 	public String toString() {
-		return "Departamento [numeroID=" + numeroID + ", nombre=" + nombre + ", numeroEmpleados=" + numeroEmpleados
-				+ ", ubicacion=" + ubicacion + ", presupuestoAnual=" + presupuestoAnual + "]";
+		return "Departamento [numDepartamento=" + numDepartamento + ", nombre=" + nombre + ", localidad=" + localidad
+				+ "]";
 	}
 
 }
