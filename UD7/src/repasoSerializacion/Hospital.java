@@ -118,6 +118,7 @@ public class Hospital {
 		for (Paciente p : lista) {
 			oos.writeObject(p);
 		}
+		
 	}
 
 	public static void consultarRegistro() {
