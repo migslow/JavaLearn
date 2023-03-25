@@ -1,4 +1,4 @@
-package ejercicioSerializable;
+package repasoSerializacion;
 
 import java.io.EOFException;
 import java.io.File;
