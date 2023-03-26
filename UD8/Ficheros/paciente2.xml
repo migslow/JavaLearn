@@ -1,0 +1,12 @@
+<list>
+  <Paciente>
+    <nombre>Miguel</nombre>
+    <edad>18</edad>
+    <sintoma>Sin1</sintoma>
+  </Paciente>
+  <Paciente>
+    <nombre>Maria</nombre>
+    <edad>15</edad>
+    <sintoma>sin2</sintoma>
+  </Paciente>
+</list>

@@ -15,22 +15,22 @@ import com.thoughtworks.xstream.io.xml.DomDriver;
 public class Prueba {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
-		ArrayList<Persona> lista = new ArrayList<Persona>();
-		ObjectInputStream ois = new ObjectInputStream(new FileInputStream("Ficheros/personas.dat"));
+		ArrayList<Mascota> lista = new ArrayList<Mascota>();
+		ObjectInputStream ois = new ObjectInputStream(new FileInputStream("Ficheros/mascotas.dat"));
 
 		try {
 			while (true) {
-				Persona p = (Persona) ois.readObject();
+				Mascota p = (Mascota) ois.readObject();
 				lista.add(p);
 			}
 		} catch (EOFException e) {
 			ois.close();
 		}
 
-		XStream xs = new XStream(new DomDriver("UTF-8"));
-		xs.alias("Agenda_Personal", List.class);
-		xs.alias("Datos_Contacto", Persona.class);
-		xs.toXML(lista, new FileOutputStream("Ficheros/personas.xml"));
+		XStream xs = new XStream();
+		xs.alias("Veterinario", List.class);
+		xs.alias("Animales", Persona.class);
+		xs.toXML(lista, new FileOutputStream("Ficheros/mascotas4.xml"));
 
 	}
 

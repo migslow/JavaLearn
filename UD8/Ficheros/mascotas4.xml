@@ -1,0 +1,10 @@
+<Veterinario>
+  <repasoXStream.Mascota>
+    <nombre>Pipi</nombre>
+    <edad>3</edad>
+  </repasoXStream.Mascota>
+  <repasoXStream.Mascota>
+    <nombre>Fifo</nombre>
+    <edad>5</edad>
+  </repasoXStream.Mascota>
+</Veterinario>
