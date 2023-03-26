@@ -13,11 +13,9 @@ public class LeerPersonas {
 		XStream xstream = new XStream();
 		xstream.alias("ListaPersonasMunicipio",ListaPersonas.class);
 		xstream.alias("DatosPersona", Persona.class);
-		xstream.addImplicitCollection(ListaPersonas.class, "lista");
+		// xstream.addImplicitCollection(ListaPersonas.class, "lista");
 		
-		ListaPersonas listadoTodas = (ListaPersonas) 
-									xstream.fromXML
-									(new FileReader("Ficheros/personas.xml"));
+		ListaPersonas listadoTodas = (ListaPersonas) xstream.fromXML (new FileReader("Ficheros/Personas2.xml"));
 		System.out.println("N�mero de Personas: " +
 									listadoTodas.getListaPersonas().size());
 		List<Persona> listaPersonas=new ArrayList<Persona>();

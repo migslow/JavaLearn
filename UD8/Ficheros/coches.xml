@@ -1,0 +1,17 @@
+<list>
+  <Coches>
+    <marca>Audi</marca>
+    <modelo>RS3</modelo>
+    <color>Negro</color>
+  </Coches>
+  <Coches>
+    <marca>BMW</marca>
+    <modelo>M3</modelo>
+    <color>Gris</color>
+  </Coches>
+  <Coches>
+    <marca>Ford</marca>
+    <modelo>Focus</modelo>
+    <color>Azul</color>
+  </Coches>
+</list>

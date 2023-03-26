@@ -59,31 +59,41 @@ public class Hospital {
 			case 4:
 				System.out.println("Introduce el id de la seguridad social: ");
 				int ID = s.nextInt();
-				System.out.println("Introduce el nombre del paciente");
-				String n = s.next();
-				System.out.println("Introduce la edad del paciente: ");
-				int edad = s.nextInt();
-				System.out.println("Introduce la direccion del paciente: ");
-				String direccion = s.next();
-				System.out.println("Introduce los sintomas del paciente: ");
-				String sintomas = s.next();
-				Paciente pNuevo = new Paciente(ID, n, edad, direccion, sintomas);
-				modificarPaciente(pNuevo);
+				boolean encontrado = false;
+				for (Paciente p : lista) {
+					if (p.getIDSeguridadSocial() == ID) {
+						encontrado = true;
+						System.out.println("Introduce el nombre del paciente");
+						String n = s.next();
+						System.out.println("Introduce la edad del paciente: ");
+						int edad = s.nextInt();
+						System.out.println("Introduce la direccion del paciente: ");
+						String direccion = s.next();
+						System.out.println("Introduce los sintomas del paciente: ");
+						String sintomas = s.next();
+						Paciente pNuevo = new Paciente(ID, n, edad, direccion, sintomas);
+						modificarPaciente(pNuevo);
+						break;
+					}
+				}
+				if (!encontrado) {
+					System.out.println("No a sido encontrado");
+				}
 				break;
 			case 5:
-
+				darAlta();
 				break;
 			case 6:
-
+				ConsultarID();
 				break;
 			case 7:
-
+				porNombre();
 				break;
 			case 8:
-
+				porDireccion();
 				break;
 			case 9:
-
+				porSintomas();
 				break;
 			case 10:
 				System.out.println("Has salido del menu");
@@ -118,7 +128,7 @@ public class Hospital {
 		for (Paciente p : lista) {
 			oos.writeObject(p);
 		}
-		
+
 	}
 
 	public static void consultarRegistro() {
@@ -133,6 +143,59 @@ public class Hospital {
 			if (p.getIDSeguridadSocial() == pNuevo.getIDSeguridadSocial()) {
 				lista.remove(p);
 				lista.add(pNuevo);
+			}
+		}
+	}
+
+	public static void darAlta() {
+		System.out.println("Introduce el id de la seguridad social: ");
+		int ID = s.nextInt();
+		for (Paciente p : lista) {
+			if (p.getIDSeguridadSocial() == ID) {
+				lista.remove(p);
+			}
+		}
+	}
+
+	public static void ConsultarID() {
+		System.out.println("Introduce el id de la seguridad social: ");
+		int ID = s.nextInt();
+		for (Paciente p : lista) {
+			if (p.getIDSeguridadSocial() == ID) {
+				System.out.println(p);
+			}
+		}
+	}
+
+	public static void porNombre() {
+		System.out.println("Introduce el nombre del paciente: ");
+		String nombre = s.nextLine();
+		for (Paciente p : lista) {
+			if (p.getNombre().toLowerCase().equalsIgnoreCase(nombre.toLowerCase())
+					&& p.getNombre().toUpperCase().equalsIgnoreCase(nombre.toUpperCase())) {
+				System.out.println(p);
+			}
+		}
+	}
+
+	public static void porDireccion() {
+		System.out.println("Introduce la direccion del paciente: ");
+		String direccion = s.nextLine();
+		for (Paciente p : lista) {
+			if (p.getDireccion().toLowerCase().equalsIgnoreCase(direccion.toLowerCase())
+					&& p.getDireccion().toUpperCase().equalsIgnoreCase(direccion.toUpperCase())) {
+				System.out.println(p);
+			}
+		}
+	}
+
+	public static void porSintomas() {
+		System.out.println("Introduce el sintoma del paciente: ");
+		String sintoma = s.nextLine();
+		for (Paciente p : lista) {
+			if (p.getSintamas().toLowerCase().equalsIgnoreCase(sintoma.toLowerCase())
+					&& p.getNombre().toUpperCase().equalsIgnoreCase(sintoma.toUpperCase())) {
+				System.out.println(p);
 			}
 		}
 	}
