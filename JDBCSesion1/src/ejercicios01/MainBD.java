@@ -34,7 +34,7 @@ public class MainBD {
 			for (Socio l : todosSocios2)
 				System.out.println(l);
 		} else
-			System.out.println("Lista de todos los libros vacia");
+			System.out.println("Lista de todos los socios vacia");
 
 		//  bd.consultarTodosResultSet(bd.consultarTodosResultSet());
 

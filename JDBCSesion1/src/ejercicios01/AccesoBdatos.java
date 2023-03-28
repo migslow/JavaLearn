@@ -7,8 +7,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import paquete1_mejorado.Libro;
-
 public class AccesoBdatos {
 
 	private static String driver = "com.mysql.cj.jdbc.Driver";

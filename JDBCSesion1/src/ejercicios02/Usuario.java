@@ -2,12 +2,14 @@ package ejercicios02;
 
 public class Usuario {
 	private String username;
-	private int password;
+	private String password;
+	private String nombre;
 
-	public Usuario(String username, int password) {
+	public Usuario(String username, String password, String nombre) {
 		super();
 		this.username = username;
 		this.password = password;
+		this.nombre = nombre;
 	}
 
 	public String getUsername() {
@@ -18,17 +20,25 @@ public class Usuario {
 		this.username = username;
 	}
 
-	public int getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
-	public void setPassword(int password) {
+	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	@Override
 	public String toString() {
-		return "Usuario [username=" + username + ", password=" + password + "]";
+		return "Usuario [username=" + username + ", password=" + password + ", nombre=" + nombre + "]";
 	}
 
 }
