@@ -2,12 +2,9 @@ package ejercicios02;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-
-import ejercicios01.Socio;
 
 public class ControlAcceso {
 
@@ -28,13 +25,24 @@ public class ControlAcceso {
 		conecta = DriverManager.getConnection(url, username, password);
 	}
 
-	public String comprobarCredenciales(String usu, String pass) throws SQLException {
-		Statement consulta = conecta.createStatement();
-		ResultSet res = consulta.executeQuery("select * from usuario where username = '" + usu + "' and password='" + pass + "'");
-		if (res.next()) {
-			return res.getString(3);
-		} else {
-			return "No existe el Usuario / Contraseña";
+	public static Usuario comprobarCredenciales(String usu, String pass) throws SQLException {
+		try {
+			PreparedStatement ps = conecta.prepareStatement("SELECT * FROM usuario WHERE username=? AND password=?");
+			ps.setString(1, usu);
+			ps.setString(2, pass);
+
+			ResultSet rs = ps.executeQuery();
+			Usuario u = null;
+			if (rs.next()) {
+				u = new Usuario(rs.getString(1), rs.getString(2), rs.getString(3));
+			}
+			rs.close();
+			ps.close();
+			return u;
+		} finally {
+			if (conecta != null) {
+				conecta.close();
+			}
 		}
 
 	}
