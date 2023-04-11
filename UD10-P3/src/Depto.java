@@ -1,9 +1,9 @@
 
 public class Depto {
 
-	Integer deptno;
-	String dname;
-	String loc;
+	private Integer deptno;
+	private String dname;
+	private String loc;
 
 	public Depto(Integer deptno, String dname, String loc) {
 		super();
