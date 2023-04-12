@@ -51,7 +51,7 @@ public class Main {
 
 		System.out.println("\nApartado I: ");
 		System.out.println("Subir un 20% el salario de los empleados del Departamento 10");
-		System.out.println(abd.actualizarSalarioconTransacciones(10, 0.2)); // →6
+		System.out.println(abd.actualizarSalarioconTransacciones(10, 60)); // →6
 		//
 		System.out.println("Subir un 15% el salario de los empleados del Departamento 44");
 		System.out.println(abd.actualizarSalarioconTransacciones(44, 0.15));// →0

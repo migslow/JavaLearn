@@ -115,7 +115,7 @@ public class AccesoBdatos {
 			PreparedStatement actualiza = conecta.prepareStatement(sql);
 			actualiza.setDouble(1, porcentaje);
 			actualiza.setInt(2, departamento);
-
+			conecta.setAutoCommit(false);
 			actualiza.close();
 			conecta.commit();
 
