@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 public class AccesoBdatos {
@@ -16,7 +17,7 @@ public class AccesoBdatos {
 			+ "?serverTimezone=Europe/Madrid";
 	private static String username = "root";
 	private static String password = "root";
-	private Connection conecta;
+	private static Connection conecta;
 
 	public void conectar() throws SQLException, ClassNotFoundException {
 		Class.forName(driver);
@@ -108,15 +109,25 @@ public class AccesoBdatos {
 		return 1062;
 	}
 
-	public int actualizarSalario(int departamento, double porcentaje) {
+	public int actualizarSalarioconTransacciones(int departamento, double porcentaje) {
 		try {
-			PreparedStatement actualizar = conecta.prepareStatement("update emp set sal=sal*? where deptno=?");
-			actualizar.setDouble(1, porcentaje);
-			actualizar.setInt(2, departamento);
-			return actualizar.executeUpdate();
+			String sql = "UPDATE emp SET sal=sal*? WHERE deptno=?";
+			PreparedStatement actualiza = conecta.prepareStatement(sql);
+			actualiza.setDouble(1, porcentaje);
+			actualiza.setInt(2, departamento);
+
+			actualiza.close();
+			conecta.commit();
+
+			return (actualiza.executeUpdate());
+
 		} catch (SQLException e) {
-			System.out.println("A ocurrido un problema con la consulta " + e.getErrorCode());
-			return 0; 
+			try {
+				conecta.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			return 0;
 		}
 	}
 

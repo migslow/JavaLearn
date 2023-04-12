@@ -48,22 +48,22 @@ public class Main {
 		System.out.println("\nApartado G: ");
 		Empleado e2 = new Empleado(10, "CARRERA", "PROFESOR", 7788, sqlFecha, 700, 0, 20);
 		System.out.println(abd.insertarConBean(e1));
-		
+
 		System.out.println("\nApartado I: ");
 		System.out.println("Subir un 20% el salario de los empleados del Departamento 10");
-		System.out.println(abd.actualizarSalario(10, 0.2)); //→6
+		System.out.println(abd.actualizarSalarioconTransacciones(10, 0.2)); // →6
 		//
 		System.out.println("Subir un 15% el salario de los empleados del Departamento 44");
-		System.out.println(abd.actualizarSalario(44, 0.15));//→0
+		System.out.println(abd.actualizarSalarioconTransacciones(44, 0.15));// →0
 		// No existe el departamento 44
-		
+
 		System.out.println("\nApartado J: ");
 		System.out.println(abd.borrarEmpleado(1));
-		//1 - Se ha borrado el empleado de código 1 de la tabla
+		// 1 - Se ha borrado el empleado de código 1 de la tabla
 		System.out.println(abd.borrarEmpleado(99));
-		//0 – No se ha borrado ninguno pues no existe el empleado 99
+		// 0 – No se ha borrado ninguno pues no existe el empleado 99
 		System.out.println(abd.borrarEmpleado(7839));
-		//1 – Se ha borrado el empleado 7839.
+		// 1 – Se ha borrado el empleado 7839.
 
 		abd.desconectar();
 
