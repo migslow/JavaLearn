@@ -36,17 +36,24 @@ public class Main extends JFrame implements ActionListener {
 		jl_password = new JLabel("Contraseña: ");
 		jl_password.setBounds(20, 60, 80, 20);
 		panel.add(jl_password);
+
+		// Imagen 1
 		jl_candadoAbierto = new JLabel();
 		jl_candadoAbierto.setBounds(140, 110, 95, 130);
 		ImageIcon iconoCandado1 = new ImageIcon("Imagenes/candado_abierto.png");
 		jl_candadoAbierto.setIcon(iconoCandado1);
 		jl_candadoAbierto.setVisible(false);
 		panel.add(jl_candadoAbierto);
+
+		// Imagen 2
 		jl_candadoCerrado = new JLabel();
 		jl_candadoCerrado.setBounds(140, 110, 95, 130);
 		ImageIcon iconoCandado2 = new ImageIcon("Imagenes/candado_cerrado.png");
 		jl_candadoCerrado.setIcon(iconoCandado2);
+		jl_candadoCerrado.setVisible(true);
 		panel.add(jl_candadoCerrado);
+
+		// Comentario
 		jl_comentario = new JLabel();
 		jl_comentario.setBounds(20, 280, 200, 20);
 		panel.add(jl_comentario);
@@ -70,18 +77,6 @@ public class Main extends JFrame implements ActionListener {
 		setSize(500, 500);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		addWindowListener(new WindowAdapter() {
-			public void windowClosing(WindowEvent we) {
-				try {
-					bd.desconectar();
-					System.out.println("desconectado");
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				System.exit(0);
-			}
-		});
 
 	}
 
@@ -98,24 +93,21 @@ public class Main extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (jtf_textuser.getText().isEmpty() || jpf_password.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Debe completar los dos campos", "Mensaje",
-					JOptionPane.INFORMATION_MESSAGE);
+		if (e.getSource().equals(jb_aceptar)) {
+			if (jtf_textuser.getText().isEmpty() || jpf_password.getText().isEmpty()) {
+				JOptionPane.showMessageDialog(null, "Debe completar los dos campos", "Mensaje",
+						JOptionPane.INFORMATION_MESSAGE);
+
+			}
 			try {
-				jl_comentario.setText(bd.comprobarCredenciales(jtf_textuser.getText(), jl_password.getText()));
+				if (bd.equals(bd.comprobarCredenciales(jtf_textuser.getText(), jl_password.getText()))) {
+					jl_comentario.setText("Bienvenido/a " + jtf_textuser.getText());
+				}
 			} catch (SQLException e1) {
 				e1.printStackTrace();
 			}
-		}
-		try {
-			if (bd.res.getString(3).equals(bd.comprobarCredenciales(jtf_textuser.getText(), jl_password.getText()))) {
-				jl_candadoAbierto.setVisible(true);
-				jl_candadoCerrado.setVisible(false);
-			}
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-		}
 
+		}
 	}
 
 }
