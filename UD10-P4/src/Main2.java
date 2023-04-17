@@ -16,6 +16,7 @@ public class Main2 {
 	private static String password = "root";
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		// Procedimiento
 		Class.forName(driver);
 		Connection conn = DriverManager.getConnection(url, username, password);
 		// Creo la llamada al procedimiento de manera muy parecida

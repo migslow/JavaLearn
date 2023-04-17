@@ -1,5 +1,10 @@
 
-import java.sql.*;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
 // Alberto Carrera Mart�n - 20 de Marzo de 2020
 // Demo de llamada a la funci�n "totalEmpleados" almacenada en MySQL
 // Esta funci�n ya se encuentra tambi�n compilada en MySQL despu�s de lanzar 
@@ -15,9 +20,10 @@ public class Main1 {
 			+ "?serverTimezone=Europe/Madrid";
 	private static String username = "root";
 	private static String password = "root";
+	static Scanner s = new Scanner(System.in);
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-
+		// Funcion
 		Class.forName(driver);
 		Connection conn = DriverManager.getConnection(url, username, password);
 		// Creo la llamada a la funci�n de manera muy parecida
