@@ -191,6 +191,27 @@ public class AccesoBdatos {
 		}
 	}
 
+	public int actualizarConTransacciones(Depto registro) {
+		try {
+			String sql = ("update dept set dname=?, loc=? where deptno=?");
+			conecta.setAutoCommit(false);
+			PreparedStatement actualiza = conecta.prepareStatement(sql);
+			actualiza.setString(1, registro.getDname());
+			actualiza.setString(2, registro.getLoc());
+			actualiza.setInt(2, registro.getDeptno());
+			int filas = actualiza.executeUpdate();
+			conecta.commit();
+			return filas;
+		} catch (SQLException e) {
+			try {
+				conecta.rollback();
+			} catch (SQLException e2) {
+				e2.getStackTrace();
+			}
+		}
+		return 0;
+	}
+
 	//
 	// metodo borrar. Le pasamos un n�mero de departamento y borra dicho
 	// departamento.
