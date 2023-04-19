@@ -48,7 +48,7 @@ public class View extends JFrame {
 	View() {
 		// M�todos de la JFrame
 		setBounds(100, 100, 450, 300);// Definir las dimensiones de la ventana
-		setTitle("GESTI�N DE CLIENTES - KADUM"); // Barra de t�tulo
+		setTitle("GESTION DE CLIENTES - BALONCESTO"); // Barra de t�tulo
 		setDefaultCloseOperation(EXIT_ON_CLOSE); // Acci�n al pulsar salir
 
 		// CREAR EL CONTENEDOR PRINCIPAL Y A�ADIRLO A LA VENTANA
@@ -61,42 +61,64 @@ public class View extends JFrame {
 
 		// Vamos al l�o
 		/**************** BOF ETIQUETAS vvvvvvvvvvvvvvvv **/
-		// ETIQUETA NOMBRE
+		// ETIQUETA SOCIO ID
 		lblsocioID = new JLabel("SocioID: "); // Crear el objeto
 		contenedor.add(lblsocioID); // A�adirlo al contenedor
 		sp.putConstraint(SpringLayout.NORTH, lblsocioID, 10, SpringLayout.NORTH, contenedor);
 		sp.putConstraint(SpringLayout.WEST, lblsocioID, 10, SpringLayout.WEST, contenedor);
-		// ETIQUETA APELLIDOS
+		// ETIQUETA NOMBRE
 		lblNombre = new JLabel("Nombre: ");
 		contenedor.add(lblNombre);
 		sp.putConstraint(SpringLayout.NORTH, lblNombre, 50, SpringLayout.NORTH, contenedor);
 		sp.putConstraint(SpringLayout.WEST, lblNombre, 10, SpringLayout.WEST, contenedor);
-		// ETIQUETA NIF
+		// ETIQUETA ESTATURA
 		lblEstatura = new JLabel("Estatura: ");
 		contenedor.add(lblEstatura);
 		sp.putConstraint(SpringLayout.NORTH, lblEstatura, 90, SpringLayout.NORTH, contenedor);
 		sp.putConstraint(SpringLayout.WEST, lblEstatura, 10, SpringLayout.WEST, contenedor);
+		// ETIQUETA EDAD
+		lblEdad = new JLabel("Edad: ");
+		contenedor.add(lblEdad);
+		sp.putConstraint(SpringLayout.NORTH, lblEdad, 10, SpringLayout.NORTH, contenedor);
+		sp.putConstraint(SpringLayout.WEST, lblEdad, 350, SpringLayout.WEST, contenedor);
+		// ETIQUETA LOCALIDAD
+		lblLocalidad = new JLabel("Localidad: ");
+		contenedor.add(lblLocalidad);
+		sp.putConstraint(SpringLayout.NORTH, lblLocalidad, 50, SpringLayout.NORTH, contenedor);
+		sp.putConstraint(SpringLayout.WEST, lblLocalidad, 350, SpringLayout.WEST, contenedor);
 		/**************** EOF ETIQUETAS ^^^^^^^^^^^^^^^^ **/
 
 		/**************** BOF CUADROS DE TEXTO vvvvvvvvv **/
-		// CUADRO DE TEXTO PARA EL NOMBRE
+		// CUADRO DE TEXTO PARA EL SOCIO ID
 		txtsocioID = new JTextField();
 		contenedor.add(txtsocioID);
 		sp.putConstraint(SpringLayout.NORTH, txtsocioID, 10, SpringLayout.NORTH, contenedor);
 		sp.putConstraint(SpringLayout.WEST, txtsocioID, 100, SpringLayout.WEST, contenedor);
 		sp.putConstraint(SpringLayout.EAST, txtsocioID, 300, SpringLayout.WEST, contenedor);
-		// CUADRO DE TEXTO PARA EL NIF
+		// CUADRO DE TEXTO PARA EL NOMBRE
 		txtNombre = new JTextField();
-		contenedor.add(txtNombre); // a�adir al contenedor
+		contenedor.add(txtNombre);
 		sp.putConstraint(SpringLayout.NORTH, txtNombre, 50, SpringLayout.NORTH, contenedor);
 		sp.putConstraint(SpringLayout.WEST, txtNombre, 100, SpringLayout.WEST, contenedor);
 		sp.putConstraint(SpringLayout.EAST, txtNombre, 300, SpringLayout.WEST, contenedor);
-		// CUADRO DE TEXTO PARA LOS APELLIDOS
+		// CUADRO DE TEXTO PARA LA ESTATURA
 		txtEstatura = new JTextField();
 		contenedor.add(txtEstatura);
 		sp.putConstraint(SpringLayout.NORTH, txtEstatura, 90, SpringLayout.NORTH, contenedor);
 		sp.putConstraint(SpringLayout.WEST, txtEstatura, 100, SpringLayout.WEST, contenedor);
 		sp.putConstraint(SpringLayout.EAST, txtEstatura, 300, SpringLayout.WEST, contenedor);
+		// CUADRO DE TEXTO PARA LA EDAD
+		txtEdad = new JTextField();
+		contenedor.add(txtEdad);
+		sp.putConstraint(SpringLayout.NORTH, txtEdad, 10, SpringLayout.NORTH, contenedor);
+		sp.putConstraint(SpringLayout.WEST, txtEdad, 450, SpringLayout.WEST, contenedor);
+		sp.putConstraint(SpringLayout.EAST, txtEdad, 650, SpringLayout.WEST, contenedor);
+		// CUADRO DE TEXTO PARA LA LOCALIDAD
+		txtLocalidad = new JTextField();
+		contenedor.add(txtLocalidad);
+		sp.putConstraint(SpringLayout.NORTH, txtLocalidad, 50, SpringLayout.NORTH, contenedor);
+		sp.putConstraint(SpringLayout.WEST, txtLocalidad, 450, SpringLayout.WEST, contenedor);
+		sp.putConstraint(SpringLayout.EAST, txtLocalidad, 650, SpringLayout.WEST, contenedor);
 		/**************** EOF CUADROS DE TEXTO ^^^^^^^^^ **/
 
 		/**************** BOF TABLA vvvvvvvvvvvvvvvvvvvv **/
@@ -133,7 +155,7 @@ public class View extends JFrame {
 
 		// Se hace visible la ventana
 		setVisible(true);
-
+		setSize(1000, 1000);
 	}
 
 	public void conectaControlador(Controller c) {

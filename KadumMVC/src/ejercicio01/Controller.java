@@ -34,12 +34,14 @@ public class Controller implements ActionListener, MouseListener {
 		case "INSERTAR":
 			try {
 				// Preparar la llamada
-				cs = Bd.getConexion().prepareCall("{CALL insertarCliente(?,?,?)}");
+				cs = Bd.getConexion().prepareCall("{insert into socio values (?,?,?,?,?)}");
 				// Indicar qu� informaci�n se pasa al
 				// procedimiento
 				cs.setString(1, this.view.txtsocioID.getText());
 				cs.setString(2, this.view.txtNombre.getText());
 				cs.setString(3, this.view.txtEstatura.getText());
+				cs.setString(4, this.view.txtEdad.getText());
+				cs.setString(5, this.view.txtLocalidad.getText());
 				// Ejecutar el procedimiento
 				cs.execute();
 			} catch (SQLException e) {
@@ -57,7 +59,7 @@ public class Controller implements ActionListener, MouseListener {
 				int identificador = (int) this.view.dtm.getValueAt(filaPulsada, 0);
 				try {
 					// Preparar la llamada
-					cs = Bd.getConexion().prepareCall("{CALL borrarCliente(?)}");
+					cs = Bd.getConexion().prepareCall("{delete from socio where socioID=?}");
 					// Indicar qu� informaci�n se pasa al procedimiento
 					cs.setInt(1, identificador);
 					// Ejecutar el procedimiento
@@ -79,12 +81,14 @@ public class Controller implements ActionListener, MouseListener {
 				int identificador = (int) this.view.dtm.getValueAt(filaPulsada, 0);
 				try {
 					// Preparar la llamada
-					cs = Bd.getConexion().prepareCall("{CALL modificarCliente(?,?,?,?)}");
+					cs = Bd.getConexion().prepareCall("{update socio set nombre=?,estatura=?,edad=?,localidad=? where socioID=?}");
 					// Indicar qu� informaci�n se pasa al procedimiento
 					cs.setInt(1, identificador);
 					cs.setString(2, this.view.txtsocioID.getText());
 					cs.setString(3, this.view.txtNombre.getText());
 					cs.setString(4, this.view.txtEstatura.getText());
+					cs.setString(5, this.view.txtEdad.getText());
+					cs.setString(6, this.view.txtLocalidad.getText());
 					// Ejecutar el procedimiento
 					cs.execute();
 					// System.out.println(this.view.dtm.getValueAt(filaPulsada, 0));
@@ -111,6 +115,8 @@ public class Controller implements ActionListener, MouseListener {
 		this.view.txtsocioID.setText("");
 		this.view.txtNombre.setText("");
 		this.view.txtEstatura.setText("");
+		this.view.txtEdad.setText("");
+		this.view.txtLocalidad.setText("");
 	}
 
 	// M�todo que recarga los datos de la tabla de la base de datos
@@ -145,6 +151,8 @@ public class Controller implements ActionListener, MouseListener {
 				fila.add(rs.getInt("socioID"));
 				fila.add(rs.getString("nombre"));
 				fila.add(rs.getString("estatura"));
+				fila.add(rs.getString("edad"));
+				fila.add(rs.getString("localidad"));
 				// A�adir el vector a la tabla de la clase View
 				this.view.dtm.addRow(fila);
 			}
@@ -170,7 +178,7 @@ public class Controller implements ActionListener, MouseListener {
 			int identificador = (int) this.view.dtm.getValueAt(filaPulsada, 0);
 			try {
 				// Preparar la llamada
-				cs = Bd.getConexion().prepareCall("{CALL getCliente(?)}");
+				cs = Bd.getConexion().prepareCall("{select socioID, nombre, estatura, edad, localidad from socio}");
 				// Indicar qu� informaci�n se pasa al procedimiento
 				cs.setInt(1, identificador);
 				// Ejecutar el procedimiento
@@ -180,6 +188,8 @@ public class Controller implements ActionListener, MouseListener {
 					this.view.txtsocioID.setText(rs.getString(1));
 					this.view.txtNombre.setText(rs.getString(2));
 					this.view.txtEstatura.setText(rs.getString(3));
+					this.view.txtEdad.setText(rs.getString(4));
+					this.view.txtLocalidad.setText(rs.getString(5));
 				}
 				// System.out.println(this.view.dtm.getValueAt(filaPulsada, 0));
 			} catch (SQLException e) {
