@@ -31,7 +31,7 @@ public class ej03 {
 		proc.setInt(1, c);
 		proc.setInt(2, p);
 		proc.registerOutParameter(3, Types.DECIMAL);
-		proc.execute();
+		proc.executeUpdate();
 		int resultado = proc.getInt(3);
 		if (resultado > 0) {
 			System.out.println(

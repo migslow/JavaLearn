@@ -7,7 +7,8 @@ import java.sql.SQLException;
 import java.sql.Types;
 import java.util.Scanner;
 
-public class ej03 {private static String driver = "com.mysql.cj.jdbc.Driver";
+public class ej03 {
+	private static String driver = "com.mysql.cj.jdbc.Driver";
 	private static String database = "pedidos";
 	private static String hostname = "localhost";
 	private static String port = "3307";
@@ -24,18 +25,20 @@ public class ej03 {private static String driver = "com.mysql.cj.jdbc.Driver";
 		int c = s.nextInt();
 		System.out.println("Introduce el porcentaje: ");
 		int p = s.nextInt();
-		CallableStatement proc = conn.prepareCall("call incrementarPrecioCategoria(?,?,?)");
+		CallableStatement proc = conn.prepareCall("call incrementarPrecioCategoria(?, ?, ?)");
 		proc.setInt(1, c);
-		proc.setInt(1, p);
+		proc.setInt(2, p);
 		proc.registerOutParameter(3, Types.DECIMAL);
-		proc.execute();
+		proc.executeUpdate();
 		int resultado = proc.getInt(3);
-		if(resultado > 0) {
-			System.out.println("Se incremento el precio un " + p + " para " + resultado + " productos de la categoria " + c);
+		if (resultado > 0) {
+			System.out.println(
+					"Se incremento el precio de " + p + " para " + resultado + " productos de la categoria " + c);
 		} else {
 			System.out.println("No se actualizo ningun producto de la categoria " + c);
 		}
-
+		proc.close();
+		conn.close();
 	}
 
 }
