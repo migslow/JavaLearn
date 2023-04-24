@@ -30,7 +30,8 @@ public class ControlAcceso {
 
 	public String comprobarCredenciales(String usu, String pass) throws SQLException {
 		Statement consulta = conecta.createStatement();
-		ResultSet res = consulta.executeQuery("select * from usuario where username = '" + usu + "' and password='" + pass + "'");
+		ResultSet res = consulta
+				.executeQuery("select * from usuario where username = '" + usu + "' and password='" + pass + "'");
 		if (res.next()) {
 			return res.getString(3);
 		} else {

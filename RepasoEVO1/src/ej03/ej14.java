@@ -3,7 +3,7 @@ package ej03;
 public class ej14 {
 
 	public static void sonIguales(int[] v1, int[] v2) {
-		for (int i = 0; i < v1.length && i < v2.length; i++) {
+		for (int i = 0; i < v1.length; i++) {
 			if (v1[i] == v2[i]) {
 				System.out.println("Son iguales");
 			} else {

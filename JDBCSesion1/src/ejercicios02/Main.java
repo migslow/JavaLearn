@@ -3,8 +3,6 @@ package ejercicios02;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.sql.SQLException;
 
 import javax.swing.ImageIcon;
@@ -26,27 +24,31 @@ public class Main extends JFrame implements ActionListener {
 	JButton jb_aceptar;
 
 	public Main() {
+		super("Control de Acceso Curso 2022- 2023");
 		panel = getContentPane();
 		panel.setLayout(null);
 
 		// JLabel
+		// USUARIO
 		jl_user = new JLabel("Usuario: ");
 		jl_user.setBounds(20, 20, 80, 20);
 		panel.add(jl_user);
+		// CONTRASEÑA
 		jl_password = new JLabel("Contraseña: ");
 		jl_password.setBounds(20, 60, 80, 20);
 		panel.add(jl_password);
-		jl_candadoAbierto = new JLabel();
-		jl_candadoAbierto.setBounds(140, 110, 95, 130);
-		ImageIcon iconoCandado1 = new ImageIcon("Imagenes/candado_abierto.png");
-		jl_candadoAbierto.setIcon(iconoCandado1);
-		jl_candadoAbierto.setVisible(false);
+		// IMAGEN CANDADO ABIERTO
+		jl_candadoAbierto = new JLabel("");
+		jl_candadoAbierto.setIcon(new ImageIcon("./imagenes/candado_abierto.png"));
+		jl_candadoAbierto.setBounds(171, 119, 111, 131);
 		panel.add(jl_candadoAbierto);
-		jl_candadoCerrado = new JLabel();
-		jl_candadoCerrado.setBounds(140, 110, 95, 130);
-		ImageIcon iconoCandado2 = new ImageIcon("Imagenes/candado_cerrado.png");
-		jl_candadoCerrado.setIcon(iconoCandado2);
+		jl_candadoAbierto.setVisible(false);
+		// IGEN CANDADO CERRADO
+		jl_candadoCerrado = new JLabel("");
+		jl_candadoCerrado.setIcon(new ImageIcon("./imagenes/candado_cerrado.png"));
+		jl_candadoCerrado.setBounds(171, 119, 111, 131);
 		panel.add(jl_candadoCerrado);
+		// COMENTARIO
 		jl_comentario = new JLabel();
 		jl_comentario.setBounds(20, 280, 200, 20);
 		panel.add(jl_comentario);
@@ -70,19 +72,6 @@ public class Main extends JFrame implements ActionListener {
 		setSize(500, 500);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		addWindowListener(new WindowAdapter() {
-			public void windowClosing(WindowEvent we) {
-				try {
-					bd.desconectar();
-					System.out.println("desconectado");
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				System.exit(0);
-			}
-		});
-
 	}
 
 	public static void main(String[] args) {
@@ -98,24 +87,30 @@ public class Main extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (jtf_textuser.getText().isEmpty() || jpf_password.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Debe completar los dos campos", "Mensaje",
-					JOptionPane.INFORMATION_MESSAGE);
+		if (jtf_textuser.getText().isEmpty() || jpf_password.getText().isEmpty())
+			JOptionPane.showMessageDialog(null, "DEBE COMPLETAR LOS DOS CAMPOS", "Mensaje", JOptionPane.ERROR_MESSAGE);
+		else {
 			try {
-				jl_comentario.setText(bd.comprobarCredenciales(jtf_textuser.getText(), jl_password.getText()));
+				jl_comentario.setText(bd.comprobarCredenciales(jtf_textuser.getText(), jpf_password.getText()));
 			} catch (SQLException e1) {
-				e1.printStackTrace();
-			}
-		}
-		try {
-			if (bd.res.getString(3).equals(bd.comprobarCredenciales(jtf_textuser.getText(), jl_password.getText()))) {
-				jl_candadoAbierto.setVisible(true);
-				jl_candadoCerrado.setVisible(false);
-			}
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-		}
+				System.out.println("Usuario o contraseñas incorrectos");
 
+			}
+			;
+
+			try {
+				if (bd.res.getString(3)
+						.equals(bd.comprobarCredenciales(jtf_textuser.getText(), jpf_password.getText()))) {
+					jl_candadoAbierto.setIcon(new ImageIcon("./imagenes/candado_abierto.png"));
+					jl_candadoAbierto.setVisible(true);
+					jl_candadoCerrado.setVisible(false);
+				}
+
+			} catch (SQLException e1) {
+				System.out.println("Usuario o contraseña incorrectos");
+				jl_candadoCerrado.setIcon(new ImageIcon("./imagenes/candado_cerrado.png"));
+			}
+		}
 	}
 
 }
