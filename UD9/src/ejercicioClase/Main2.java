@@ -18,27 +18,27 @@ public class Main2 {
 		
 		// abd.imprimirDepartamento(90);
 		// abd.imprimirDepartamento(40);
-		abd.imprimirDepartamento(10);
+		// abd.imprimirDepartamento(10);
 		
-		/*
-		System.out.println(abd.insertarDepartamento(new
-		DepartamentoEntity(60,"Recursos Humanos", "Chimillas")));
-		System.out.println(abd.insertarDepartamento(new
-		DepartamentoEntity(60,"Recursos Humanos", "Chimillas")));
-		abd.imprimirDepartamento(60);
-		*/
-		/*
-		System.out.println(abd.modificarDepartamento(new
-		DepartamentoEntity(88,"RRHH", "Huerrios")));
-		System.out.println(abd.modificarDepartamento(new
-		DepartamentoEntity(60,"RRHH", "Esquedas")));
-		abd.imprimirDepartamento(60);
-		*/
-		/*
-		abd.borrarDepartamento(88); // false no existe
-		abd.borrarDepartamento(60); // true
-		abd.borrarDepartamento(10); // false pues tiene empleados
-		*/
+		
+		// System.out.println(abd.insertarDepartamento(new
+		// DepartamentoEntity(60,"Recursos Humanos", "Chimillas")));
+		// System.out.println(abd.insertarDepartamento(new
+		// DepartamentoEntity(60,"Recursos Humanos", "Chimillas")));
+		// abd.imprimirDepartamento(60);
+		
+		
+		// System.out.println(abd.modificarDepartamento(new
+		// DepartamentoEntity(88,"RRHH", "Huerrios")));
+		// System.out.println(abd.modificarDepartamento(new
+		// DepartamentoEntity(60,"RRHH", "Esquedas")));
+		// abd.imprimirDepartamento(60);
+		
+		
+		// abd.borrarDepartamento(88); // false no existe
+		// abd.borrarDepartamento(60); // true
+		// abd.borrarDepartamento(10); // false pues tiene empleados
+		
 		// abd.imprimirDepartamento(10);
 
 		abd.demoJPQL();

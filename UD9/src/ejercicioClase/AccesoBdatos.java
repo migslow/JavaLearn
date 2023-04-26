@@ -118,14 +118,14 @@ public class AccesoBdatos {
 				DepartamentoEntity.class);
 		List<DepartamentoEntity> l2 = tq2.getResultList();
 		for (DepartamentoEntity r2 : l2) {
-			System.out.println("Nombre :  " + r2.getNombre() + ", Localidad: " + r2.getLocalidad());
+			System.out.println("Nombre:  " + r2.getNombre() + ", Localidad: " + r2.getLocalidad());
 		}
 		//
 		TypedQuery<Object[]> tq3 = em.createQuery("SELECT d.nombre, d.localidad FROM DepartamentoEntity  d",
 				Object[].class);
 		List<Object[]> l3 = tq3.getResultList();
 		for (Object[] r3 : l3) {
-			System.out.println("Nombre :  " + r3[0] + ", Localidad: " + r3[1]);
+			System.out.println("Nombre:  " + r3[0] + ", Localidad: " + r3[1]);
 		}
 		// */
 		TypedQuery<Object[]> tq4 = em.createQuery(
@@ -133,7 +133,7 @@ public class AccesoBdatos {
 		tq4.setParameter("n", 10);
 		List<Object[]> l4 = tq4.getResultList();
 		for (Object[] r4 : l4) {
-			System.out.println("Nombre :  " + r4[0] + ", Localidad: " + r4[1]);
+			System.out.println("Nombre:  " + r4[0] + ", Localidad: " + r4[1]);
 		}
 
 	}// de demoJPQL
