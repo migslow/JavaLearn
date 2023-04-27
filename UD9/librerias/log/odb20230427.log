@@ -996,3 +996,37 @@ Type ejercicioClase.EmpleadoEntity is not enhanced.
 [2023-04-27 17:35:31 #5 store] 
 Database 'C:\Users\migue\git\JavaLearn\UD9\db\empleados.odb' is closed by 1088@DESKTOP-CVFANML
 
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-04-27 19:38:41 #1 store] 
+Database 'C:\Users\migue\git\JavaLearn\UD9\db\empleados.odb' is opened by 2284@DESKTOP-CVFANML
+
+[2023-04-27 19:38:41 #2 store] 
+Configuration path: ?
+
+[2023-04-27 19:38:41 #3 type] 
+Type ejercicioClase.DepartamentoEntity is not enhanced.
+
+[2023-04-27 19:38:41 #4 type] 
+Type ejercicioClase.EmpleadoEntity is not enhanced.
+
+[2023-04-27 19:38:41 #5 store] 
+Database 'C:\Users\migue\git\JavaLearn\UD9\db\empleados.odb' is closed by 2284@DESKTOP-CVFANML
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-04-27 19:38:42 #1 store] 
+Database 'C:\Users\migue\git\JavaLearn\UD9\db\empleados.odb' is opened by 344@DESKTOP-CVFANML
+
+[2023-04-27 19:38:42 #2 store] 
+Configuration path: ?
+
+[2023-04-27 19:38:42 #3 type] 
+Type ejercicioClase.DepartamentoEntity is not enhanced.
+
+[2023-04-27 19:38:42 #4 type] 
+Type ejercicioClase.EmpleadoEntity is not enhanced.
+
+[2023-04-27 19:38:42 #5 store] 
+Database 'C:\Users\migue\git\JavaLearn\UD9\db\empleados.odb' is closed by 344@DESKTOP-CVFANML
+
