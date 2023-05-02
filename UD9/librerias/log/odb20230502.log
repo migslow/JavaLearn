@@ -1,0 +1,17 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-05-02 11:44:27 #1 store] 
+Database 'C:\Users\dam1alu15\git\JavaLearn\UD9\db\empleados.odb' is opened by 5616@B02-PC28
+
+[2023-05-02 11:44:27 #2 store] 
+Configuration path: ?
+
+[2023-05-02 11:44:27 #3 type] 
+Type ejercicioClase.DepartamentoEntity is not enhanced.
+
+[2023-05-02 11:44:27 #4 type] 
+Type ejercicioClase.EmpleadoEntity is not enhanced.
+
+[2023-05-02 11:44:27 #5 store] 
+Database 'C:\Users\dam1alu15\git\JavaLearn\UD9\db\empleados.odb' is closed by 5616@B02-PC28
+
