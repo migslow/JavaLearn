@@ -42,11 +42,14 @@ public class Main2 {
 		// abd.imprimirDepartamento(10);
 
 		abd.demoJPQL();
+		System.out.println();
 		System.out.println("Salarios actualizados: " + abd.incrementarSalario(200));
 		System.out.println("Salarios actualizados buscado por oficio: " + abd.incrementarSalarioOficio("Empleado", 200));
 		System.out.println("Salarios actualizados buscado por departamento: " + abd.incrementarSalarioDepartamento(10, 200));
 		System.out.println("Empleados borrados: " + abd.borrarEmpleado(1034));
 		System.out.println("Departamentos borrados: " + abd.borrarDepartamentoEjercicio(10));
+		System.out.println("Actualizado el nombre: " + abd.actualizarNombreEmpleado(1039, "Miguel Ovejero Piedrafita"));
+		System.out.println("Actualizar oficio: " + abd.actualizarOficio(1039, "CEO"));
 
 		abd.desconectar();
 

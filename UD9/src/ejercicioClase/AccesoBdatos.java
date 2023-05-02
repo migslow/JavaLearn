@@ -255,6 +255,7 @@ public class AccesoBdatos {
 		for (Object[] r16 : l16) {
 			System.out.println(r16[0] + " - " + r16[1] + " - ");
 		}
+
 		// EJERCICIO 13
 		System.out.println("\nEjercicio 13: ");
 		TypedQuery<Object[]> tq17 = em.createQuery(
@@ -263,6 +264,54 @@ public class AccesoBdatos {
 		for (Object[] r17 : l17) {
 			System.out.println(r17[0] + " - " + r17[1] + " - ");
 		}
+
+		// EJERCICIO 14
+		System.out.println("\nEjercicio 14: ");
+		TypedQuery<Object[]> tq18 = em.createQuery("select d.nombre, d.oficio, d.alta from EmpleadoEntity d",
+				Object[].class);
+		List<Object[]> l18 = tq18.getResultList();
+		for (Object[] r18 : l18) {
+			System.out.println(r18[0] + " - " + r18[1] + " - " + r18[2]);
+		}
+
+		// Ejercicio 15
+		System.out.println("\nEjercicio 15: ");
+		TypedQuery<EmpleadoEntity> tq19 = em.createQuery("select d from EmpleadoEntity d where salario >= 8000",
+				EmpleadoEntity.class);
+		List<EmpleadoEntity> l19 = tq19.getResultList();
+		for (EmpleadoEntity r19 : l19) {
+			System.out.println(
+					r19.getNombre() + " - " + r19.getOficio() + " - " + r19.getAlta() + " - " + r19.getSalario());
+		}
+
+		// Ejercicio 16
+		System.out.println("\nEjercicio 16: ");
+		TypedQuery<DepartamentoEntity> tq20 = em.createQuery("select d from DepartamentoEntity d",
+				DepartamentoEntity.class);
+		List<DepartamentoEntity> l20 = tq20.getResultList();
+		for (DepartamentoEntity r20 : l20) {
+			System.out.println(r20.getDptoId() + " - " + r20.getLocalidad() + " - " + r20.getNombre());
+		}
+
+		// Ejercicio 17
+		System.out.println("\nEjercicio 17: ");
+		TypedQuery<Object[]> tq21 = em.createQuery(
+				"select e.nombre, e.oficio from EmpleadoEntity e where e.oficio like 'E%'", Object[].class);
+		List<Object[]> l21 = tq21.getResultList();
+		for (Object[] r21 : l21) {
+			System.out.println(r21[0] + " - " + r21[1]);
+		}
+
+		// Ejercicio 18
+		System.out.println("\nEjercicio 18: ");
+		TypedQuery<Object[]> tq22 = em.createQuery(
+				"select d.localidad, count(d.empleados) from DepartamentoEntity d where d.empleados.salario >=10000 group by d.localidad",
+				Object[].class);
+		List<Object[]> l22 = tq22.getResultList();
+		for (Object[] r22 : l22) {
+			System.out.println(r22[0] + " - " + r22[1]);
+		}
+
 	}// de demoJPQL
 //--------------------------------------------------------------------------------------------------------------
 
@@ -317,6 +366,28 @@ public class AccesoBdatos {
 		Query q5 = em.createQuery("delete from DepartamentoEntity where dptoId = :n");
 		q5.setParameter("n", numeroDepartamento);
 		cuenta = q5.executeUpdate();
+		em.getTransaction().commit();
+		return cuenta;
+	}
+
+	public int actualizarNombreEmpleado(int numeroEmpleado, String nombre) {
+		int cuenta;
+		em.getTransaction().begin();
+		Query q6 = em.createQuery("update EmpleadoEntity set nombre = :n where empnoId = :e");
+		q6.setParameter("n", nombre);
+		q6.setParameter("e", numeroEmpleado);
+		cuenta = q6.executeUpdate();
+		em.getTransaction().commit();
+		return cuenta;
+	}
+
+	public int actualizarOficio(int numeroEmpleado, String oficio) {
+		int cuenta;
+		em.getTransaction().begin();
+		Query q7 = em.createQuery("update EmpleadoEntity set oficio = :o where empnoId = :e");
+		q7.setParameter("o", oficio);
+		q7.setParameter("e", numeroEmpleado);
+		cuenta = q7.executeUpdate();
 		em.getTransaction().commit();
 		return cuenta;
 	}
