@@ -11,6 +11,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+
+import com.objectdb.o.LIN;
 //
 // Alberto Carrera Mart�n - Abril 2020
 //
@@ -312,6 +314,16 @@ public class AccesoBdatos {
 			System.out.println(r22[0] + " - " + r22[1]);
 		}
 
+		// Ejercicio 19
+		System.out.println("\nEjercicio 19: ");
+		TypedQuery<Object[]> tq23 = em.createQuery(
+				"select d.nombre, d.oficio, d.comision from EmpleadoEntity d where d.comision IS NOT NULL",
+				Object[].class);
+		List<Object[]> l23 = tq23.getResultList();
+		for (Object[] r23 : l23) {
+			System.out.println(r23[0] + " - " + r23[1] + " - " + r23[2]);
+		}
+
 	}// de demoJPQL
 //--------------------------------------------------------------------------------------------------------------
 
@@ -388,6 +400,17 @@ public class AccesoBdatos {
 		q7.setParameter("o", oficio);
 		q7.setParameter("e", numeroEmpleado);
 		cuenta = q7.executeUpdate();
+		em.getTransaction().commit();
+		return cuenta;
+	}
+
+	public int actualizarComision(int numeroEmpleado, int comision) {
+		int cuenta;
+		em.getTransaction().begin();
+		Query q8 = em.createQuery("update EmpleadoEntity set comision = :c where empnoId = :e");
+		q8.setParameter("c", comision);
+		q8.setParameter("e", numeroEmpleado);
+		cuenta = q8.executeUpdate();
 		em.getTransaction().commit();
 		return cuenta;
 	}

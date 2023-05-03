@@ -50,6 +50,7 @@ public class Main2 {
 		System.out.println("Departamentos borrados: " + abd.borrarDepartamentoEjercicio(10));
 		System.out.println("Actualizado el nombre: " + abd.actualizarNombreEmpleado(1039, "Miguel Ovejero Piedrafita"));
 		System.out.println("Actualizar oficio: " + abd.actualizarOficio(1039, "CEO"));
+		System.out.println("Actualizar comision: " + abd.actualizarComision(1039, 1400));
 
 		abd.desconectar();
 
