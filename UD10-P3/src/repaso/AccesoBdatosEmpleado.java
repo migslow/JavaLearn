@@ -307,6 +307,24 @@ public class AccesoBdatosEmpleado {
 		return 0;
 	}
 
+	public int actualizarNombreConTransacciones(int departamento, String nombre) {
+		try {
+			PreparedStatement ps = conecta.prepareStatement("update emp set sal=? where deptno=?");
+			ps.setString(1, nombre);
+			ps.setInt(2, departamento);
+			conecta.setAutoCommit(false);
+			ps.executeUpdate();
+			conecta.commit();
+		} catch (SQLException e) {
+			try {
+				conecta.rollback();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return 0;
+	}
+
 	public int borrarEmpleadoPorCodigo(int numero) {
 		try {
 			PreparedStatement ps = conecta.prepareStatement("delete from emp where empno=?");

@@ -62,6 +62,9 @@ public class MainEmpleado {
 
 		System.out.println("\nActualizar salario con transacciones: ");
 		System.out.println(bd.actualizarSalario(10, 5));
+		
+		System.out.println("\nActualizar nombre con transacciones: ");
+		System.out.println(bd.actualizarNombreConTransacciones(20, "Alberto Carrera"));
 
 		System.out.println("\nBorrar empleado: ");
 		System.out.println(bd.borrarEmpleadoPorCodigo(7369));

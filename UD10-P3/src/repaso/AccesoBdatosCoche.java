@@ -128,6 +128,32 @@ public class AccesoBdatosCoche {
 		}
 	}
 
+	public Coche busquedaPorCV(int numero) {
+		try {
+			PreparedStatement ps = conecta.prepareStatement("select * from coche where cv=?");
+			ps.setInt(1, numero);
+			Coche c = new Coche();
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				c.setId(rs.getInt(1));
+				c.setMarca(rs.getString(2));
+				c.setModelo(rs.getString(3));
+				c.setPropietario(rs.getString(4));
+				c.setCv(rs.getInt(5));
+				c.setKilometrosRecorridos(rs.getInt(6));
+			} else {
+				c = null;
+			}
+			rs.close();
+			ps.close();
+			return c;
+		} catch (SQLException e) {
+			System.out.println("A ocurrido un problema con la consulta " + e.getErrorCode());
+			e.printStackTrace();
+			return null;
+		}
+	}
+
 	public ArrayList<Coche> recorrerTodosLosRegistrosArray() {
 		ArrayList<Coche> coches = new ArrayList<>();
 		try {
@@ -153,6 +179,27 @@ public class AccesoBdatosCoche {
 		try {
 			PreparedStatement ps = conecta.prepareStatement("select * from coche where modelo=?");
 			ps.setString(1, modelo);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Coche c = new Coche(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5),
+						rs.getInt(6));
+				coches.add(c);
+			}
+			rs.close();
+			ps.close();
+		} catch (SQLException e) {
+			System.out.println("A ocurrido un problema con la consulta " + e.getErrorCode());
+			e.printStackTrace();
+			return null;
+		}
+		return coches;
+	}
+
+	public ArrayList<Coche> busquedaPorContieneModelo(String modelo) {
+		ArrayList<Coche> coches = new ArrayList<>();
+		try {
+			PreparedStatement ps = conecta.prepareStatement("select * from coche where modelo like ? ");
+			ps.setString(1, modelo + "%%");
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				Coche c = new Coche(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5),
@@ -285,6 +332,24 @@ public class AccesoBdatosCoche {
 		return 1062;
 	}
 
+	public int insertarConBean3(Coche coche) {
+		try {
+			PreparedStatement ps = conecta.prepareStatement("insert into coche values(?,?,?,?,?,?)");
+			ps.setInt(1, coche.getId());
+			ps.setString(2, coche.getMarca());
+			ps.setString(3, coche.getModelo());
+			ps.setString(4, coche.getPropietario());
+			ps.setInt(5, coche.getCv());
+			ps.setInt(6, coche.getKilometrosRecorridos());
+			ps.executeUpdate();
+			return 1;
+		} catch (SQLException e) {
+			System.out.println("A ocurrido un problema con la consulta" + e.getErrorCode());
+			e.printStackTrace();
+		}
+		return 1062;
+	}
+
 	public int actualizarMarca(int id, String marca) {
 		try {
 			PreparedStatement ps = conecta.prepareStatement("update coche set marca=? where Id=?");
@@ -298,10 +363,41 @@ public class AccesoBdatosCoche {
 		return 0;
 	}
 
+	public int actualizarMarcaConTransacciones(int id, String marca) {
+		try {
+			PreparedStatement ps = conecta.prepareStatement("update coche set marca=? where Id=?");
+			ps.setString(1, marca);
+			ps.setInt(1, id);
+			conecta.setAutoCommit(false);
+			ps.executeUpdate();
+			conecta.commit();
+		} catch (Exception e) {
+			try {
+				conecta.rollback();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return 0;
+	}
+
 	public int actualizarModelo(int id, String modelo) {
 		try {
 			PreparedStatement ps = conecta.prepareStatement("update coche set modelo=? where Id=?");
 			ps.setString(1, modelo);
+			ps.setInt(2, id);
+			return ps.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("A ocurrido un problema con la consulta " + e.getErrorCode());
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
+	public int actualizarCv(int id, int cv) {
+		try {
+			PreparedStatement ps = conecta.prepareStatement("update coche set cv=? where Id=?");
+			ps.setInt(1, cv);
 			ps.setInt(2, id);
 			return ps.executeUpdate();
 		} catch (SQLException e) {
@@ -329,6 +425,32 @@ public class AccesoBdatosCoche {
 		return 0;
 	}
 
+	public int actualizarTodosLosCamposConTransacciones(int id, String marca, String modelo, String pro, int cv,
+			int kilo) {
+		try {
+			PreparedStatement ps = conecta.prepareStatement(
+					"update coche set marca=?, modelo=?, propietario=?, cv=?, kilometrosRecorridos=? where Id=?");
+			ps.setString(1, marca);
+			ps.setString(2, modelo);
+			ps.setString(3, pro);
+			ps.setInt(4, cv);
+			ps.setInt(5, kilo);
+			ps.setInt(6, id);
+			conecta.setAutoCommit(false);
+			ps.close();
+			conecta.commit();
+			return (ps.executeUpdate());
+		} catch (SQLException e) {
+			try {
+				conecta.rollback();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+			return 0;
+		}
+
+	}
+
 	public int borrarCoche(int numero) {
 		try {
 			PreparedStatement ps = conecta.prepareStatement("delete from coche where id=?");
@@ -339,6 +461,26 @@ public class AccesoBdatosCoche {
 			e.printStackTrace();
 		}
 		return 0;
+	}
+
+	public int borrarCocheConTransacciones(int numero) {
+		int resultado;
+		try {
+			conecta.setAutoCommit(false);
+			PreparedStatement ps = conecta.prepareStatement("delete from coche where id=?");
+			ps.setInt(1, numero);
+			resultado = ps.executeUpdate();
+			conecta.commit();
+			return resultado;
+
+		} catch (SQLException e) {
+			try {
+				conecta.rollback();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+			return 0;
+		}
 	}
 
 	public int borrarCochePorKilometros(int numero) {
@@ -352,21 +494,33 @@ public class AccesoBdatosCoche {
 		}
 		return 0;
 	}
-	
-	public int funcionMediaKilometros() {
+
+	public int borrarPorMarca(String marca) {
 		try {
-			CallableStatement cb = conecta.prepareCall("select media_kilometros_recorridos()");
-			ResultSet rs = cb.executeQuery();
-			if(rs.next()) {
-				return rs.getInt(1);
-			}
+			PreparedStatement ps = conecta.prepareStatement("delete from coche where marca=?");
+			ps.setString(1, marca);
+			return ps.executeUpdate();
 		} catch (SQLException e) {
-			System.out.println("A ocurrido un problema " +e.getErrorCode());
+			System.out.println("A ocurrido un problema con la consulta " + e.getErrorCode());
 			e.printStackTrace();
 		}
 		return 0;
 	}
-	
+
+	public int funcionMediaKilometros() {
+		try {
+			CallableStatement cb = conecta.prepareCall("select media_kilometros_recorridos()");
+			ResultSet rs = cb.executeQuery();
+			if (rs.next()) {
+				return rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			System.out.println("A ocurrido un problema " + e.getErrorCode());
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
 	public int funcionMaxCV() {
 		try {
 			CallableStatement cb = conecta.prepareCall("select buscar_coche_max_kilometraje()");
