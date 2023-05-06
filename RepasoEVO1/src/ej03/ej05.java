@@ -65,10 +65,4 @@ public class ej05 {
 		}
 	}
 
-	public static int sumaFilas(int[][] matriz, int fila) {
-		for (int i = 0; i < matriz.length; i++) {
-			 
-		}
-	}
-
 }

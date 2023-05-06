@@ -19,6 +19,8 @@ public class AccesoBdatosLibro {
 		Class.forName(driver);
 		conecta = DriverManager.getConnection(url, username, password);
 	}
+	
+	
 
 	public void desconectar() throws SQLException, ClassNotFoundException {
 		conecta = null;
