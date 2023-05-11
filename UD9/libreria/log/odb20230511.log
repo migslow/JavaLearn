@@ -1,0 +1,20 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-05-11 22:42:29 #1 store] 
+Database 'C:\Users\migue\git\JavaLearn\UD9\db\empleados.odb' is opened by 4196@DESKTOP-CVFANML
+
+[2023-05-11 22:42:29 #2 store] 
+Configuration path: ?
+
+[2023-05-11 22:42:29 #3 type] 
+Type ejercicioClase.DepartamentoEntity is not enhanced.
+
+[2023-05-11 22:42:29 #4 type] 
+Type ejercicioClase.EmpleadoEntity is not enhanced.
+
+[2023-05-11 22:42:29 #5 type] 
+Type repasoEjercicioClase.DepartamentoEntity is not enhanced.
+
+[2023-05-11 22:42:29 #6 type] 
+Type repasoEjercicioClase.EmpleadoEntity is not enhanced.
+
