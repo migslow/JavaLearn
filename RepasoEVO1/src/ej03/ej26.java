@@ -4,18 +4,15 @@ public class ej26 {
 
 	public static void main(String[] args) {
 		int[] numeros = new int[20];
-		
-		for (int i = 0; i < numeros.length; i++) {
-			numeros = rellenarNumeroAle(numeros);
-		}
-		System.out.println(numeros);
+		rellenarNumeroAle(numeros);
 	}
 	
-	public static int[] rellenarNumeroAle(int[]v) {
+	public static void rellenarNumeroAle(int[]v) {
 		for (int i = 0; i < v.length; i++) {
-			v[i] = (int) (Math.random()*100);
+			v[i] = (int) (Math.random() * 100);
+			System.err.println(v[i]);
 		}
-		return v;
 	}
+	
 
 }
