@@ -12,7 +12,8 @@ public class ej39 {
 		rellenarNumerosAle(numeros);
 		System.out.println("\nEl array solo con los numeros primos: ");
 		numerosPrimos(numeros);
-		ordenarArray(numeros);
+		
+		// ordenarArray(numeros);
 		System.out.println("\nEl array con los numeros ordenados: \n" + Arrays.toString(numeros));
 	}
 
@@ -32,9 +33,7 @@ public class ej39 {
 				System.out.print(v[i] + " - ");
 			}
 		}
-	}
-
-	public static void ordenarArray(int[] v) {
+		
 		for (int i = 0; i < v.length; i++) {
 			for (int j = 0; j < v.length - 1; j++) {
 				int aux = v[j], auxSig = v[j + 1];
@@ -45,5 +44,10 @@ public class ej39 {
 			}
 		}
 	}
+	/*
+	public static void ordenarArray(int[] v) {
+		
+	}
+	*/
 
 }
