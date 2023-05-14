@@ -6,12 +6,12 @@ public class Miguel_ovejero3 {
 
 	public static void main(String[] args) {
 		int contador = 0;
-		int minimo = 0;
+		int minimo = 100;
 		for (int i = 1; i <= 15; i++) {
 
 			int rdm = (int) (Math.random() * 21);
 			System.out.print(rdm + " ");
-			if (i == 1) {
+			if (i == 100) {
 				minimo = rdm;
 			}
 			if (rdm < minimo) {

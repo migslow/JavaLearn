@@ -31,7 +31,7 @@ public class ej02 {
 	public static void ordenacion(int[] v) {
 		for (int i = 0; i < v.length; i++) {
 			for (int j = 0; j < v.length - 1; j++) {
-				int aux = v[j], auxSig = v[i + 1];
+				int aux = v[j], auxSig = v[j + 1];
 				if(aux > auxSig) {
 					v[j] = auxSig;
 					v[j + 1] = aux;
