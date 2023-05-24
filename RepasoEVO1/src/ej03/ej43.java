@@ -5,21 +5,23 @@ import java.util.Scanner;
 public class ej43 {
 
 	static Scanner s = new Scanner(System.in);
-	
+
 	public static void main(String[] args) {
 		int[][] numeros = new int[3][3];
 		rellenarArray(numeros);
+		sumaFilas(numeros);
+		sumaColumnas(numeros);
 
 	}
-	
-	public static void rellenarArray(int[][]v) {
+
+	public static void rellenarArray(int[][] v) {
 		for (int i = 0; i < v.length; i++) {
 			for (int j = 0; j < v.length; j++) {
-				System.out.println("Introduce el numero en la fila [" + i + "] en la columna [" + j+ "]: ");
+				System.out.println("Introduce el numero en la fila [" + i + "] en la columna [" + j + "]: ");
 				v[i][j] = s.nextInt();
 			}
 		}
-		
+
 		for (int i = 0; i < v.length; i++) {
 			for (int j = 0; j < v.length; j++) {
 				System.out.print(v[i][j] + "\t");
@@ -27,13 +29,24 @@ public class ej43 {
 			System.out.println();
 		}
 	}
-	
-	public static void sumaFilas(int[][]v) {
+
+	public static void sumaFilas(int[][] v) {
 		for (int i = 0; i < v.length; i++) {
 			int suma = 0;
 			for (int j = 0; j < v.length; j++) {
 				suma = suma + v[i][j];
 			}
+			System.out.println("\nLa suma de la fila " + i + " es " + suma);
+		}
+	}
+
+	public static void sumaColumnas(int[][] v) {
+		for (int j = 0; j < v.length; j++) {
+			int suma = 0;
+			for (int i = 0; i < v.length; i++) {
+				suma = suma + v[i][j];
+			}
+			System.out.println("\nLa suma de la columna " + j + " es " + suma);
 		}
 	}
 
