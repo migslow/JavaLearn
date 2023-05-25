@@ -1,4 +1,4 @@
-package ejercicios;
+package ejerciciosFicheros;
 
 /*
  * 	Escribe una clase con un método que reciba por parámetro el nombre de un fichero de

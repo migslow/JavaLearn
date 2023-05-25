@@ -1,4 +1,4 @@
-package ejercicios;
+package ejerciciosFicheros;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -28,7 +28,6 @@ public class ej05 {
 			String aux;
 			while ((aux = br.readLine()) != null) {
 				bw.write(aux.toUpperCase());
-				System.out.println(aux);
 			}
 			br.close();
 			bw.close();
