@@ -36,15 +36,14 @@ public class MainCliente {
 		while (true) {
 			System.out.println("\n===== MENÚ PRINCIPAL =====");
 			System.out.println("1. Crear cliente");
-			System.out.println("2. Consultar clientes");
-			System.out.println("3. Consultar clientes morosos");
+			System.out.println("2. Escritura fichero");
+			System.out.println("3. Consultar clientes");
 			System.out.println("4. Modificacion clientes");
 			System.out.println("5. Dar de baja a un cliente");
-			System.out.println("6. Guardar clientes");
 			System.out.println("7. Salir del programa");
 			System.out.print("Introduce un numero entre el 1 y el 7: ");
 			int opcion = s.nextInt();
-			s.nextInt();
+			s.nextLine();
 			switch (opcion) {
 			case 1:
 				crearCliente();
@@ -62,13 +61,10 @@ public class MainCliente {
 
 				break;
 			case 6:
-
-				break;
-			case 7:
 				System.exit(-1);
 				break;
 			default:
-				System.out.println("No has introducido un numero entre 1 y 7");
+				System.out.println("No has introducido un numero entre 1 y 6");
 				break;
 			}
 		}
@@ -91,18 +87,18 @@ public class MainCliente {
 			lista.add(p);
 		}
 	}
-	
+
 	public static void escrituraFichero(String ruta) throws IOException {
 		FileOutputStream fos = new FileOutputStream(ruta);
 		ObjectOutputStream oos = new ObjectOutputStream(fos);
-		for(clientes c : lista) {
-			System.out.println(c);
+		for (clientes c : lista) {
+			oos.writeObject(c);
 		}
 	}
-	
+
 	public static void consultarLista() {
 		System.out.println("\nLos clientes de la lista: ");
-		for(clientes c : lista) {
+		for (clientes c : lista) {
 			System.out.println(c);
 		}
 	}
