@@ -1,0 +1,147 @@
+<Biblioteca>
+  <Libro>
+    <autor>Tolstoi, León</autor>
+    <titulo>Ana Karenina</titulo>
+    <editorial>Unidad Editorial</editorial>
+  </Libro>
+  <Libro>
+    <autor>Baudelaire, Charles</autor>
+    <titulo>Las flores del mal</titulo>
+    <editorial>Unidad Editorial</editorial>
+  </Libro>
+  <Libro>
+    <autor>Cortázar, Julio</autor>
+    <titulo>Las armas secretas y otros relatos</titulo>
+    <editorial>Unidad Editorial</editorial>
+  </Libro>
+  <Libro>
+    <autor>Stevenson, R. L.</autor>
+    <titulo>Dr. Jekyll y Mr. Hyde</titulo>
+    <editorial>Unidad Editorial</editorial>
+  </Libro>
+  <Libro>
+    <autor>Defoe, Daniel</autor>
+    <titulo>Robinson Crusoe</titulo>
+    <editorial>Bibliotex</editorial>
+  </Libro>
+  <Libro>
+    <autor>Huxley, Aldous</autor>
+    <titulo>Un mundo feliz</titulo>
+    <editorial>Alfaguara</editorial>
+  </Libro>
+  <Libro>
+    <autor>Cela, Camilo José</autor>
+    <titulo>La colmena</titulo>
+    <editorial>Espasa Calpe</editorial>
+  </Libro>
+  <Libro>
+    <autor>Sábato, Ernesto</autor>
+    <titulo>El túnel</titulo>
+    <editorial>Alfaguara</editorial>
+  </Libro>
+  <Libro>
+    <autor>Stendhal</autor>
+    <titulo>Rojo y Negro</titulo>
+    <editorial>Alba</editorial>
+  </Libro>
+  <Libro>
+    <autor>Jennings, Gary</autor>
+    <titulo>El viajero</titulo>
+    <editorial>Planeta</editorial>
+  </Libro>
+  <Libro>
+    <autor>Fuentes, Carlos</autor>
+    <titulo>Instinto de Inez</titulo>
+    <editorial>Alfaguara</editorial>
+  </Libro>
+  <Libro>
+    <autor>Borges, Jorge Luis</autor>
+    <titulo>Obras completas III</titulo>
+    <editorial>Círculo de Lectores</editorial>
+  </Libro>
+  <Libro>
+    <autor>Fábrega, Pedro Pablo</autor>
+    <titulo>PHP 4</titulo>
+    <editorial>Prentice Hall</editorial>
+  </Libro>
+  <Libro>
+    <autor>Trigos García, Esteban</autor>
+    <titulo>PHP 4</titulo>
+    <editorial>Anaya Multimedia</editorial>
+  </Libro>
+  <Libro>
+    <autor>Stewart, Ian</autor>
+    <titulo>Ingeniosos encuentros entre juegos y matemáticas</titulo>
+    <editorial>Gedisa</editorial>
+  </Libro>
+  <Libro>
+    <autor>Camous, Henri</autor>
+    <titulo>Problemas y jegos con las matemáticas</titulo>
+    <editorial>Gedisa</editorial>
+  </Libro>
+  <Libro>
+    <autor>García Guinea, M. </autor>
+    <titulo>Guía turística de Cantabria</titulo>
+    <editorial>Librería Estvdio</editorial>
+  </Libro>
+  <Libro>
+    <autor>Oliveras, Alberto</autor>
+    <titulo>Vicente Ferrer. La revolución silenciosa</titulo>
+    <editorial>Planeta Singular</editorial>
+  </Libro>
+  <Libro>
+    <autor>Nietzsche, Friedrich</autor>
+    <titulo>Así habló Zaratustra</titulo>
+    <editorial>Edimat Libros</editorial>
+  </Libro>
+  <Libro>
+    <autor>Arguiñano, Karlos</autor>
+    <titulo>1.069 recetas</titulo>
+    <editorial>Asegarce Debate</editorial>
+  </Libro>
+  <Libro>
+    <autor>Messadi, Gerard</autor>
+    <titulo>Grandes descubrimientos de la ciencia</titulo>
+    <editorial>Biblioteca Newton</editorial>
+  </Libro>
+  <Libro>
+    <autor>Yarza Luaces, Joaquín</autor>
+    <titulo>Beato de Libana. Manuscritos iluminados</titulo>
+    <editorial>Moleiro Editor</editorial>
+  </Libro>
+  <Libro>
+    <autor>Sopena</autor>
+    <titulo>Gran Atlas Columbus</titulo>
+    <editorial>Sopena</editorial>
+  </Libro>
+  <Libro>
+    <autor>Avilés Farré, Juan</autor>
+    <titulo>Atlas histórico universal</titulo>
+    <editorial>El País Aguilar</editorial>
+  </Libro>
+  <Libro>
+    <autor>Edey, Maitland</autor>
+    <titulo>Los orígenes del hombre. El eslabón perdido</titulo>
+    <editorial>Time Life Folio</editorial>
+  </Libro>
+  <Libro>
+    <autor>National Geographic</autor>
+    <titulo>El reino animal. Los mejores reportajes fotográficos</titulo>
+    <editorial>El País</editorial>
+  </Libro>
+  <Libro>
+    <autor>Subirana, Rosa María</autor>
+    <titulo>Museos de España. Museo Picasso</titulo>
+    <editorial>Ediciones Orgaz</editorial>
+  </Libro>
+  <Libro>
+    <autor>Branchet, Bob</autor>
+    <titulo>Microsoft SQL Server 5</titulo>
+    <editorial>Prentice Hall</editorial>
+  </Libro>
+  <Libro>
+    <autor>Branchet, Bob</autor>
+    <titulo>Microsoft SQL Server 5</titulo>
+    <editorial>Prentice Hall</editorial>
+  </Libro>
+</Biblioteca>
