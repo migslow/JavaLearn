@@ -1,21 +1,42 @@
-
-
 import java.util.Scanner;
 
 public class ej02 {
+	
+	static Scanner s = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
-		System.out.println("Introduce el primer numero: ");
-		int n1 = s.nextInt();
-		System.out.println("Introduce el segundo numero: ");
-		int n2 = s.nextInt();
-		if(n1 % n2 == 0) {
-			System.out.println(n1 + " es multiplo de " + n2);
-		} else {
-			System.out.println(n1 + " no es multiplo de " + n2);
-		}
+		int [] numeros = new int[10];
+		
 
+	}
+	
+	public static void rellenarArray(int[]v) {
+		for (int i = 0; i < v.length; i++) {
+			System.out.println("Introduce el numero en la posicion: [" + i + "]");
+			v[i] = s.nextInt();
+		}
+		
+		for (int i = 0; i < v.length; i++) {
+			System.out.print(v[i] + " - ");
+		}
+	}
+	
+	public static void comprobar(int[]v) {
+		int pos = 0, neg = 0, ceros = 0;
+		for (int i = 0; i < v.length; i++) {
+			if(v[i] >= 0) {
+				pos++;
+			}
+			if(v[i] < 0) {
+				neg++;
+			}
+			if(v[i] == 0) {
+				ceros++;
+			}
+		}
+		System.out.println("Numeros positivos: " + pos);
+		System.out.println("Numeros negativo: " + neg);
+		System.out.println("Numeros cero: cero " + ceros);
 	}
 
 }
