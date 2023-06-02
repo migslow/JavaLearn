@@ -1,6 +1,8 @@
 package ArrayList;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 
 public class ArrayListAnimal {
 	private ArrayList<Animal> lista = new ArrayList<Animal>();
@@ -38,11 +40,11 @@ public class ArrayListAnimal {
 		}
 		return encontrados;
 	}
-	
+
 	public String cambiarNombre(int id, String nombre) {
 		String escrito = "";
 		for (int i = 0; i < tamanyo(); i++) {
-			if(lista.get(i).getId() == id) {
+			if (lista.get(i).getId() == id) {
 				lista.get(i).setNombre(nombre);
 			}
 		}
@@ -53,6 +55,13 @@ public class ArrayListAnimal {
 	public void mostrarLista() {
 		for (Animal a : lista) {
 			System.out.println(a);
+		}
+	}
+
+	public void mostrarIterator() {
+		Iterator<Animal> it = lista.iterator();
+		while (it.hasNext()) {
+			System.out.println(it.next());
 		}
 	}
 
