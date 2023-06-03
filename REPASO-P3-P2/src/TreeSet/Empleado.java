@@ -1,6 +1,6 @@
 package TreeSet;
 
-public class Empleado {
+public class Empleado implements Comparable<Empleado> {
 	private int id;
 	private String nombre;
 	private String oficio;
@@ -44,6 +44,11 @@ public class Empleado {
 
 	public void setSalario(double salario) {
 		this.salario = salario;
+	}
+
+	@Override
+	public int compareTo(Empleado otroEmpleado) {
+		return Integer.compare(this.id, otroEmpleado.id);
 	}
 
 	@Override
