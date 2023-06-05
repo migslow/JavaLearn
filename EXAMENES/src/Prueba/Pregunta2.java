@@ -1,5 +1,6 @@
 package Prueba;
 
+import java.util.Collections;
 import java.util.LinkedList;
 
 public class Pregunta2 {
@@ -32,6 +33,10 @@ public class Pregunta2 {
 				System.out.println(c);
 			}
 		}
+	}
+	
+	public void compararPorCodigo() {
+		Collections.sort(lista, new CodigoComparator());
 	}
 
 }
