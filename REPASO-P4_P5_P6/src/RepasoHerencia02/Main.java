@@ -1,4 +1,9 @@
-package RepasoHerencia01;
+package RepasoHerencia02;
+
+import RepasoHerencia01.ClaseB;
+import RepasoHerencia01.ClaseY;
+import RepasoHerencia01.Lista;
+import RepasoHerencia01.claseZ;
 
 public class Main {
 
