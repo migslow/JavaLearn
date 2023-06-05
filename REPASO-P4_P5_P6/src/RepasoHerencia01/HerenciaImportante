@@ -1,0 +1,3 @@
+final = (constante) no puede tener mas clases descendientes. A aun metodo, no se puede sobrescribir.
+
+abstract = no puede crear objetos.

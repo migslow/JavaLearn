@@ -9,7 +9,7 @@ public class ej01 {
 
 	public static void main(String[] args) throws ParseException {
 		Scanner s = new Scanner(System.in);
-		SimpleDateFormat formato = new SimpleDateFormat("dd/mm/yyyy");
+		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
 		System.out.println("Introduce la fecha: ");
 		Date f = formato.parse(s.nextLine());
 
