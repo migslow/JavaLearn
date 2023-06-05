@@ -112,19 +112,53 @@ public class AccesoBdatos {
 	// EJERCICIOS CONSULTAS
 
 	public void demoJPQL() {
-		
+		System.out.println("\nEjercicio 1: ");
+		TypedQuery<Object[]> tq1 = em.createQuery("SELECT e.nombre, e.alta FROM EmpleadoEntity e", Object[].class);
+		List<Object[]> l1 = tq1.getResultList();
+		for (Object[] r1 : l1) {
+			System.out.println(r1[0] + " - " + r1[1]);
+		}
 
+		System.out.println("\nEjercicio 2: ");
+		TypedQuery<Object[]> tq2 = em.createQuery(
+				"select e.nombre, e.alta from EmpleadoEntity e where e.nombre like '%Carrera%'", Object[].class);
+		List<Object[]> l2 = tq2.getResultList();
+		for (Object[] r2 : l2) {
+			System.out.println(r2[0] + " - " + r2[1]);
+		}
+
+		System.out.println("\nEjercicio 3: ");
+		TypedQuery<Object[]> tq3 = em.createQuery(
+				"select e.nombre, e.oficio ,e.departamento.nombre from EmpleadoEntity e where e.oficio = 'Empleado' and e.departamento.nombre = 'I+D'",
+				Object[].class);
+		List<Object[]> l3 = tq3.getResultList();
+		for(Object[] r3 : l3) {
+			System.out.println(r3[0] + " - " + r3[1] + " - " + r3[2]);
+		}
 	}// de demoJPQL
 //--------------------------------------------------------------------------------------------------------------
 
 	// EJERCICIOS METODOS CON LENGUAJE JPQL
 
 	public int incrementarSalario(int cantidad) {
-		
+		int cuenta;
+		em.getTransaction().begin();
+		Query q1 = em.createQuery("update EmpleadoEntity set salario = salario + :c");
+		q1.setParameter("c", cantidad);
+		cuenta = q1.executeUpdate();
+		em.getTransaction().commit();
+		return cuenta; 
 	}
 
 	public int incrementarSalarioOficio(String oficio, int cantidad) {
-		
+		int cuenta;
+		em.getTransaction().begin();
+		Query q2 = em.createQuery("update EmpleadoEntity set salario = salario + :c where oficio = :o");
+		q2.setParameter("c", cantidad);
+		q2.setParameter("o", oficio);
+		cuenta = q2.executeUpdate();
+		em.getTransaction().commit();
+		return cuenta;
 	}
 
 	public int incrementarSalarioDepartamento(int numDepartamento, int cantidad) {

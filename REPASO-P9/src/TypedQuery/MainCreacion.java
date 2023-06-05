@@ -51,7 +51,7 @@ public class MainCreacion {
 		EmpleadoEntity e14 = new EmpleadoEntity(3000, "Javier Escart�n Nasarre", "Empleado", e9,
 				formato.parse("2003-07-13"), 2435, null, d3);
 		//
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("db/empleados.odb");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("baseDatos/empleados.odb");
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(d1);
