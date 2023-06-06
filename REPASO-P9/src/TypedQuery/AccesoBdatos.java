@@ -132,9 +132,17 @@ public class AccesoBdatos {
 				"select e.nombre, e.oficio ,e.departamento.nombre from EmpleadoEntity e where e.oficio = 'Empleado' and e.departamento.nombre = 'I+D'",
 				Object[].class);
 		List<Object[]> l3 = tq3.getResultList();
-		for(Object[] r3 : l3) {
+		for (Object[] r3 : l3) {
 			System.out.println(r3[0] + " - " + r3[1] + " - " + r3[2]);
 		}
+		
+		System.out.println("\nEjercicio 4:");
+		TypedQuery<Object[]> tq4 = em.createQuery("select e.nombre, e.alta from EmpleadoEntity e where year(e.alta) >= 2003", Object[].class);
+		List<Object[]> l4 = tq4.getResultList();
+		for(Object[] r4 : l4) {
+			System.out.println(r4[0] + " - " + r4[1]);
+		}
+		
 	}// de demoJPQL
 //--------------------------------------------------------------------------------------------------------------
 
@@ -147,27 +155,26 @@ public class AccesoBdatos {
 		q1.setParameter("c", cantidad);
 		cuenta = q1.executeUpdate();
 		em.getTransaction().commit();
-		return cuenta; 
+		return cuenta;
 	}
 
 	public int incrementarSalarioOficio(String oficio, int cantidad) {
 		int cuenta;
 		em.getTransaction().begin();
-		Query q2 = em.createQuery("update EmpleadoEntity set salario = salario + :c where oficio = :o");
+		Query q2 = em.createQuery("update EmpleadoEntity set salario = salario + : c where oficio = :o");
 		q2.setParameter("c", cantidad);
 		q2.setParameter("o", oficio);
 		cuenta = q2.executeUpdate();
 		em.getTransaction().commit();
 		return cuenta;
 	}
-
+	
 	public int incrementarSalarioDepartamento(int numDepartamento, int cantidad) {
 		int cuenta;
 		em.getTransaction().begin();
-		Query q3 = em
-				.createQuery("update EmpleadoEntity set salario = salario + :c where departamento.getDptoId() = :d");
-		q3.setParameter("d", numDepartamento);
+		Query q3 = em.createQuery("update EmpleadoEntity set salario = salario + :c where departamento.dptoId = :d");
 		q3.setParameter("c", cantidad);
+		q3.setParameter("d", numDepartamento);
 		cuenta = q3.executeUpdate();
 		em.getTransaction().commit();
 		return cuenta;
@@ -176,8 +183,8 @@ public class AccesoBdatos {
 	public int borrarEmpleado(int numeroEmpleado) {
 		int cuenta;
 		em.getTransaction().begin();
-		Query q4 = em.createQuery("delete from EmpleadoEntity where empnoId = :n");
-		q4.setParameter("n", numeroEmpleado);
+		Query q4 = em.createQuery("delete from EmpleadoEntity where empnoId :c");
+		q4.setParameter("c", numeroEmpleado);
 		cuenta = q4.executeUpdate();
 		em.getTransaction().commit();
 		return cuenta;
@@ -186,8 +193,8 @@ public class AccesoBdatos {
 	public int borrarDepartamentoEjercicio(int numeroDepartamento) {
 		int cuenta;
 		em.getTransaction().begin();
-		Query q5 = em.createQuery("delete from DepartamentoEntity where dptoId = :n");
-		q5.setParameter("n", numeroDepartamento);
+		Query q5 = em.createQuery("delete from DepartamentoEntity where dptoId = :c");
+		q5.setParameter("c", numeroDepartamento);
 		cuenta = q5.executeUpdate();
 		em.getTransaction().commit();
 		return cuenta;
@@ -207,10 +214,10 @@ public class AccesoBdatos {
 	public int actualizarOficio(int numeroEmpleado, String oficio) {
 		int cuenta;
 		em.getTransaction().begin();
-		Query q7 = em.createQuery("update EmpleadoEntity set oficio = :o where empnoId = :e");
-		q7.setParameter("o", oficio);
-		q7.setParameter("e", numeroEmpleado);
-		cuenta = q7.executeUpdate();
+		Query q6 = em.createQuery("update EmpleadoEntity set oficio = :n where empnoId = :e");
+		q6.setParameter("n", oficio);
+		q6.setParameter("e", numeroEmpleado);
+		cuenta = q6.executeUpdate();
 		em.getTransaction().commit();
 		return cuenta;
 	}
@@ -218,13 +225,13 @@ public class AccesoBdatos {
 	public int actualizarComision(int numeroEmpleado, int comision) {
 		int cuenta;
 		em.getTransaction().begin();
-		Query q8 = em.createQuery("update EmpleadoEntity set comision = :c where empnoId = :e");
-		q8.setParameter("c", comision);
-		q8.setParameter("e", numeroEmpleado);
-		cuenta = q8.executeUpdate();
+		Query q6 = em.createQuery("update EmpleadoEntity set comision = :n where empnoId = :e");
+		q6.setParameter("n", comision);
+		q6.setParameter("e", numeroEmpleado);
+		cuenta = q6.executeUpdate();
 		em.getTransaction().commit();
 		return cuenta;
 	}
-
+	
 }
 // de la clase

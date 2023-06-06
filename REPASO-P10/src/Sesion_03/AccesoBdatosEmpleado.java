@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class AccesoBdatos {
+public class AccesoBdatosEmpleado {
 	private static String driver = "com.mysql.cj.jdbc.Driver";
 	private static String database = "demodb";
 	private static String hostname = "localhost";
