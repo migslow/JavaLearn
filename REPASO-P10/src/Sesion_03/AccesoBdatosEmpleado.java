@@ -151,9 +151,10 @@ public class AccesoBdatosEmpleado {
 			actualiza.setDouble(1, porcentaje);
 			actualiza.setInt(2, departamento);
 			conecta.setAutoCommit(false);
-			actualiza.close();
-			conecta.commit();
-			return (actualiza.executeUpdate());
+	        int filasActualizadas = actualiza.executeUpdate();
+	        conecta.commit();
+	        actualiza.close();
+	        return filasActualizadas;
 		} catch (SQLException e) {
 			try {
 				conecta.rollback();

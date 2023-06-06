@@ -7,8 +7,8 @@ public class ej01 {
 	public static void main(String[] args) {
 		int[] numeros = new int[10];
 		rellenarArray(numeros);
-		max(numeros);
-		min(numeros);
+		System.out.println("El numero maximo es: " + max(numeros));
+		System.out.println("El numero minimo es: " + min(numeros));
 		pos(numeros);
 	}
 
@@ -42,15 +42,20 @@ public class ej01 {
 	}
 
 	public static void pos(int v[]) {
-		System.out.print("\nEl minimo aparece en la posicion: ");
+		System.out.print("Las posiciones del máximo son: ");
 		for (int i = 0; i < v.length; i++) {
-			if (v[i] == min(v))
-				System.out.print((i + 1));
+			if (v[i] == max(v)) {
+				System.out.print((i + 1) + " - ");
+			}
 		}
-		System.out.print("\nEl maximo aparece en la posicion: ");
+
+		System.out.println();
+
+		System.out.print("Las posiciones del mínimo son: ");
 		for (int i = 0; i < v.length; i++) {
-			if (v[i] == max(v))
-				System.out.print((i + 1));
+			if (v[i] == min(v)) {
+				System.out.print((i + 1) + " - ");
+			}
 		}
 	}
 

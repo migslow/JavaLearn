@@ -7,7 +7,7 @@ public class ej03 {
 	public static void main(String[] args) {
 		int[] numeros = new int[10];
 		rellenarArray(numeros);
-		System.out.println("\nHay " + comprobarNumerosMultiplosDeDos(numeros) + " numeros multiplos");
+		System.out.println("\nHay " + comprobarNumerosMultiplosDeDos(numeros) + " numeros multiplos de dos");
 
 	}
 	
