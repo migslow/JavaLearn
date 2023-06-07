@@ -21,10 +21,10 @@ public class ej06 {
 		}
 		for (int i = 0; i < num.length; i++) {
 			if (num[0] == maximo(num)) {
-				System.out.println(" maximo");
+				System.out.print("maximo");
 			}
 			if (num[0] == minimo(num)) {
-				System.out.println(" minimo");
+				System.out.print("minimo");
 			} 
 		}
 	}
