@@ -1,5 +1,6 @@
 package RepasoHerencia05;
 
 public class Main {
-	Producto
+	Lista l = new Lista();
+	
 }

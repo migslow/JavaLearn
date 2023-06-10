@@ -1,4 +1,4 @@
-package TypedQuery;
+ package TypedQuery;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
