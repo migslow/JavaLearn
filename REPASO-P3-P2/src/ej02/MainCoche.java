@@ -10,6 +10,7 @@ public class MainCoche {
 		
 		lista.mostrarIterator();
 		
+		System.out.println("\nBusqueda por marca :");
 		System.out.println(lista.buscarPorMarca("A"));
 		System.out.println(lista.eliminarPorId(3));
 		System.out.println(lista.cambiarPrecio(2, 128.234));
