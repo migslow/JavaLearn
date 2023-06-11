@@ -1,5 +1,6 @@
 package ej03;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -140,7 +141,7 @@ public class AccesoBdatosVideojuego {
 		}
 		return 0;
 	}
-	
+
 	public int actualizarPrecioConTransacciones(int id, int precio) {
 		try {
 			int filas = 0;
@@ -168,7 +169,7 @@ public class AccesoBdatosVideojuego {
 		}
 		return 0;
 	}
-	
+
 	public int eliminarVideojuegoConTransacciones(int id) {
 		try {
 			conecta.setAutoCommit(false);
@@ -182,6 +183,26 @@ public class AccesoBdatosVideojuego {
 		}
 		return 0;
 	}
+
+	public String procediminetoJuegosPorGenero(String genero) {
+	    try {
+	        CallableStatement func = conecta.prepareCall("SELECT juegos_por_genero(?)");
+	        func.setString(1, genero);
+	        ResultSet rs = func.executeQuery();
+	        if (rs.next()) {
+	            String lista_juegos = rs.getString(1);
+	            System.out.println("Lista de juegos para el género " + genero + ": " + lista_juegos);
+	            return lista_juegos;
+	        } else {
+	            System.out.println("No se encontraron juegos para el género " + genero);
+	        }
+	    } catch (SQLException e) {
+	        System.out.println("Ha ocurrido un problema: " + e.getErrorCode());
+	        e.printStackTrace();
+	    }
+	    return null;
+	}
+
 
 	public void desconectar() throws SQLException, ClassNotFoundException {
 		conecta.close();

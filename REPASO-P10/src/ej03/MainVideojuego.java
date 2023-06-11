@@ -16,6 +16,7 @@ public class MainVideojuego {
 		System.out.println(bd.insertarConBeanConTransacciones(new Videojuego(12, "t2", "d2", "g2", 2023, "m2", "p2", 20)));
 		System.out.println(bd.actualizarPrecioConTransacciones(9, 69));
 		System.out.println(bd.eliminarVideojuegoConTransacciones(12));
+		System.out.println(bd.procediminetoJuegosPorGenero("Shooter"));
 	}
 	
 }
