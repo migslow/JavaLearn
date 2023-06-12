@@ -217,10 +217,10 @@ public class AccesoBdatosTienda {
 
 	public void calcularPrecioTotalProducto(double precio, int cantidad) {
 		try {
-			CallableStatement proc = conecta.prepareCall("select calcularPrecioTotal(?,?)");
-			proc.setDouble(1, precio);
-			proc.setInt(2, cantidad);
-			ResultSet rs = proc.executeQuery();
+			CallableStatement fuct = conecta.prepareCall("select calcularPrecioTotal(?,?)");
+			fuct.setDouble(1, precio);
+			fuct.setInt(2, cantidad);
+			ResultSet rs = fuct.executeQuery();
 			while (rs.next()) {
 				double total = rs.getDouble(1);
 				System.out.println("Total: " + total);
