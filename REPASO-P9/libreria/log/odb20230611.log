@@ -1,0 +1,271 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-06-11 16:44:59 #1 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' has been recovered (tr. 63-65)
+
+[2023-06-11 16:44:59 #2 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is opened by 2344@DESKTOP-CVFANML
+
+[2023-06-11 16:44:59 #3 store] 
+Configuration path: ?
+
+[2023-06-11 16:44:59 #4 type] 
+Type TypedQuery.DepartamentoEntity is not enhanced.
+
+[2023-06-11 16:44:59 #5 type] 
+Type TypedQuery.EmpleadoEntity is not enhanced.
+
+[2023-06-11 16:44:59 #6 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is closed by 2344@DESKTOP-CVFANML
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-06-11 16:48:10 #1 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is opened by 5296@DESKTOP-CVFANML
+
+[2023-06-11 16:48:10 #2 store] 
+Configuration path: ?
+
+[2023-06-11 16:48:10 #3 type] 
+Type TypedQuery.DepartamentoEntity is not enhanced.
+
+[2023-06-11 16:48:10 #4 type] 
+Type TypedQuery.EmpleadoEntity is not enhanced.
+
+[2023-06-11 16:48:10 #5 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is closed by 5296@DESKTOP-CVFANML
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-06-11 16:48:58 #1 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is opened by 8924@DESKTOP-CVFANML
+
+[2023-06-11 16:48:58 #2 store] 
+Configuration path: ?
+
+[2023-06-11 16:48:58 #3 type] 
+Type TypedQuery.DepartamentoEntity is not enhanced.
+
+[2023-06-11 16:48:58 #4 type] 
+Type TypedQuery.EmpleadoEntity is not enhanced.
+
+[2023-06-11 16:48:58 #5 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is closed by 8924@DESKTOP-CVFANML
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-06-11 16:50:59 #1 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is opened by 10304@DESKTOP-CVFANML
+
+[2023-06-11 16:50:59 #2 store] 
+Configuration path: ?
+
+[2023-06-11 16:51:00 #3 type] 
+Type TypedQuery.DepartamentoEntity is not enhanced.
+
+[2023-06-11 16:51:00 #4 type] 
+Type TypedQuery.EmpleadoEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-06-11 16:51:21 #1 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is opened by 10264@DESKTOP-CVFANML
+
+[2023-06-11 16:51:21 #2 store] 
+Configuration path: ?
+
+[2023-06-11 16:51:21 #3 type] 
+Type TypedQuery.DepartamentoEntity is not enhanced.
+
+[2023-06-11 16:51:21 #4 type] 
+Type TypedQuery.EmpleadoEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-06-11 16:52:49 #1 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is opened by 4872@DESKTOP-CVFANML
+
+[2023-06-11 16:52:49 #2 store] 
+Configuration path: ?
+
+[2023-06-11 16:52:49 #3 type] 
+Type TypedQuery.DepartamentoEntity is not enhanced.
+
+[2023-06-11 16:52:49 #4 type] 
+Type TypedQuery.EmpleadoEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-06-11 16:54:40 #1 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is opened by 3224@DESKTOP-CVFANML
+
+[2023-06-11 16:54:40 #2 store] 
+Configuration path: ?
+
+[2023-06-11 16:54:40 #3 type] 
+Type TypedQuery.DepartamentoEntity is not enhanced.
+
+[2023-06-11 16:54:40 #4 type] 
+Type TypedQuery.EmpleadoEntity is not enhanced.
+
+[2023-06-11 16:54:40 #5 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is closed by 3224@DESKTOP-CVFANML
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-06-11 16:54:53 #1 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is opened by 9612@DESKTOP-CVFANML
+
+[2023-06-11 16:54:53 #2 store] 
+Configuration path: ?
+
+[2023-06-11 16:54:53 #3 type] 
+Type TypedQuery.DepartamentoEntity is not enhanced.
+
+[2023-06-11 16:54:53 #4 type] 
+Type TypedQuery.EmpleadoEntity is not enhanced.
+
+[2023-06-11 16:54:54 #5 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is closed by 9612@DESKTOP-CVFANML
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-06-11 16:57:58 #1 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is opened by 9452@DESKTOP-CVFANML
+
+[2023-06-11 16:57:58 #2 store] 
+Configuration path: ?
+
+[2023-06-11 16:57:58 #3 type] 
+Type TypedQuery.DepartamentoEntity is not enhanced.
+
+[2023-06-11 16:57:58 #4 type] 
+Type TypedQuery.EmpleadoEntity is not enhanced.
+
+[2023-06-11 16:57:58 #5 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is closed by 9452@DESKTOP-CVFANML
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-06-11 17:01:45 #1 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is opened by 11072@DESKTOP-CVFANML
+
+[2023-06-11 17:01:45 #2 store] 
+Configuration path: ?
+
+[2023-06-11 17:01:45 #3 type] 
+Type TypedQuery.DepartamentoEntity is not enhanced.
+
+[2023-06-11 17:01:45 #4 type] 
+Type TypedQuery.EmpleadoEntity is not enhanced.
+
+[2023-06-11 17:01:45 #5 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is closed by 11072@DESKTOP-CVFANML
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-06-11 17:10:14 #1 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is opened by 3172@DESKTOP-CVFANML
+
+[2023-06-11 17:10:14 #2 store] 
+Configuration path: ?
+
+[2023-06-11 17:10:14 #3 type] 
+Type TypedQuery.DepartamentoEntity is not enhanced.
+
+[2023-06-11 17:10:14 #4 type] 
+Type TypedQuery.EmpleadoEntity is not enhanced.
+
+[2023-06-11 17:10:14 #5 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is closed by 3172@DESKTOP-CVFANML
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-06-11 17:13:29 #1 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is opened by 2024@DESKTOP-CVFANML
+
+[2023-06-11 17:13:29 #2 store] 
+Configuration path: ?
+
+[2023-06-11 17:13:29 #3 type] 
+Type TypedQuery.DepartamentoEntity is not enhanced.
+
+[2023-06-11 17:13:29 #4 type] 
+Type TypedQuery.EmpleadoEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-06-11 17:13:58 #1 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' has been recovered (tr. 69-69)
+
+[2023-06-11 17:13:58 #2 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is opened by 6112@DESKTOP-CVFANML
+
+[2023-06-11 17:13:58 #3 store] 
+Configuration path: ?
+
+[2023-06-11 17:13:58 #4 type] 
+Type TypedQuery.DepartamentoEntity is not enhanced.
+
+[2023-06-11 17:13:58 #5 type] 
+Type TypedQuery.EmpleadoEntity is not enhanced.
+
+[2023-06-11 17:13:58 #6 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is closed by 6112@DESKTOP-CVFANML
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-06-11 17:36:10 #1 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is opened by 10180@DESKTOP-CVFANML
+
+[2023-06-11 17:36:10 #2 store] 
+Configuration path: ?
+
+[2023-06-11 17:36:10 #3 type] 
+Type TypedQuery.DepartamentoEntity is not enhanced.
+
+[2023-06-11 17:36:10 #4 type] 
+Type TypedQuery.EmpleadoEntity is not enhanced.
+
+[2023-06-11 17:36:11 #5 query] 
+Error during query execution: update EmpleadoEntity set salario = salario + :c where departamento.dptoId = :n({c->200,n->10})
+
+[2023-06-11 17:36:11 #6 *] 
+[ObjectDB 2.8.2] Unexpected exception (Error 990)
+  Generated by OpenJDK 64-Bit Server VM 17.0.4.1 (on Windows 11 10.0).
+Please report this error on http://www.objectdb.com/issue/new
+com.objectdb.o.InternalException: null
+com.objectdb.o.InternalException
+	at com.objectdb.o.InternalException.f(InternalException.java:235)
+	at com.objectdb.o.QRC.i(QRC.java:294)
+	at com.objectdb.o.QRC.j(QRC.java:197)
+	at com.objectdb.o.QRM.ZU(QRM.java:273)
+	at com.objectdb.o.MST.ZU(MST.java:1019)
+	at com.objectdb.o.WRA.ZU(WRA.java:313)
+	at com.objectdb.o.WSM.ZU(WSM.java:117)
+	at com.objectdb.o.QRR.k(QRR.java:260)
+	at com.objectdb.o.QRR.i(QRR.java:154)
+	at com.objectdb.jpa.JpaQuery.executeUpdate(JpaQuery.java:786)
+	at TypedQuery.AccesoBdatos.incrementarSalarioDepartamento(AccesoBdatos.java:214)
+	at TypedQuery.Main2.main(Main2.java:50)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-06-11 17:36:24 #1 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' has been recovered (tr. 75-77)
+
+[2023-06-11 17:36:24 #2 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is opened by 10524@DESKTOP-CVFANML
+
+[2023-06-11 17:36:24 #3 store] 
+Configuration path: ?
+
+[2023-06-11 17:36:25 #4 type] 
+Type TypedQuery.DepartamentoEntity is not enhanced.
+
+[2023-06-11 17:36:25 #5 type] 
+Type TypedQuery.EmpleadoEntity is not enhanced.
+
+[2023-06-11 17:36:25 #6 store] 
+Database 'C:\Users\migue\git\JavaLearn\REPASO-P9\db\empleados.odb' is closed by 10524@DESKTOP-CVFANML
+

@@ -13,5 +13,11 @@ public class MainTienda {
 		System.out.println(bd.insertarConBean(new Tienda(11, "Silla", 24.99, 12)));
 		System.out.println(bd.actualizarPrecio(7, 29.99));
 		System.out.println(bd.borrarArticulo(2));
+		
+		System.out.println("\nProcedimiento: ");
+		bd.calcularPecioSuperior(10.99);
+		
+		System.out.println("\nFuncion: ");
+		bd.calcularPrecioTotalProducto(10.99, 5);
 	}
 }
