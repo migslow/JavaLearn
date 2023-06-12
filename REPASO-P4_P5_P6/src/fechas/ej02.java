@@ -10,7 +10,7 @@ public class ej02 {
 
 		long resultado = d2.getTime() - d1.getTime();
 		long calculo = resultado / (24 * 60 * 60 * 1000);
-		System.out.println("La diferencia es: " + calculo);
+		System.out.println("La diferencia en dias es: " + calculo);
 
 	}
 

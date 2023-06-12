@@ -1,33 +1,32 @@
 package Examen_4;
+
 import java.util.ArrayList;
 
-
 public class Main2 {
-	
 
 	static ArrayList<Empleado> listaEmpleados = new ArrayList<Empleado>();
 
 	private static double salariosTotales() {
 		double total = 0;
-		for(Empleado e : listaEmpleados) {
-			if(e instanceof Empleado) {
+		for (Empleado e : listaEmpleados) {
+			if (e instanceof Empleado) {
 				total = total + e.salarioTotal();
 			}
 		}
 		return total;
 
 	}
-	
+
 	private static int numeroComerciales() {
 		int contador = 0;
-		for(Empleado e : listaEmpleados) {
-			if(e instanceof Comercial) {
+		for (Empleado e : listaEmpleados) {
+			if (e instanceof Comercial) {
 				contador++;
 			}
 		}
 		return contador;
 	}
-	
+
 	public static void main(String[] args) {
 
 		Comercial c1 = new Comercial("Bel�n Carrera", 38, 1200, 20000);
@@ -44,18 +43,15 @@ public class Main2 {
 
 		System.out.println("Total de empleados " + listaEmpleados.size());
 		System.out.println("Total de comerciales " + numeroComerciales());
-		System.out.println("Total de administrativos "
-					+ (listaEmpleados.size() -numeroComerciales() ));
-		
+		System.out.println("Total de administrativos " + (listaEmpleados.size() - numeroComerciales()));
+
 		System.out.println("Suma Total de Salarios --> " + salariosTotales());
-		
+
 	} // DEL MAIN
 
 } // DE LA CLASE
 //-------------------------RESULTADO-------------------------------------------
-/* 
-Total de empleados 5
-Total de comerciales 3
-Total de administrativos 2
-Suma Total de Salarios --> 6050.0
-*/
+/*
+ * Total de empleados 5 Total de comerciales 3 Total de administrativos 2 Suma
+ * Total de Salarios --> 6050.0
+ */
