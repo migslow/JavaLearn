@@ -50,6 +50,7 @@ public class ej29 {
 			if (v[i] != v[i + 1]) {
 				System.out.print(v[i] + " - ");
 			}
+			
 		}
 	}
 
